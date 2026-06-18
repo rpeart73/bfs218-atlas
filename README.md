@@ -4,7 +4,7 @@ A learning companion for **BFS218: Racism and the Digital Age (Understanding Tec
 
 Per-week: Overview, Purpose and Learning Outcomes, Guiding Questions, Weekly Concepts, Readings, an interactive in-browser slideshow, a Case Study, a Reflection Corner, and References. Plus four learning tools: glossary and key thinkers, a Living Cartography personal map, self-check cards, and case studies.
 
-It is a **companion to Blackboard**, not a replacement. Grades, discussion, and official submission live in Blackboard. No grading and no student-to-student interaction here.
+It is a **companion to Blackboard**, not a replacement. Official course records, discussion, and submission live in Blackboard. No assessment and no student-to-student interaction here.
 
 ## Editing content
 All content is in `data/course-data.js` (one `window.BFS218` object).

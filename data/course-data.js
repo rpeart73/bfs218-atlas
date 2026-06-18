@@ -7,7 +7,6 @@ window.BFS218 = {
   "mode": "Online Asynchronous",
   "institution": "Seneca Polytechnic",
   "blackboardCourseUrl": "",
-  "gradebookUrl": "",
   "reflectionQuestion": "Can a tool built inside an unfair world ever be neutral? And if it cannot, what does that ask of the people who make it, use it, and live with it?"
  },
  "instructor": {
@@ -127,7 +126,7 @@ window.BFS218 = {
     },
     {
      "type": "text",
-     "text": "This week we also introduce the Personal Cartography, your first graded assignment (15 percent). Cartography means map-making. In this assignment you map your own relationship to digital technology: the tools you use, the systems that touch your life, the moments where you have felt seen, sorted, watched, or misread by a machine. You are not graded on having the right answer. You are graded on noticing, describing, and beginning to ask critical questions."
+     "text": "This week we also introduce the Personal Cartography, your first major course task. Cartography means map-making. In this task you map your own relationship to digital technology: the tools you use, the systems that touch your life, the moments where you have felt seen, sorted, watched, or misread by a machine. The point is not having the right answer. The point is noticing, describing, and beginning to ask critical questions."
     },
     {
      "type": "text",
@@ -409,8 +408,8 @@ window.BFS218 = {
      {
       "heading": "Your first assignment: Personal Cartography",
       "points": [
-       "Cartography means map-making. Your first assignment, worth 15 percent and due in Week 2, asks you to map your own digital life.",
-       "You are not graded on the right answer. You are graded on noticing, describing, and beginning to ask critical questions.",
+       "Cartography means map-making. Your first course task, due in Week 2, asks you to map your own digital life.",
+       "The point is not having the right answer. The point is noticing, describing, and beginning to ask critical questions.",
        "Notice",
        "A real moment with technology.",
        "Map",
@@ -453,7 +452,7 @@ window.BFS218 = {
      "Notice that default discrimination needs no villain at all. If harm can come from a default nobody chose on purpose, then waiting to find someone to blame is exactly how the harm keeps running unchallenged.",
      "Intersectionality is not just adding categories together. The harm at the overlap is often worse than race and gender separately would predict, which is why looking at one axis at a time can make the deepest damage statistically disappear.",
      "Watch the shape of the course: it moves from naming the problem to earning hope, not assuming it. That order is a quiet argument that hope you have not worked for is just comfort, and comfort is what kept the problem invisible.",
-     "Grading you on noticing rather than the right answer is itself a lesson about technology: the dangerous systems are the ones we stopped noticing. Your real skill this term is staying awake to what has become invisible.",
+     "The focus on noticing rather than the right answer is itself a lesson about technology: the dangerous systems are the ones we stopped noticing. Your real skill this term is staying awake to what has become invisible.",
      "Pattern, not villain, is the whole strategy. Hunting for a single bad actor lets you relax once you find one; training your eye on the pattern keeps you suspicious of the calm, helpful, neutral-looking systems that never get caught.",
      "Sit with what neutral is keeping you from seeing. The feeling that a system is just neutral is not the absence of a viewpoint; it is a viewpoint so common you stopped noticing it had one, which is exactly when to look harder.",
      "Notice that all three anchors are Black women scholars naming harms that systems were built to make invisible. The reading list is itself an argument: the people a system fails most are often the ones who see it most clearly."
@@ -504,7 +503,7 @@ window.BFS218 = {
     },
     {
      "type": "text",
-     "text": "Your first map is due this week. As you finish it, apply this week's CRT lens: not is this technology biased, but whose world does this system assume, and who pays when it is wrong. Post one insight from your map to the Map Exchange and respond to two classmates."
+     "text": "Your first map is due this week. As you finish it, apply this week's CRT lens: not is this technology biased, but whose world does this system assume, and who pays when it is wrong. Use the Blackboard Map Exchange to share one insight from your map and respond to two classmates."
     },
     {
      "type": "head",
@@ -771,7 +770,7 @@ window.BFS218 = {
       "points": [
        "Your first map is due this week, so bring it ready to the session.",
        "Read your own map through the CRT lens: whose world does this system assume, and who pays when it gets things wrong?",
-       "Post one insight from your map to the Map Exchange, and respond to two classmates.",
+       "Use the Blackboard Map Exchange to share one insight from your map and respond to two classmates.",
        "Always use a privacy-safe detail; describe the system without exposing personal data, and use the alternate public-interface path if your own data feels unsafe."
       ]
      },
@@ -2052,7 +2051,7 @@ window.BFS218 = {
      "Ewert is the New Jim Code in a single case. A tool that looks neutral and scientific, an 'actuarial risk score,' was never tested for the people it judged, so its objectivity was just an assumption dressed up as math.",
      "This slide is the payoff of the last five weeks: the Canadian cases are not new ideas, they are your dimensions caught in the act. If you can name the dimension behind each case, the abstract theory just became a tool you can use.",
      "That third question, about oversight, is the one most people forget to ask. We argue about whether a tool is biased and skip whether anyone can actually stop it. A harm with no accountability body is not a mistake, it is a design choice.",
-     "Adding campus life to that list is not filler. It quietly asks whether the same logics you are studying at a distance are running on the very systems that track your attendance, your logins, and your grades right now.",
+     "Adding campus life to that list is not filler. It quietly asks whether the same logics you are studying at a distance are running on the very systems that track your attendance, your logins, and your academic record right now.",
      "This is the deepest point of the week: the gap between fast tech and slow law is not an accident waiting to be fixed, it is the space where harm lives and profits. Whoever gains from a tool will deploy it before the rules arrive.",
      "Benjamin's question turns knowledge into responsibility. Once you can name the New Jim Code in your own city, you cannot un-see it, and the week is really asking what you now feel obligated to do with that sight.",
      "Look at where these sources come from: the Citizen Lab, a privacy commissioner, a Supreme Court ruling. The evidence for techno-racism in Canada is not fringe or foreign, it sits in our own courts and watchdog offices, already documented and public."
@@ -2219,7 +2218,7 @@ window.BFS218 = {
    "references": [
     "Benjamin, R. (2019). Race after technology: Abolitionist tools for the New Jim Code. Polity Press. (Engineered inequity; default discrimination; coded exposure.)"
    ],
-   "mapPrompt": "Reread your entries from Weeks 3 to 6.\nChoose the one system you understand best and can show on screen.\nFor that system, draft your four Knowledge Check answers: dimension(s), who is harmed, designed or incidental, one response.\nNote anything still unclear, and take it to the Map Exchange before you record.",
+   "mapPrompt": "Reread your entries from Weeks 3 to 6.\nChoose the one system you understand best and can show on screen.\nFor that system, draft your four Knowledge Check answers: dimension(s), who is harmed, designed or incidental, one response.\nNote anything still unclear, and bring that question to the Blackboard Map Exchange before you record.",
    "video": {
     "provider": "",
     "id": "",
@@ -4107,7 +4106,7 @@ window.BFS218 = {
       "points": [
        "This week, reread your map from the first entry to the last.",
        "Mark how your seeing changed, and draft the four answers for your Final video.",
-       "Bring one thing that changed in your seeing to the Map Exchange."
+       "Bring one thing that changed in your seeing to the Blackboard Map Exchange."
       ]
      },
      {
@@ -4162,7 +4161,7 @@ window.BFS218 = {
     },
     {
      "type": "text",
-     "text": "This is the self-paced, online-asynchronous section. You finish and submit the Final Revisiting Cartography video, move through the closing deck and videos, and post a final reflection in the Map Exchange. The Final video is due this week."
+     "text": "This is the self-paced, online-asynchronous section. You finish and submit the Final Revisiting Cartography video, move through the closing deck and videos, and post a final reflection in the Blackboard Map Exchange. The Final video is due this week."
     },
     {
      "type": "head",
@@ -4430,7 +4429,7 @@ window.BFS218 = {
      "A single lens is portable in a way four checklists never are. The test is whether you reach for it without being asked, on a tool released long after this course is a distant memory.",
      "Your final task asks for less polish than honesty. A messy walkthrough that shows real change will always outweigh a smooth one that hides whether you actually learned to see.",
      "This is the whole course folded into four questions you can carry anywhere. Memorize that sequence and you no longer need the course, because you have become the thing it was trying to build.",
-     "A map that only lived inside the course would have been an assignment, not a habit. The real measure of your learning is whether you make a new entry when nobody is grading it.",
+     "A map that only lived inside the course would have been an assignment, not a habit. The real measure of your learning is whether you make a new entry when nobody is asking for it.",
      "Small and concrete wins because vague promises quietly expire. Ask the honest question: which version of your commitment would still be true a year from now when no one is checking?",
      "Sitting with the discomfort of seeing what is built to look neutral is the rare part. Most people stop at it looks fine to me, and that comfort is exactly what the New Jim Code counts on.",
      "This last question is the course's real exam, and it has no deadline. The hard moment is not spotting the harm; it is holding your read when everyone around you insists nothing is wrong.",
@@ -5164,27 +5163,22 @@ window.BFS218 = {
  "assignments": [
   {
    "name": "Map Exchange",
-   "weight": "20%",
-   "blurb": "An ongoing exchange where you post one insight from your cartography and respond to classmates. It happens in the Blackboard discussion."
+   "blurb": "A Blackboard discussion where you share one insight from your cartography and respond to classmates."
   },
   {
    "name": "Personal Cartography",
-   "weight": "20%",
    "blurb": "Your growing personal map of techno-racism in your own digital life, built across the term. You develop it in the Living Cartography tool here and submit it in Blackboard."
   },
   {
    "name": "Knowledge Check Video 1",
-   "weight": "20%",
    "blurb": "A short recorded video where you explain course ideas in your own words. Hands-on and tied to you, so it cannot be faked."
   },
   {
    "name": "Knowledge Check Video 2",
-   "weight": "20%",
    "blurb": "A second recorded video check that builds on the first and applies more of the toolkit."
   },
   {
    "name": "Final Revisiting Cartography Video",
-   "weight": "20%",
    "blurb": "A closing video where you revisit your cartography and reflect on how your seeing changed across the term."
   }
  ]

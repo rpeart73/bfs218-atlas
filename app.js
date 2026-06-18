@@ -1,5 +1,5 @@
 /* BFS218 Atlas: learning companion. Vanilla JS, self-contained, no build step.
-   Companion to Blackboard: no grading, no student-to-student interaction here. */
+   Companion to Blackboard: no assessment, no student-to-student interaction here. */
 (function(){
 "use strict";
 var D = window.BFS218 || {};
@@ -167,7 +167,7 @@ function home(){
     var tiles=(p.weeks||[]).map(function(n){var wk=week(n);if(!wk)return '';return '<a class="wktile" href="#/week/'+n+'" style="background:'+p.fill+'"><span class="wn" style="color:'+p.accent+'">WEEK '+pad(n)+'</span><b>'+esc(wk.title||'')+'</b><span class="muted" style="font-size:.8rem">'+esc(wk.concept||'')+'</span></a>';}).join('');
     return '<h3 style="margin:18px 0 8px;color:'+p.accent+'">'+esc(p.name)+' <span class="muted" style="font-weight:400">Weeks '+p.weeks[0]+' to '+p.weeks[p.weeks.length-1]+'</span></h3><div class="wkgrid">'+tiles+'</div>';
   }).join('');
-  var foot='<div class="card" style="margin-top:24px"><div class="eyebrow">A companion, not the gradebook</div><p style="margin:0">This site holds the learning materials and tools. Your grades, the discussion board, and handing work in all live in Blackboard. Nothing here is graded, and nothing you do here is tracked.</p></div>';
+  var foot='<div class="card" style="margin-top:24px"><div class="eyebrow">A companion to Blackboard</div><p style="margin:0">This site holds the learning materials and private tools. Official course records, submissions, and class discussion live in Blackboard. Nothing here is assessed or tracked.</p></div>';
   return hero+tools+'<h2 style="margin-top:26px">The 14 weeks</h2>'+bands+foot;
 }
 
@@ -236,7 +236,7 @@ function glossarySearch(q){
 function cards(){
   var pre=(location.hash.split('?week=')[1])||'';
   var opts='<option value="">All weeks</option>'+(D.weeks||[]).map(function(w){return '<option value="'+w.number+'"'+(String(w.number)===String(pre)?' selected':'')+'>Week '+pad(w.number)+'</option>';}).join('');
-  return '<h1>Self-check cards</h1><p class="lede">Practice recalling the key ideas in your own words, then flip to check. Private study, never scored, never a test.</p>'+
+  return '<h1>Self-check cards</h1><p class="lede">Practice recalling the key ideas in your own words, then flip to check. Private study, never a test.</p>'+
     '<label for="card-week">Show cards for</label><select id="card-week" data-action="cw" style="max-width:280px">'+opts+'</select><div id="cardgrid" style="margin-top:16px">'+cardGrid(pre)+'</div>';
 }
 function cardGrid(wk){
@@ -252,13 +252,13 @@ function cases(){
 
 function assignments(){
   var as=D.assignments||[];
-  return '<h1>Assignments</h1><p class="lede">Your assessments for the course. You build and prepare them here, and you hand them in and get your grade in Blackboard.</p>'+as.map(function(a){return '<div class="card"><div class="eyebrow">'+esc(a.weight||'')+'</div><h3 style="margin:.1em 0 .4em">'+esc(a.name)+'</h3><p style="margin:0">'+esc(a.blurb||'')+'</p></div>';}).join('')+'<div class="card"><div class="eyebrow">Where you hand in</div><p style="margin:0">All assignment instructions, submission, and grades live in Blackboard. This page is an overview.</p></div>';
+  return '<h1>Assignments</h1><p class="lede">A preparation overview for the main course tasks. Use this page to plan your work, then use Blackboard for official instructions, submission, and course records.</p>'+as.map(function(a){return '<div class="card"><div class="eyebrow">Blackboard task</div><h3 style="margin:.1em 0 .4em">'+esc(a.name)+'</h3><p style="margin:0">'+esc(a.blurb||'')+'</p></div>';}).join('')+'<div class="card"><div class="eyebrow">Where you hand in</div><p style="margin:0">All official instructions and submission points live in Blackboard. This page is a preparation guide.</p></div>';
 }
 
 /* ---------- living cartography (visual + save) ---------- */
 function cartography(){
   var pre=(location.hash.split('?week=')[1])||'';
-  return '<h1>Living Cartography</h1><p class="lede">Your own growing map of where technology touches race in your digital life. It is yours, it saves on your device, and it is never graded.</p>'+
+  return '<h1>Living Cartography</h1><p class="lede">Your own growing map of where technology touches race in your digital life. It is yours, it saves on your device, and it is not assessed here.</p>'+
     '<div class="notebar"><b>Your privacy comes first.</b> You never have to share anything personal. Describe a moment in words, map a public screen, or use a general example. All three are full and equal.</div>'+
     '<div style="display:flex;flex-wrap:wrap;gap:10px;margin:14px 0"><button class="btn btn-primary" data-action="carto-add" data-week="'+esc(pre)+'">Add an entry</button><button class="btn" data-action="carto-export">Save to a file</button><button class="btn" data-action="carto-import">Load from a file</button><button class="btn btn-quiet" data-action="carto-clear">Clear my map</button><input type="file" id="carto-file" accept="application/json" hidden></div>'+
     '<h2>Your map</h2><p class="muted" style="margin-top:-4px">Each pin is a moment you mapped. Watch your map fill across the term.</p>'+cartoMap()+
