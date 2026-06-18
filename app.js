@@ -11,8 +11,8 @@ var OVERLAY = document.getElementById('overlay');
 var CSS = [
 "#hero{position:relative;overflow:hidden;border-radius:18px;padding:40px clamp(20px,5vw,56px);margin-bottom:26px;color:#1A1A1A;background:linear-gradient(135deg,#FBFAF7 0%,#E8EEF1 38%,#E9EFE7 62%,#ECE7F1 100%);border:1px solid var(--hair)}",
 "#hero .htag{font-family:var(--mono);font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:#54585A}",
-"#hero h1{font-size:clamp(1.9rem,4.4vw,2.9rem);margin:.18em 0 .12em;max-width:18ch}",
-"#hero .hsub{font-size:1.15rem;color:#3a3f45;max-width:48ch}",
+"#hero h1{font-size:clamp(1.9rem,4.4vw,2.9rem);margin:.18em 0 .12em}",
+"#hero .hsub{font-size:1.15rem;color:#3a3f45}",
 "#hero .hcontour{position:absolute;inset:0;opacity:.5;pointer-events:none}",
 "#hero .hactions{margin-top:20px;display:flex;flex-wrap:wrap;gap:10px}",
 ".toolgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}",
@@ -36,6 +36,9 @@ var CSS = [
 ".glossweek{border:1px solid var(--hair);border-radius:12px;padding:6px 16px 14px;margin-bottom:14px;background:var(--surface)}",
 ".cite{font-size:.85rem;color:#4A4A4A;border-left:3px solid var(--hair);padding-left:10px;margin:.5em 0 0}",
 ".rlink{font-weight:600;font-size:.9rem}",
+".slideshow-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:16px;align-items:start}",
+".slide-kp{background:var(--raised);border:1px solid var(--hair);border-radius:12px;padding:16px}",
+"@media (max-width:760px){.slideshow-grid{grid-template-columns:1fr}}",
 "@media (max-width:640px){.toolgrid{grid-template-columns:1fr}}"
 ].join("\n");
 (function(){ var s=document.createElement('style'); s.textContent=CSS; document.head.appendChild(s); })();
@@ -108,14 +111,21 @@ function videoEmbed(v,label){
 function readingMedia(r){ return '<div class="aspect">'+videoEmbed({provider:r.provider,url:r.url})+'</div>'; }
 
 /* ---------- slideshow ---------- */
+function kpHTML(wk,cur){
+  var pts=((wk.slides||{}).points)||[], count=(wk.slides||{}).count||0, kp=pts[cur-1];
+  var h='<div class="eyebrow">Key point &middot; slide '+cur+' of '+count+'</div>';
+  if(!kp||(!kp.heading&&!((kp.points||[]).length))) return h+'<p class="muted" style="margin:0">Follow the narration for this slide.</p>';
+  return h+(kp.heading?'<h4 style="margin:.1em 0 .4em">'+esc(kp.heading)+'</h4>':'')+((kp.points&&kp.points.length)?'<ul style="margin:0;padding-left:1.1em;line-height:1.6">'+kp.points.map(function(x){return '<li>'+esc(x)+'</li>';}).join('')+'</ul>':'');
+}
 function slideBlock(wk){
   var s=wk.slides||{};
   if(!s.available||!s.count) return '<div class="aspect"><div class="placeholder">The slideshow for this week will appear here once the deck is posted.</div></div>';
   var dir=s.dir||('slides/week-'+pad(wk.number));
-  return '<div class="slidewrap" data-count="'+s.count+'" data-dir="'+esc(dir)+'" tabindex="0" aria-label="Slideshow, use arrow keys">'+
-    '<div class="aspect"><img id="slide-img" src="'+esc(dir+'/slide-1.png')+'" alt="Slide 1 of '+s.count+'"></div>'+
+  return '<div class="slidewrap" data-week="'+wk.number+'" data-count="'+s.count+'" data-dir="'+esc(dir)+'" tabindex="0" aria-label="Slideshow for Week '+wk.number+', use arrow keys to move">'+
+    '<div class="slideshow-grid"><div><div class="aspect"><img id="slide-img" src="'+esc(dir+'/slide-1.png')+'" alt="Slide 1 of '+s.count+'"></div>'+
     '<div style="height:4px;background:var(--hair);border-radius:2px;margin-top:8px"><div id="slide-bar" style="height:100%;width:'+(100/s.count)+'%;background:var(--red);border-radius:2px"></div></div>'+
-    '<div class="slidebar"><button class="btn" data-action="slide-prev">Previous</button><span class="count"><span id="slide-n">1</span> / '+s.count+'</span><button class="btn" data-action="slide-next">Next</button></div></div>';
+    '<div class="slidebar"><button class="btn" data-action="slide-prev">Previous</button><span class="count"><span id="slide-n">1</span> / '+s.count+'</span><button class="btn" data-action="slide-next">Next</button></div></div>'+
+    '<aside class="slide-kp" id="slide-kp" aria-live="polite">'+kpHTML(wk,1)+'</aside></div></div>';
 }
 function stepSlide(wrap,dir){
   if(!wrap) return;
@@ -123,6 +133,7 @@ function stepSlide(wrap,dir){
   var nEl=wrap.querySelector('#slide-n'),img=wrap.querySelector('#slide-img'),bar=wrap.querySelector('#slide-bar');
   var cur=parseInt(nEl.textContent,10)+dir; if(cur<1)cur=count; if(cur>count)cur=1;
   nEl.textContent=cur; img.src=dirp+'/slide-'+cur+'.png'; img.alt='Slide '+cur+' of '+count; if(bar) bar.style.width=(100*cur/count)+'%';
+  var wk=week(parseInt(wrap.getAttribute('data-week'),10)); var kpEl=document.getElementById('slide-kp'); if(kpEl&&wk) kpEl.innerHTML=kpHTML(wk,cur);
 }
 
 /* ---------- home ---------- */
