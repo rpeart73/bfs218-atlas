@@ -444,7 +444,7 @@ window.BFS218 = {
      }
     ],
     "insights": [
-     "This course is not about hating technology. It is about learning to read it, the way you would read a person's intentions, so the tools you use every day stop feeling automatic and start feeling like choices someone made.",
+     "These slides open the course. They move from one question, can a machine be racist, to a clear definition of techno-racism and the New Jim Code, so you finish with the language the rest of the term will use.",
      "Notice what the promise really costs you. Once you can see how a search bar or a loan decision sorts people, you cannot unsee it, and that discomfort is the point: clarity here is a one-way door.",
      "Moving the question from the heart to the design is a power move. It means no one gets off the hook by saying they did not mean it, and it shifts blame from feelings (which we cannot prove) to outcomes (which we can measure).",
      "Design, data, and defaults are exactly the parts we treat as boring plumbing, so no one inspects them. That invisibility is not an accident; a bias hidden in the wiring is far safer than a bias someone says out loud.",
@@ -793,7 +793,7 @@ window.BFS218 = {
      }
     ],
     "insights": [
-     "Last week gave you a name for the problem; this week gives you the theory that explains why it keeps happening. A name lets you point at harm, but a theory lets you predict where it will show up next.",
+     "These slides add the theory under last week's tools. They walk through critical race theory and show the New Jim Code as that theory applied to code, giving you the ground for everything that follows.",
      "Notice the order: you learn to see before you learn to act. That is deliberate, because most people who want to fix a system never paused to understand how it actually fails, and end up fixing the wrong thing.",
      "Moving from intent to outcomes is not letting anyone off easy; it is the opposite. Intent is private and deniable, but outcomes are public and countable, so this shift makes harm something you can actually prove.",
      "The claim that racism works best when a system looks neutral should unsettle you. It means the cleaner, fairer, and more modern a system appears, the more cover it has, so polish itself becomes a reason to look closer.",
@@ -1097,7 +1097,7 @@ window.BFS218 = {
      }
     ],
     "insights": [
-     "Notice the order Benjamin chose: engineered inequity comes first because it is the most visible form. Once you can see harm that is built on purpose, you are ready to spot the quieter kinds hiding in later weeks.",
+     "These slides open the anatomy of the New Jim Code with its first dimension, engineered inequity. They show how bias can be built into a system on purpose, and how to spot it in real designs.",
      "Taking the New Jim Code apart one dimension at a time is itself an argument. It tells you the problem is not one bad app but a pattern with parts, and a pattern can be named, mapped, and resisted.",
      "These four are not a ranking from worst to mildest. They are four doorways into the same house, so a single real-world system can show up in more than one dimension at once.",
      "If the harm is in the design, then no individual confession will ever explain it. That is why you should study the blueprint, not hunt for a villain, when something keeps failing the same group.",
@@ -1399,7 +1399,7 @@ window.BFS218 = {
      }
     ],
     "insights": [
-     "Last week the harm was loud and on purpose; this week it arrives quietly through settings nobody questions. Default discrimination is harder to fight precisely because it does not look like a decision at all.",
+     "These slides take up the second dimension, default discrimination. They show how harm can happen with no one choosing it, simply because the default was set for some people and not others.",
      "The phrase when no one is looking is the key. Engineered inequity needs someone to build the gap wider, but default discrimination needs only that everyone looked away and left the old inequity sitting in the defaults.",
      "Watch how the dimensions trade visibility for reach. As you move down the list, the harm gets quieter and easier to defend as accidental, which is exactly what makes the later dimensions harder to hold anyone responsible for.",
      "Here is the trap: you do not need a racist designer, only a passive one. That means firing the bad apple fixes nothing, because the harm was never in a person's heart, it was sitting in the defaults waiting.",
@@ -1708,7 +1708,7 @@ window.BFS218 = {
      }
     ],
     "insights": [
-     "Notice the word 'asynchronous.' You are learning about systems that decide who gets seen on a platform that itself decides what to show you and when. The course is happening inside its own subject.",
+     "These slides cover the third dimension, coded exposure. They show how being seen or unseen by a system is itself designed, and how visibility can be both a risk and a denial of service.",
      "Each dimension you have met is a different doorway into the same building. Engineered inequity is about who gets sorted, defaults are about who gets harmed by accident, and this week is about who even gets noticed in the first place.",
      "These four are not a ranking from worst to least bad. They are four moves the same code can make at once, so a single system can sort you, fail you by default, and watch you all in the same breath.",
      "Here is the trap in Benjamin's question: we usually treat being seen as a kind of respect or safety. Ask yourself whether a system that finally 'sees' you is offering you protection or just a clearer target.",
@@ -2044,7 +2044,7 @@ window.BFS218 = {
      }
     ],
     "insights": [
-     "The phrase 'in our backyard' is doing quiet work. It pulls techno-racism out of the safe distance of 'American tech companies' and puts it under Canadian law, which many of us are taught to trust as fairer. Watch that assumption this week.",
+     "These slides bring the New Jim Code home to Canada. They walk through documented cases in borders, policing, and corrections, so the theory lands on real institutions and real communities here.",
      "'It is here' is the whole argument of the week in three words. The temptation is always to locate racism somewhere else, in another country or another decade, because that lets us off the hook. Naming it locally removes the exit.",
      "Notice these are not three separate problems but one logic wearing three uniforms. If the same pattern shows up at the border, in policing, and in housing, that is not bad luck, it is a system doing what it was built to do.",
      "Molnar's phrase 'testing ground' should chill you. Tools tried on migrants, the people least able to say no, do not stay at the border. Rights stripped from the most vulnerable tend to become normal for everyone else next.",
@@ -2353,7 +2353,7 @@ window.BFS218 = {
      }
     ],
     "insights": [
-     "If you only remember one thing from this course, let it be the move you are learning here: a tool can look fair and forward-thinking on the surface while quietly doing the same sorting that older, uglier systems did out loud.",
+     "These slides pull the four dimensions together into one working anatomy. They are a review and a check, helping you name each dimension in one line before the course widens out.",
      "Notice that the course built the toolkit before handing it to you. That order is the point: you cannot challenge a system you cannot first name, so naming is not busywork, it is the first act of power.",
      "These three questions are portable. You can carry them out of this classroom and aim them at the banking app, the hiring portal, or the campus card reader, which is exactly what the next assignment asks you to do.",
      "The word 'amplify' is your defense against a common dodge: when someone says the technology did not invent racism, they are right, and that is the trap. A neutral-looking design can widen an old gap without ever inventing a new one.",
@@ -2663,7 +2663,7 @@ window.BFS218 = {
      }
     ],
     "insights": [
-     "Notice the course does not open Part III with a better algorithm or a fairness fix. Starting with a whole different relationship to data signals that some problems cannot be patched from inside the same system that made them.",
+     "These slides open Part III by changing the question from is the system biased to who should govern data at all. They introduce Indigenous data sovereignty and the OCAP principles.",
      "This is the hinge of the entire term: for seven weeks you asked whether a system was biased, and now you ask who should govern it at all. Those are not the same question, and the second one is far harder to dodge.",
      "Watch the quiet assumption buried in 'whoever collects the data owns it,' because it turns living communities into raw material. Sovereignty rejects that the moment data leaves you, you stop being a person and become a resource someone else mines.",
      "The four principles only work as a set, so resist treating them like a menu. A system can grant one and withhold the rest, which looks generous on paper while keeping all the real power exactly where it was.",
@@ -2951,7 +2951,7 @@ window.BFS218 = {
      }
     ],
     "insights": [
-     "Notice that Benjamin places this last on purpose. The hardest harm to fight is not the one that looks cruel, but the one that walks in wearing a smile and calls itself progress.",
+     "These slides complete the dimensions with technological benevolence, the help that watches. They show how tools sold as care or progress can extend control, and why good intentions do not settle the question.",
      "Ask yourself why the most dangerous dimension is the one saved for the turn toward fixing things. If help can hide harm, then every solution you are offered is also a claim you should test.",
      "Having the whole anatomy is not the finish line, it is the toolkit. Real systems rarely show you one clean dimension at a time, so your job now is to spot several working together in one tool.",
      "The word benevolence is doing quiet political work here. When harm is dressed as a gift, refusing it makes you look ungrateful, and that discomfort is exactly what keeps the harm in place.",
@@ -3256,7 +3256,7 @@ window.BFS218 = {
      }
     ],
     "insights": [
-     "Notice the shift this week. We move from describing the New Jim Code to catching it where it actually decides futures, which means the stakes stop being abstract and start being someone's job, loan, or seat.",
+     "These slides examine the gate, the systems that decide who gets through in hiring, lending, school, and search. They show how sorting that looks neutral can quietly decide life chances.",
      "Hiring, lending, and education are not random examples. They are the three gates that compound, because being shut out of one often shuts you out of the next, and bias at the gate quietly stacks across a life.",
      "Watch what scale and speed do to fairness. A human might sort a few people and second-guess each one, but a gate that sorts thousands in an instant turns one biased rule into thousands of identical harms.",
      "The cruelest part is hidden in plain sight. The person kept out usually never learns it happened, so the harm is not only the rejection, it is being denied the chance to even know there was a decision to fight.",
@@ -3563,7 +3563,7 @@ window.BFS218 = {
      }
     ],
     "insights": [
-     "If a whole course on naming harm can fit into eleven weeks, ask yourself why the building part gets only one. That imbalance is the real lesson: it is far easier to critique a system than to imagine a fairer one, and this week asks the harder thing.",
+     "These slides turn from seeing the problem to building alternatives. They weigh reform against deeper redesign and introduce design justice, putting the most affected people at the centre of what gets built.",
      "Notice what this turn costs you. Seeing harm lets you stay a critic on the outside, but building forces you to commit to a vision and own its flaws. The tools are not neutral; picking them up means taking a side.",
      "The quiet trap is that reform can feel like progress while keeping the same people in charge. Ask of any fix: after this change, who still decides? If the answer is unchanged, you have polished the gate, not removed it.",
      "This flips how we usually judge technology. A designer who 'meant well' gets no credit here; only the lived result counts. That is why the New Jim Code keeps spreading, because good intentions keep getting mistaken for good outcomes.",
@@ -3856,7 +3856,7 @@ window.BFS218 = {
      }
     ],
     "insights": [
-     "This week is where critique grows teeth. Naming harm changes minds, but law changes what companies are allowed to do. Ask yourself which technologies you have studied would actually stop if the rules said they must.",
+     "These slides move from fixing tools to holding power to account. They map levels of accountability and look at Canada's AI law and its gaps, framing techno-racism as a human rights matter.",
      "The hard truth here is that a single good fix can be perfectly legal to ignore. If the rules permit the harm, then accountability has to climb above the individual system, or every fix you proposed last week stays optional.",
      "Notice the direction of power. The single system, where we began, sits at the bottom, and human rights sits at the top. The higher the level, the harder it is for any one company to opt out, which is exactly why this week matters.",
      "Here is the uncomfortable point: a law can exist, get praised as leadership, and still leave whole groups exposed through its gaps. When you study any rule, the gaps are not failures of detail; they are quiet decisions about whose harm does not count.",
@@ -4151,7 +4151,7 @@ window.BFS218 = {
      }
     ],
     "insights": [
-     "Notice the structure hiding in plain sight: the course did not save the easiest task for last. Looking honestly at how much your own mind has shifted is harder than judging any system out there.",
+     "These slides begin the return. They guide you back to read your own Living Cartography again with the full toolkit, so you can see how your seeing has changed across the term.",
      "Coming home is its own kind of skill. It is easy to keep aiming criticism outward at companies and policies, but turning that same clear gaze on your own earlier blind spots takes a steadier nerve.",
      "Here is the quiet proof the New Jim Code is real: harm that needed no villain and no change in the machine, only a viewer who finally learned to read it. Your growth is the evidence.",
      "This is why you were asked to keep entries you could not fully explain at the time. A map made only of polished, finished thoughts would have erased the very journey it was supposed to record.",
@@ -4448,7 +4448,7 @@ window.BFS218 = {
      }
     ],
     "insights": [
-     "A closing is not the same as an ending. The course is built to hand you a practice you keep using, so treat this week as a launch into your field, not a final exam to forget.",
+     "These slides close the course. They gather the whole arc into a single breath, re-answer the question you started with, and ask what you will carry into the world beyond the class.",
      "The thing you lacked in Week 1 was not information; it was a way of organizing it. Plenty of people know facts about bias in tech, yet still cannot read a new system on sight.",
      "Watch how the answer matured: not from yes to no, but from a vague shrug to a precise account. The real shift is that you can now say exactly why, and point to the design that does it.",
      "Lay the four parts side by side and the course's spine appears: harm starts with a default, not a hatred, so the cure cannot just be hiring nicer people. It has to redesign the defaults themselves.",
@@ -5200,5 +5200,32 @@ window.BFS218 = {
   "cartography",
   "cards",
   "cases"
+ ],
+ "assignments": [
+  {
+   "name": "Map Exchange",
+   "weight": "20%",
+   "blurb": "An ongoing exchange where you post one insight from your cartography and respond to classmates. It happens in the Blackboard discussion."
+  },
+  {
+   "name": "Personal Cartography",
+   "weight": "20%",
+   "blurb": "Your growing personal map of techno-racism in your own digital life, built across the term. You develop it in the Living Cartography tool here and submit it in Blackboard."
+  },
+  {
+   "name": "Knowledge Check Video 1",
+   "weight": "20%",
+   "blurb": "A short recorded video where you explain course ideas in your own words. Hands-on and tied to you, so it cannot be faked."
+  },
+  {
+   "name": "Knowledge Check Video 2",
+   "weight": "20%",
+   "blurb": "A second recorded video check that builds on the first and applies more of the toolkit."
+  },
+  {
+   "name": "Final Revisiting Cartography Video",
+   "weight": "20%",
+   "blurb": "A closing video where you revisit your cartography and reflect on how your seeing changed across the term."
+  }
  ]
 };

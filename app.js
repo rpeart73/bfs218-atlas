@@ -51,6 +51,17 @@ var CARTO = loadCarto();
 
 /* ---------- helpers ---------- */
 function esc(s){ return String(s==null?'':s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];}); }
+function linkify(t){
+  t=String(t==null?'':t); var re=/(https?:\/\/[^\s]+|doi:\s*10\.\d{4,}\/[^\s]+|\b10\.\d{4,}\/[^\s]+)/gi, out='', last=0, m;
+  while((m=re.exec(t))){
+    out+=esc(t.slice(last,m.index));
+    var full=m[0], trail=''; var tm=full.match(/[).,;:]+$/); if(tm){ trail=tm[0]; full=full.slice(0,full.length-trail.length); }
+    var href=full; if(/^10\./.test(full)) href='https://doi.org/'+full; else if(/^doi:/i.test(full)) href='https://doi.org/'+full.replace(/^doi:\s*/i,'');
+    out+='<a href="'+esc(href)+'" target="_blank" rel="noopener">'+esc(full)+'</a>'+esc(trail);
+    last=m.index+m[0].length;
+  }
+  return out+esc(t.slice(last));
+}
 function phaseOf(id){ for(var i=0;i<(D.phases||[]).length;i++){ if(D.phases[i].id===id) return D.phases[i]; } return {name:'',accent:'#5B7A8C',fill:'#eee'}; }
 function week(n){ for(var i=0;i<(D.weeks||[]).length;i++){ if(D.weeks[i].number===n) return D.weeks[i]; } return null; }
 function pad(n){ return (n<10?'0':'')+n; }
@@ -83,6 +94,7 @@ function closeModal(){ OVERLAY.innerHTML=''; document.removeEventListener('keydo
 var ROUTES=[
   {sec:'Course'},
   {id:'home',label:'Home',hash:'#/home'},
+  {id:'assignments',label:'Assignments',hash:'#/assignments'},
   {sec:'Learning tools'},
   {id:'glossary',label:'Glossary and Thinkers',hash:'#/glossary'},
   {id:'cartography',label:'Living Cartography',hash:'#/cartography'},
@@ -161,6 +173,7 @@ function structList(arr){
   return (arr||[]).map(function(it){ return it.type==='head' ? '<h4 style="margin:14px 0 6px">'+esc(it.text)+'</h4>' : '<p style="margin:.45em 0">'+esc(it.text)+'</p>'; }).join('');
 }
 function readingLink(r){
+  if(r.pdf) return '<a class="rlink" href="'+esc(r.pdf)+'" target="_blank" rel="noopener">Access Reading</a>';
   if(r.url) return '<a class="rlink" href="'+esc(r.url)+'" target="_blank" rel="noopener">Access Reading</a>';
   var q=encodeURIComponent(String(r.text||'').replace(/\s+/g,' ').slice(0,180));
   return '<a class="rlink" href="https://scholar.google.com/scholar?q='+q+'" target="_blank" rel="noopener">Access Reading</a>';
@@ -181,11 +194,11 @@ function weekView(n){
     sec('purpose','Purpose and Learning Outcomes', ((pu.statement||[]).map(function(x){return '<p>'+esc(x)+'</p>';}).join(''))+((pu.outcomes&&pu.outcomes.length)?'<div class="eyebrow">By the end of this week you will be able to:</div><ul style="line-height:1.7">'+pu.outcomes.map(li).join('')+'</ul>':''))+
     sec('guiding','Guiding Questions', (wk.guiding&&wk.guiding.length)?'<ol style="line-height:1.8">'+wk.guiding.map(li).join('')+'</ol>':'<p class="muted">Guiding questions coming soon.</p>')+
     sec('concepts','Weekly Concepts', (wk.concepts&&wk.concepts.length)?wk.concepts.map(function(c,ci){return '<div style="margin-bottom:22px;padding-bottom:18px;border-bottom:1px solid var(--hair)"><h3 style="margin:0 0 .4em">'+esc((ci+1)+'. '+c.term)+'</h3>'+((c.paras||[]).map(function(x){return '<p style="margin:.5em 0">'+esc(x)+'</p>';}).join(''))+((c.cites&&c.cites.length)?'<p class="cite"><b>Reference (APA 7th):</b><br>'+c.cites.map(function(x){return esc(x);}).join('<br>')+'</p>':'')+'</div>';}).join(''):'<p class="muted">Concepts coming soon.</p>')+
-    sec('readings','Readings', (function(){var rs=wk.readings||[];if(!rs.length)return '<p class="muted">Readings will be listed here.</p>';return rs.map(function(r){if(r.type==='head')return '<h4 style="margin:16px 0 6px">'+esc(r.text)+'</h4>';if(r.type==='video')return '<div class="reading">'+(r.label?'<p style="margin:0 0 8px"><b>'+esc(r.label)+'</b></p>':'')+readingMedia(r)+'</div>';if(r.type==='cite')return '<div class="reading"><p style="margin:0 0 .4em">'+esc(r.text)+'</p>'+readingLink(r)+'</div>';return '<p style="margin:.45em 0">'+esc(r.text)+'</p>';}).join('');})())+
+    sec('readings','Readings', (function(){var rs=wk.readings||[];if(!rs.length)return '<p class="muted">Readings will be listed here.</p>';return rs.map(function(r){if(r.type==='head')return '<h4 style="margin:16px 0 6px">'+esc(r.text)+'</h4>';if(r.type==='video')return '<div class="reading">'+(r.label?'<p style="margin:0 0 8px"><b>'+esc(r.label)+'</b></p>':'')+readingMedia(r)+'</div>';if(r.type==='cite')return '<div class="reading"><p style="margin:0 0 .4em">'+linkify(r.text)+'</p>'+readingLink(r)+'</div>';return '<p style="margin:.45em 0">'+esc(r.text)+'</p>';}).join('');})())+
     sec('slideshow','Interactive Slideshow', slideBlock(wk)+'<h3 style="margin-top:18px">Narrated walkthrough</h3>'+videoBlock(wk)+'<div class="notebar" style="margin-top:12px"><b>Pause and notice.</b> As you move through the slides, stop on one that surprises you and ask: who does this system assume I am, and who does it leave out?</div>')+
     sec('case','Case Study', caseInner)+
     sec('reflect','Reflection Corner', '<p class="muted">One question to carry through the whole course. It is not a quiz. There is no right answer. It is here to make you think.</p><blockquote style="border-left:4px solid '+p.accent+';margin:14px 0 0;padding:6px 0 6px 18px;font-size:1.2rem;line-height:1.5">'+esc((D.course||{}).reflectionQuestion||'')+'</blockquote>')+
-    sec('references','References', (function(){var rf=wk.references||[];return rf.length?rf.map(function(r){return '<div class="reading"><p style="margin:0">'+esc(r)+'</p></div>';}).join(''):'<p class="muted">References will be listed here.</p>';})());
+    sec('references','References', (function(){var rf=wk.references||[];return rf.length?rf.map(function(r){return '<div class="reading"><p style="margin:0">'+linkify(r)+'</p></div>';}).join(''):'<p class="muted">References will be listed here.</p>';})());
   var cta='<div class="card"><div class="eyebrow">Make it yours</div><p>'+esc(wk.mapPrompt||'Add a moment from your own digital life to your Living Cartography this week.')+'</p><a class="btn btn-primary" href="#/cartography?week='+n+'">Add this week to your Living Cartography</a></div>';
   return head+jump+s+cta;
 }
@@ -236,6 +249,11 @@ function cases(){
   return '<h1>Case studies</h1><p class="lede">Real Canadian examples of techno-racism, as worked cases you can connect to the concepts.</p>'+(D.cases||[]).map(function(c){return '<div class="card"><div class="eyebrow">'+esc(c.concept||'')+' &middot; '+esc(c.where||'')+'</div><h3 style="margin:.2em 0 .4em">'+esc(c.title)+'</h3><p style="margin:0 0 .6em">'+esc(c.summary)+'</p><div class="mono" style="font-size:.72rem;color:#54585A">Weeks: '+(c.weeks||[]).map(function(n){return '<a href="#/week/'+n+'">W'+pad(n)+'</a>';}).join(', ')+'</div></div>';}).join('');
 }
 
+function assignments(){
+  var as=D.assignments||[];
+  return '<h1>Assignments</h1><p class="lede">Your assessments for the course. You build and prepare them here, and you hand them in and get your grade in Blackboard.</p>'+as.map(function(a){return '<div class="card"><div class="eyebrow">'+esc(a.weight||'')+'</div><h3 style="margin:.1em 0 .4em">'+esc(a.name)+'</h3><p style="margin:0">'+esc(a.blurb||'')+'</p></div>';}).join('')+'<div class="card"><div class="eyebrow">Where you hand in</div><p style="margin:0">All assignment instructions, submission, and grades live in Blackboard. This page is an overview.</p></div>';
+}
+
 /* ---------- living cartography (visual + save) ---------- */
 function cartography(){
   var pre=(location.hash.split('?week=')[1])||'';
@@ -276,6 +294,7 @@ function render(){
   else if(path==='cartography'){ active='cartography'; html=cartography(); }
   else if(path==='cards'){ active='cards'; html=cards(); }
   else if(path==='cases'){ active='cases'; html=cases(); }
+  else if(path==='assignments'){ active='assignments'; html=assignments(); }
   else { active='home'; html=home(); }
   renderNav(active); MAIN.innerHTML=html; MAIN.focus(); window.scrollTo(0,0);
 }
