@@ -80,10 +80,69 @@ window.BFS218 = {
    "phaseId": "listening",
    "title": "Introduction to the Course",
    "concept": "Techno-racism",
-   "overview": "Racism and the Digital Age: Understanding Techno-Racism   |   Online-Asynchronous section\nWeek 1 opens the course. Our work this term is to learn to see something that is built to stay out of sight: the way racism is carried inside the technologies we use every day. This first week sets the frame, names the central idea, and shows you the map of where the next thirteen weeks will take you.\nThis is the self-paced, online-asynchronous section. There is no live class meeting. Work through the Week 1 materials in order at your own pace: start with the Key Concepts and Readings, then move through the lecture deck with the narration while you fill in your Guided Notes, and carry the week’s question with you: Can a machine be racist? Use the Asynchronous Learning Guide as your checklist, and reach out during virtual office hours if you need help.\nThis is the introduction week, so it is lighter on dense theory than the weeks that follow. That is on purpose. Before we analyse a single algorithm, we need a shared language and a shared question. By the end of Week 1 you should be able to say, in your own words, what techno-racism means, why it is hard to notice, and why a course about racism would spend a whole term on technology.",
-   "welcome": "Hi everyone, and welcome to Week 1 of BFS218, Racism and the Digital Age: Understanding Techno-Racism.",
+   "overview": [
+    {
+     "type": "text",
+     "text": "Week 1 opens the course. Our work this term is to learn to see something that is built to stay out of sight: the way racism is carried inside the technologies we use every day. This first week sets the frame, names the central idea, and shows you the map of where the next thirteen weeks will take you."
+    },
+    {
+     "type": "head",
+     "text": "How this week works"
+    },
+    {
+     "type": "text",
+     "text": "This is the self-paced, online-asynchronous section. There is no live class meeting. Work through the Week 1 materials in order at your own pace: start with the Key Concepts and Readings, then move through the lecture deck with the narration while you fill in your Guided Notes, and carry the week’s question with you: Can a machine be racist? Use the Asynchronous Learning Guide as your checklist, and reach out during virtual office hours if you need help."
+    },
+    {
+     "type": "head",
+     "text": "What this week is for"
+    },
+    {
+     "type": "text",
+     "text": "This is the introduction week, so it is lighter on dense theory than the weeks that follow. That is on purpose. Before we analyse a single algorithm, we need a shared language and a shared question. By the end of Week 1 you should be able to say, in your own words, what techno-racism means, why it is hard to notice, and why a course about racism would spend a whole term on technology."
+    },
+    {
+     "type": "text",
+     "text": "Think of this week as learning to read a new kind of map. The territory is digital life: search engines, hiring software, facial recognition, credit scoring, border technology, social media feeds. The map is the set of concepts we will build together, starting with one idea from Ruha Benjamin that runs through the entire course."
+    },
+    {
+     "type": "head",
+     "text": "The throughline: the New Jim Code"
+    },
+    {
+     "type": "text",
+     "text": "The spine of this course is a single argument from Ruha Benjamin's book Race After Technology. Benjamin (2019) calls it the New Jim Code: the use of new technologies that reflect and reproduce existing inequities while being promoted and perceived as more objective or progressive than the discriminatory systems of an earlier era."
+    },
+    {
+     "type": "text",
+     "text": "Read that twice. The danger is not only that a system can be biased. The danger is that the system looks neutral, even fair, even helpful, while it does the old work of exclusion in a new way. A hiring tool does not announce that it screens out racialized applicants. A search engine does not post a sign. The bias hides inside the math, the data, and the design, and the surface still says objective."
+    },
+    {
+     "type": "text",
+     "text": "Benjamin gives us four ways the New Jim Code shows up, and they become the architecture of our middle weeks: engineered inequity, default discrimination, coded exposure, and technological benevolence. You do not need to master these yet. You only need to know that this is the journey, and that Week 1 is the trailhead."
+    },
+    {
+     "type": "head",
+     "text": "Your first assignment: the Personal Cartography"
+    },
+    {
+     "type": "text",
+     "text": "This week we also introduce the Personal Cartography, your first graded assignment (15 percent). Cartography means map-making. In this assignment you map your own relationship to digital technology: the tools you use, the systems that touch your life, the moments where you have felt seen, sorted, watched, or misread by a machine. You are not graded on having the right answer. You are graded on noticing, describing, and beginning to ask critical questions."
+    },
+    {
+     "type": "text",
+     "text": "You will not submit it this week. The Personal Cartography is introduced now so you can start paying attention, and it is due in Week 2. Late in the term, in Weeks 13 and 14, you will return to it and write Revisiting Your Cartography Parts 1 and 2, comparing what you saw at the start with what you can see after a full term of practice. Week 1 is where that arc begins."
+    },
+    {
+     "type": "head",
+     "text": "The course map"
+    }
+   ],
    "purpose": {
-    "statement": "Week 1 asks one question: why would a course about racism spend an entire term on technology? The week answers it by introducing techno-racism as a real and specific form of racial inequity, one that lives inside the design of digital systems rather than only in individual attitudes.",
+    "statement": [
+     "Week 1 asks one question: why would a course about racism spend an entire term on technology? The week answers it by introducing techno-racism as a real and specific form of racial inequity, one that lives inside the design of digital systems rather than only in individual attitudes.",
+     "This is not yet a deep dive into any one technology. It is a week about learning to look. You will leave with a working definition of techno-racism, a first encounter with Ruha Benjamin's New Jim Code, and a clear sense of how the course is built. You will also begin the Personal Cartography, the assignment that turns this critical looking into a habit."
+    ],
     "outcomes": [
      "Define techno-racism in your own words and explain why it is often invisible to the people it does not harm.",
      "State Benjamin's New Jim Code and give one plain-language example of a system that looks neutral while reproducing inequity.",
@@ -102,13 +161,10 @@ window.BFS218 = {
    "concepts": [
     {
      "term": "Techno-racism",
-     "parts": [
-      "Techno-racism names the way racial bias is embedded inside technical systems: the algorithms, datasets, defaults, and design choices that shape digital life.",
-      "It is racism that operates through technology rather than only through individual people.",
-      "A landlord can refuse a tenant; a tenant-screening algorithm can do the same thing at scale, quietly, and call it a risk score.",
-      "The key move is to stop treating technology as separate from society.",
-      "The course outline puts it directly: these systems are often shaped by people with racial, ethnic, and cultural privilege, who can build, without meaning to, systems that treat whiteness as the default.",
-      "Techno-racism is the result, and learning to see it is the work of this course."
+     "paras": [
+      "Techno-racism names the way racial bias is embedded inside technical systems: the algorithms, datasets, defaults, and design choices that shape digital life. It is racism that operates through technology rather than only through individual people.",
+      "A landlord can refuse a tenant; a tenant-screening algorithm can do the same thing at scale, quietly, and call it a risk score. The key move is to stop treating technology as separate from society.",
+      "The course outline puts it directly: these systems are often shaped by people with racial, ethnic, and cultural privilege, who can build, without meaning to, systems that treat whiteness as the default. Techno-racism is the result, and learning to see it is the work of this course."
      ],
      "cites": [
       "Benjamin, R. (2019). Race after technology: Abolitionist tools for the New Jim Code. Polity Press."
@@ -116,15 +172,11 @@ window.BFS218 = {
     },
     {
      "term": "The New Jim Code",
-     "parts": [
-      "This is the engine of the whole course.",
-      "Ruha Benjamin (2019) defines the New Jim Code as the employment of new technologies that reflect and reproduce existing inequities but that are promoted and perceived as more objective or progressive than the discriminatory systems of a previous era.",
-      "Three things to hold onto.",
-      "First, the technology reproduces an old inequity; it does not invent racism, it carries it forward.",
-      "Second, the technology is dressed in the language of progress; it looks neutral, fair, or even benevolent.",
-      "Third, that appearance of objectivity is exactly what makes it dangerous, because it discourages the very scrutiny that would catch it.",
-      "Benjamin names this lineage on purpose: the New Jim Code echoes the New Jim Crow and the older Jim Crow, the legal and social machinery of segregation, now rebuilt in code.",
-      "Benjamin proposes four dimensions of the New Jim Code, and they organize the middle of our term: engineered inequity (designs that openly amplify hierarchy), default discrimination (designs that ignore social context and so replicate it), coded exposure (being watched but not truly seen), and technological benevolence (fixes that claim to help but can deepen harm).",
+     "paras": [
+      "This is the engine of the whole course. Ruha Benjamin (2019) defines the New Jim Code as the employment of new technologies that reflect and reproduce existing inequities but that are promoted and perceived as more objective or progressive than the discriminatory systems of a previous era.",
+      "Three things to hold onto. First, the technology reproduces an old inequity; it does not invent racism, it carries it forward.",
+      "Second, the technology is dressed in the language of progress; it looks neutral, fair, or even benevolent. Third, that appearance of objectivity is exactly what makes it dangerous, because it discourages the very scrutiny that would catch it.",
+      "Benjamin names this lineage on purpose: the New Jim Code echoes the New Jim Crow and the older Jim Crow, the legal and social machinery of segregation, now rebuilt in code. Benjamin proposes four dimensions of the New Jim Code, and they organize the middle of our term: engineered inequity (designs that openly amplify hierarchy), default discrimination (designs that ignore social context and so replicate it), coded exposure (being watched but not truly seen), and technological benevolence (fixes that claim to help but can deepen harm).",
       "You meet each one in its own week."
      ],
      "cites": [
@@ -133,13 +185,10 @@ window.BFS218 = {
     },
     {
      "term": "Intersectionality",
-     "parts": [
-      "Intersectionality, from legal scholar Kimberle Crenshaw (1991), is the idea that systems of identity and power do not act one at a time.",
-      "Race, gender, class, and other categories overlap, and a person at the intersection can face a harm that looking at any single category would miss.",
-      "Why introduce it in Week 1 of a technology course?",
-      "Because the harms we will study are rarely about race alone.",
-      "Buolamwini and Gebru (2018) found that facial-analysis systems failed most often not for darker-skinned people in general, nor for women in general, but specifically for darker-skinned women, the intersection.",
-      "Intersectionality is the tool that lets you ask the sharper question: who exactly does this system fail, and at which overlap?"
+     "paras": [
+      "Intersectionality, from legal scholar Kimberle Crenshaw (1991), is the idea that systems of identity and power do not act one at a time. Race, gender, class, and other categories overlap, and a person at the intersection can face a harm that looking at any single category would miss.",
+      "Why introduce it in Week 1 of a technology course? Because the harms we will study are rarely about race alone.",
+      "Buolamwini and Gebru (2018) found that facial-analysis systems failed most often not for darker-skinned people in general, nor for women in general, but specifically for darker-skinned women, the intersection. Intersectionality is the tool that lets you ask the sharper question: who exactly does this system fail, and at which overlap?"
      ],
      "cites": [
       "Buolamwini, J., & Gebru, T. (2018). Gender shades: Intersectional accuracy disparities in commercial gender classification. Proceedings of Machine Learning Research, 81, 1 to 15.",
@@ -151,71 +200,88 @@ window.BFS218 = {
    "readings": [
     {
      "type": "text",
-     "text": "Week 1 is a framing week, so the reading load is light and chosen to set up the whole term. Read the essential item closely. The looking-ahead items are previews; you will meet them again in depth in later weeks."
+     "text": "Week 1 is a framing week, so the reading load is light and chosen to set up the whole term. Read the essential item closely. The looking-ahead items are previews; you will meet them again in depth in later weeks.",
+     "url": ""
     },
     {
      "type": "head",
-     "text": "Essential read (read this closely)"
+     "text": "Essential read (read this closely)",
+     "url": ""
     },
     {
      "type": "cite",
-     "text": "Benjamin, R. (2019). Introduction: The New Jim Code. In Race after technology: Abolitionist tools for the New Jim Code (pp. 1 to 47). Polity Press."
+     "text": "Benjamin, R. (2019). Introduction: The New Jim Code. In Race after technology: Abolitionist tools for the New Jim Code (pp. 1 to 47). Polity Press.",
+     "url": ""
     },
     {
      "type": "text",
-     "text": "This is the cornerstone of the course. In the Introduction, Benjamin defines the New Jim Code and previews her four dimensions: engineered inequity, default discrimination, coded exposure, and technological benevolence. As you read, mark the moment where she defines the New Jim Code, and find at least one of her examples that surprised you. The required course text is Race After Technology; the Introduction is provided in the Week 1 readings folder."
+     "text": "This is the cornerstone of the course. In the Introduction, Benjamin defines the New Jim Code and previews her four dimensions: engineered inequity, default discrimination, coded exposure, and technological benevolence. As you read, mark the moment where she defines the New Jim Code, and find at least one of her examples that surprised you. The required course text is Race After Technology; the Introduction is provided in the Week 1 readings folder.",
+     "url": ""
     },
     {
      "type": "head",
-     "text": "Looking ahead (preview only)"
+     "text": "Looking ahead (preview only)",
+     "url": ""
     },
     {
      "type": "text",
-     "text": "These two sources are previews of where the course goes. Skim them now to feel the range of the field; we return to each in a later week."
+     "text": "These two sources are previews of where the course goes. Skim them now to feel the range of the field; we return to each in a later week.",
+     "url": ""
     },
     {
      "type": "cite",
-     "text": "Noble, S. U. (2018). Algorithms of oppression: How search engines reinforce racism. New York University Press."
+     "text": "Noble, S. U. (2018). Algorithms of oppression: How search engines reinforce racism. New York University Press.",
+     "url": ""
     },
     {
      "type": "text",
-     "text": "Noble shows how search engines, presented as neutral information tools, can return demeaning and stereotyped results for Black women and girls. Her work pairs with Benjamin's to show that the problem is structural, not a one-off glitch. We engage Noble's argument directly in the algorithmic-bias and gatekeeping weeks."
+     "text": "Noble shows how search engines, presented as neutral information tools, can return demeaning and stereotyped results for Black women and girls. Her work pairs with Benjamin's to show that the problem is structural, not a one-off glitch. We engage Noble's argument directly in the algorithmic-bias and gatekeeping weeks.",
+     "url": ""
     },
     {
      "type": "cite",
-     "text": "Buolamwini, J., & Gebru, T. (2018). Gender shades: Intersectional accuracy disparities in commercial gender classification. Proceedings of Machine Learning Research, 81, 1 to 15."
+     "text": "Buolamwini, J., & Gebru, T. (2018). Gender shades: Intersectional accuracy disparities in commercial gender classification. Proceedings of Machine Learning Research, 81, 1 to 15.",
+     "url": ""
     },
     {
      "type": "text",
-     "text": "Buolamwini and Gebru tested commercial facial-analysis systems and found far higher error rates for darker-skinned women than for lighter-skinned men. It is a clear, evidence-based example of how an intersectional gap gets built into a product. We study it closely in the coded-exposure week."
+     "text": "Buolamwini and Gebru tested commercial facial-analysis systems and found far higher error rates for darker-skinned women than for lighter-skinned men. It is a clear, evidence-based example of how an intersectional gap gets built into a product. We study it closely in the coded-exposure week.",
+     "url": ""
     },
     {
      "type": "head",
-     "text": "Reference cited in the course frame"
+     "text": "Reference cited in the course frame",
+     "url": ""
     },
     {
      "type": "text",
-     "text": "Crenshaw, K. (1991). Mapping the margins: Intersectionality, identity politics, and violence against women of color. Stanford Law Review, 43(6), 1241 to 1299. https://doi.org/10.2307/1229039"
+     "text": "Crenshaw, K. (1991). Mapping the margins: Intersectionality, identity politics, and violence against women of color. Stanford Law Review, 43(6), 1241 to 1299. https://doi.org/10.2307/1229039",
+     "url": "https://doi.org/10.2307/1229039"
     },
     {
      "type": "text",
-     "text": "Crenshaw's concept of intersectionality is the lens we use to ask not only how race shapes technology, but how race, gender, and class shape it together. Week 1 names this lens; the critical race theory week develops it."
+     "text": "Crenshaw's concept of intersectionality is the lens we use to ask not only how race shapes technology, but how race, gender, and class shape it together. Week 1 names this lens; the critical race theory week develops it.",
+     "url": ""
     },
     {
      "type": "head",
-     "text": "How to read this week"
+     "text": "How to read this week",
+     "url": ""
     },
     {
      "type": "text",
-     "text": "Read the Benjamin Introduction with a pen. Underline the definition of the New Jim Code."
+     "text": "Read the Benjamin Introduction with a pen. Underline the definition of the New Jim Code.",
+     "url": ""
     },
     {
      "type": "text",
-     "text": "Write one sentence answering: what is one technology in my life that is promoted as neutral or helpful?"
+     "text": "Write one sentence answering: what is one technology in my life that is promoted as neutral or helpful?",
+     "url": ""
     },
     {
      "type": "text",
-     "text": "Keep that sentence; it is the seed of your Personal Cartography."
+     "text": "Keep that sentence; it is the seed of your Personal Cartography.",
+     "url": ""
     }
    ],
    "references": [
@@ -243,10 +309,68 @@ window.BFS218 = {
    "phaseId": "listening",
    "title": "Critical Race Theory and the New Jim Code",
    "concept": "Critical race theory (CRT)",
-   "overview": "Racism and the Digital Age: Understanding Techno-Racism   |   Online-Asynchronous section\nWhere you are in the journey: this is the close of Part I, the Trailhead. In Week 1 you met the central question and the idea of techno-racism. This week the lens becomes complete. You add critical race theory to the New Jim Code, and by the end you hold the full set of tools the rest of the course will use.\nThis is the self-paced, online-asynchronous section. Work through this week's materials in order, at your own pace: start with the Key Concepts and Readings, then move through the lecture deck with the narration while you fill in your Guided Notes, and carry the week’s question with you: Can a machine be racist? Your Personal Cartography is due this week, so leave time to complete it. Use the Asynchronous Learning Guide as your checklist.\nWeek 1 gave you a question and a vocabulary. Week 2 gives you the theory underneath them. Critical race theory, or CRT, explains why racism persists in systems that claim to be neutral, and it is the ground Ruha Benjamin builds the New Jim Code on. By the end of this week you should be able to explain what CRT argues, connect it to the New Jim Code, and use both to read a real example from your own digital life.",
-   "welcome": "Online-Asynchronous video script for Raymond Peart",
+   "overview": [
+    {
+     "type": "text",
+     "text": "Where you are in the journey: this is the close of Part I, the Trailhead. In Week 1 you met the central question and the idea of techno-racism. This week the lens becomes complete. You add critical race theory to the New Jim Code, and by the end you hold the full set of tools the rest of the course will use."
+    },
+    {
+     "type": "head",
+     "text": "How this week works"
+    },
+    {
+     "type": "text",
+     "text": "This is the self-paced, online-asynchronous section. Work through this week's materials in order, at your own pace: start with the Key Concepts and Readings, then move through the lecture deck with the narration while you fill in your Guided Notes, and carry the week’s question with you: Can a machine be racist? Your Personal Cartography is due this week, so leave time to complete it. Use the Asynchronous Learning Guide as your checklist."
+    },
+    {
+     "type": "head",
+     "text": "What this week is for"
+    },
+    {
+     "type": "text",
+     "text": "Week 1 gave you a question and a vocabulary. Week 2 gives you the theory underneath them. Critical race theory, or CRT, explains why racism persists in systems that claim to be neutral, and it is the ground Ruha Benjamin builds the New Jim Code on. By the end of this week you should be able to explain what CRT argues, connect it to the New Jim Code, and use both to read a real example from your own digital life."
+    },
+    {
+     "type": "head",
+     "text": "Critical race theory in plain terms"
+    },
+    {
+     "type": "text",
+     "text": "CRT begins from a simple, hard claim: racism is not only individual prejudice. It is ordinary, built into laws, institutions, and everyday systems, and it often works best when it looks neutral. Kimberle Crenshaw, whose intersectionality you met in Week 1, is one of CRT's founding scholars. The theory asks us to look past intent and at outcomes: who a system serves, and who it costs."
+    },
+    {
+     "type": "text",
+     "text": "Benjamin takes this lens to technology. The New Jim Code is CRT applied to code: systems that reproduce old inequities while wearing the new clothes of objectivity and progress. This week you see the join between the theory and the tool."
+    },
+    {
+     "type": "head",
+     "text": "Your Personal Cartography is due"
+    },
+    {
+     "type": "text",
+     "text": "Your first map is due this week. As you finish it, apply this week's CRT lens: not is this technology biased, but whose world does this system assume, and who pays when it is wrong. Post one insight from your map to the Map Exchange and respond to two classmates."
+    },
+    {
+     "type": "head",
+     "text": "The course map: where we go next"
+    },
+    {
+     "type": "text",
+     "text": "Part I closes here. Next week Part II opens, the anatomy: we take Benjamin's four dimensions of the New Jim Code one at a time, starting with engineered inequity. You now have the full lens. The rest of the course is learning to use it."
+    },
+    {
+     "type": "head",
+     "text": "What carries forward"
+    },
+    {
+     "type": "text",
+     "text": "CRT is the theory; the New Jim Code is its application to technology. Hold both."
+    }
+   ],
    "purpose": {
-    "statement": "Week 2 closes the opening arc of the course by giving you the theory underneath the vocabulary. You met techno-racism and the New Jim Code in Week 1; this week you learn the body of thought they rest on, critical race theory, and you turn in your first Personal Cartography.",
+    "statement": [
+     "Week 2 closes the opening arc of the course by giving you the theory underneath the vocabulary. You met techno-racism and the New Jim Code in Week 1; this week you learn the body of thought they rest on, critical race theory, and you turn in your first Personal Cartography."
+    ],
     "outcomes": [
      "Explain in plain language what critical race theory argues: that racism is ordinary and structural and can operate through systems that look neutral.",
      "Connect critical race theory to Benjamin's New Jim Code, showing how the New Jim Code applies CRT to technology.",
@@ -265,9 +389,8 @@ window.BFS218 = {
    "concepts": [
     {
      "term": "Critical race theory (CRT)",
-     "parts": [
-      "Critical race theory is a body of scholarship holding that racism is ordinary and structural: built into laws, institutions, and everyday systems, not only into individual prejudice.",
-      "A central CRT claim is that systems can produce racially unequal outcomes while appearing neutral.",
+     "paras": [
+      "Critical race theory is a body of scholarship holding that racism is ordinary and structural: built into laws, institutions, and everyday systems, not only into individual prejudice. A central CRT claim is that systems can produce racially unequal outcomes while appearing neutral.",
       "Kimberle Crenshaw (1991), whose intersectionality you met in Week 1, is one of CRT's founding scholars."
      ],
      "cites": [
@@ -276,9 +399,8 @@ window.BFS218 = {
     },
     {
      "term": "Structural and systemic racism",
-     "parts": [
-      "Structural racism is racism that lives in how systems are designed and how they routinely operate, so that unequal outcomes recur even when no single person intends them.",
-      "This is why the course studies design and data, not only attitudes."
+     "paras": [
+      "Structural racism is racism that lives in how systems are designed and how they routinely operate, so that unequal outcomes recur even when no single person intends them. This is why the course studies design and data, not only attitudes."
      ],
      "cites": [
       "Benjamin, R. (2019). Race after technology: Abolitionist tools for the New Jim Code. Polity Press."
@@ -286,9 +408,8 @@ window.BFS218 = {
     },
     {
      "term": "The New Jim Code as applied critical race theory",
-     "parts": [
-      "Ruha Benjamin (2019) defines the New Jim Code as the employment of new technologies that reflect and reproduce existing inequities while being promoted and experienced as more objective or progressive than the systems of an earlier era.",
-      "Read it as CRT applied to code: the same structural racism, now carried by technology that looks like progress."
+     "paras": [
+      "Ruha Benjamin (2019) defines the New Jim Code as the employment of new technologies that reflect and reproduce existing inequities while being promoted and experienced as more objective or progressive than the systems of an earlier era. Read it as CRT applied to code: the same structural racism, now carried by technology that looks like progress."
      ],
      "cites": [
       "Benjamin, R. (2019). Race after technology: Abolitionist tools for the New Jim Code. Polity Press."
@@ -296,9 +417,8 @@ window.BFS218 = {
     },
     {
      "term": "Intentions versus outcomes",
-     "parts": [
-      "The key analytic shift this week: stop asking whether a system intends harm and start asking what it does, to whom, and who pays.",
-      "A system with no intent can still produce a racial harm, and CRT trains you to see it."
+     "paras": [
+      "The key analytic shift this week: stop asking whether a system intends harm and start asking what it does, to whom, and who pays. A system with no intent can still produce a racial harm, and CRT trains you to see it."
      ],
      "cites": [
       "Benjamin, R. (2019). Race after technology: Abolitionist tools for the New Jim Code. Polity Press."
@@ -308,47 +428,58 @@ window.BFS218 = {
    "readings": [
     {
      "type": "text",
-     "text": "Week 2 gives you the theory under the tools. The reading pairs a critical race theory cornerstone with a return to Benjamin, so you can see the join between the theory and the New Jim Code."
+     "text": "Week 2 gives you the theory under the tools. The reading pairs a critical race theory cornerstone with a return to Benjamin, so you can see the join between the theory and the New Jim Code.",
+     "url": ""
     },
     {
      "type": "head",
-     "text": "Essential read (read this closely)"
+     "text": "Essential read (read this closely)",
+     "url": ""
     },
     {
      "type": "cite",
-     "text": "Crenshaw, K. (1991). Mapping the margins: Intersectionality, identity politics, and violence against women of color. Stanford Law Review, 43(6), 1241-1299."
+     "text": "Crenshaw, K. (1991). Mapping the margins: Intersectionality, identity politics, and violence against women of color. Stanford Law Review, 43(6), 1241-1299.",
+     "url": ""
     },
     {
      "type": "text",
-     "text": "Crenshaw's essay is a cornerstone of critical race theory. Read it for the core move: harm is best understood at the intersection of systems, and an analysis that looks at one axis at a time misses the people hit hardest. Carry that into how you read technology."
+     "text": "Crenshaw's essay is a cornerstone of critical race theory. Read it for the core move: harm is best understood at the intersection of systems, and an analysis that looks at one axis at a time misses the people hit hardest. Carry that into how you read technology.",
+     "url": ""
     },
     {
      "type": "head",
-     "text": "Re-read with new eyes"
+     "text": "Re-read with new eyes",
+     "url": ""
     },
     {
      "type": "cite",
-     "text": "Benjamin, R. (2019). Introduction: The New Jim Code. In Race after technology: Abolitionist tools for the New Jim Code (pp. 1-32). Polity Press."
+     "text": "Benjamin, R. (2019). Introduction: The New Jim Code. In Race after technology: Abolitionist tools for the New Jim Code (pp. 1-32). Polity Press.",
+     "url": ""
     },
     {
      "type": "text",
-     "text": "You read this in Week 1 for the definition. Read it again now through the CRT lens: notice how Benjamin treats racism as structural and built into design, and how the New Jim Code applies that claim to technology."
+     "text": "You read this in Week 1 for the definition. Read it again now through the CRT lens: notice how Benjamin treats racism as structural and built into design, and how the New Jim Code applies that claim to technology.",
+     "url": ""
     },
     {
      "type": "head",
-     "text": "How to read this week"
+     "text": "How to read this week",
+     "url": ""
     },
     {
      "type": "text",
-     "text": "Read Crenshaw for the intersectional move; write one sentence on a harm that only appears at an overlap."
+     "text": "Read Crenshaw for the intersectional move; write one sentence on a harm that only appears at an overlap.",
+     "url": ""
     },
     {
      "type": "text",
-     "text": "Re-read the Benjamin Introduction and mark one line where the New Jim Code reads as critical race theory applied to code."
+     "text": "Re-read the Benjamin Introduction and mark one line where the New Jim Code reads as critical race theory applied to code.",
+     "url": ""
     },
     {
      "type": "text",
-     "text": "Use both as you finish your Personal Cartography, due this week."
+     "text": "Use both as you finish your Personal Cartography, due this week.",
+     "url": ""
     }
    ],
    "references": [
@@ -374,10 +505,68 @@ window.BFS218 = {
    "phaseId": "listening",
    "title": "Engineered Inequity",
    "concept": "Engineered inequity",
-   "overview": "Racism and the Digital Age: Understanding Techno-Racism   |   Online-Asynchronous section\nWhere you are in the journey: Part II, the Anatomy, opens this week. You have the full lens from Part I; now we take the New Jim Code apart, one dimension at a time. We begin with the first dimension, engineered inequity.\nThis is the self-paced, online-asynchronous section. Work through this week's materials in order at your own pace: the Key Concepts and Readings, then the lecture deck with the narration while you fill the Guided Notes, then the Reflection Corner. Use the Asynchronous Learning Guide as your checklist.\nEngineered inequity is the first of Benjamin's four dimensions of the New Jim Code. By the end of the week you should be able to define it, tell it apart from the idea that a technology simply creates bias from nothing, and name a real example from your own digital life.",
-   "welcome": "Welcome to Week 3, and welcome to Part II of the course. Up to now the work has been to learn to see. We built the lens in Part I: critical race theory, and the phrase that holds the whole course together, the New Jim Code. From here, the work changes. We stop describing the problem in general, and we start taking it apart, one piece at a time.",
+   "overview": [
+    {
+     "type": "text",
+     "text": "Where you are in the journey: Part II, the Anatomy, opens this week. You have the full lens from Part I; now we take the New Jim Code apart, one dimension at a time. We begin with the first dimension, engineered inequity."
+    },
+    {
+     "type": "head",
+     "text": "How this week works"
+    },
+    {
+     "type": "text",
+     "text": "This is the self-paced, online-asynchronous section. Work through this week's materials in order at your own pace: the Key Concepts and Readings, then the lecture deck with the narration while you fill the Guided Notes, then the Reflection Corner. Use the Asynchronous Learning Guide as your checklist."
+    },
+    {
+     "type": "head",
+     "text": "What this week is for"
+    },
+    {
+     "type": "text",
+     "text": "Engineered inequity is the first of Benjamin's four dimensions of the New Jim Code. By the end of the week you should be able to define it, tell it apart from the idea that a technology simply creates bias from nothing, and name a real example from your own digital life."
+    },
+    {
+     "type": "head",
+     "text": "The dimension: engineered inequity"
+    },
+    {
+     "type": "text",
+     "text": "Benjamin's claim is precise: engineered inequity is technology that, by its design, explicitly amplifies social hierarchies based on race, class, and gender. The key word is amplify. The inequality is already there; the technology widens it and speeds it up, often while presenting itself as neutral or efficient."
+    },
+    {
+     "type": "text",
+     "text": "Her framing question is blunt: are robots racist? Her answer is that they can be, not because a machine wears white hoods or uses slurs, but because it is designed inside a society already structured by racism, and it carries that structure forward."
+    },
+    {
+     "type": "head",
+     "text": "Your Living Cartography this week"
+    },
+    {
+     "type": "text",
+     "text": "Add one engineered-inequity entry to your Living Cartography this week: one system from your own digital life that widens a gap that was already there. Use the four questions we build in class: the existing gap, the design choice, the alibi of neutrality, and who carries the cost."
+    },
+    {
+     "type": "head",
+     "text": "What carries forward"
+    },
+    {
+     "type": "text",
+     "text": "Engineered inequity amplifies an existing gap by design; it does not invent bias from nothing."
+    },
+    {
+     "type": "text",
+     "text": "Are robots racist? They can be, through design, in a society already structured by racism."
+    },
+    {
+     "type": "text",
+     "text": "Add an engineered-inequity entry to your Living Cartography this week."
+    }
+   ],
    "purpose": {
-    "statement": "Week 3 opens Part II of the course, where we dissect the New Jim Code dimension by dimension. This week's dimension is engineered inequity, the way technology can amplify an existing social hierarchy by design.",
+    "statement": [
+     "Week 3 opens Part II of the course, where we dissect the New Jim Code dimension by dimension. This week's dimension is engineered inequity, the way technology can amplify an existing social hierarchy by design."
+    ],
     "outcomes": [
      "Define engineered inequity as technology that, by design, amplifies existing hierarchies of race, class, and gender.",
      "Distinguish amplifying an existing inequity from the looser idea that a technology creates bias from nothing.",
@@ -395,9 +584,8 @@ window.BFS218 = {
    "concepts": [
     {
      "term": "Engineered inequity",
-     "parts": [
-      "Engineered inequity is Benjamin's first dimension of the New Jim Code: technology that, by its design, explicitly amplifies social hierarchies based on race, class, and gender.",
-      "The harm is built into the design, and it presents itself as neutral or efficient while widening a gap that already exists."
+     "paras": [
+      "Engineered inequity is Benjamin's first dimension of the New Jim Code: technology that, by its design, explicitly amplifies social hierarchies based on race, class, and gender. The harm is built into the design, and it presents itself as neutral or efficient while widening a gap that already exists."
      ],
      "cites": [
       "Benjamin, R. (2019). Race after technology: Abolitionist tools for the New Jim Code. Polity Press. (Engineered inequity, the first dimension; the chapter Are Robots Racist?)"
@@ -405,9 +593,8 @@ window.BFS218 = {
     },
     {
      "term": "Amplify, not create",
-     "parts": [
-      "The careful move this week is the word amplify.",
-      "Engineered inequity does not conjure inequality out of nothing; it takes an existing inequity and makes it wider, faster, or harder to escape.",
+     "paras": [
+      "The careful move this week is the word amplify. Engineered inequity does not conjure inequality out of nothing; it takes an existing inequity and makes it wider, faster, or harder to escape.",
       "That is why the fix is never just better intentions; it is different design."
      ],
      "cites": [
@@ -416,9 +603,8 @@ window.BFS218 = {
     },
     {
      "term": "Are robots racist?",
-     "parts": [
-      "This is Benjamin's framing question for the dimension.",
-      "Her answer: robots can be racist, not because a machine has hatred in it, but because it is designed inside a society already structured by racism and carries that structure forward.",
+     "paras": [
+      "This is Benjamin's framing question for the dimension. Her answer: robots can be racist, not because a machine has hatred in it, but because it is designed inside a society already structured by racism and carries that structure forward.",
       "The question moves us, once again, from intent to design."
      ],
      "cites": [
@@ -429,35 +615,43 @@ window.BFS218 = {
    "readings": [
     {
      "type": "text",
-     "text": "This week's reading is Benjamin on the first dimension of the New Jim Code. Read for the precise meaning of engineered inequity and for her answer to the question are robots racist."
+     "text": "This week's reading is Benjamin on the first dimension of the New Jim Code. Read for the precise meaning of engineered inequity and for her answer to the question are robots racist.",
+     "url": ""
     },
     {
      "type": "head",
-     "text": "Essential read (read this closely)"
+     "text": "Essential read (read this closely)",
+     "url": ""
     },
     {
      "type": "cite",
-     "text": "Benjamin, R. (2019). Race after technology: Abolitionist tools for the New Jim Code. Polity Press. Read the first dimension, engineered inequity (the chapter framed as Are Robots Racist?)."
+     "text": "Benjamin, R. (2019). Race after technology: Abolitionist tools for the New Jim Code. Polity Press. Read the first dimension, engineered inequity (the chapter framed as Are Robots Racist?).",
+     "url": ""
     },
     {
      "type": "text",
-     "text": "Read for two things. First, the definition: engineered inequity amplifies existing hierarchies of race, class, and gender by design. Second, the argument that robots can be racist through design even without intent, in a society already structured by racism."
+     "text": "Read for two things. First, the definition: engineered inequity amplifies existing hierarchies of race, class, and gender by design. Second, the argument that robots can be racist through design even without intent, in a society already structured by racism.",
+     "url": ""
     },
     {
      "type": "head",
-     "text": "How to read this week"
+     "text": "How to read this week",
+     "url": ""
     },
     {
      "type": "text",
-     "text": "Underline where Benjamin says the technology amplifies an existing hierarchy; note the word amplify."
+     "text": "Underline where Benjamin says the technology amplifies an existing hierarchy; note the word amplify.",
+     "url": ""
     },
     {
      "type": "text",
-     "text": "Mark her answer to are robots racist, and the reason she gives."
+     "text": "Mark her answer to are robots racist, and the reason she gives.",
+     "url": ""
     },
     {
      "type": "text",
-     "text": "Bring one real example to the live session, and add it to your Living Cartography."
+     "text": "Bring one real example to the live session, and add it to your Living Cartography.",
+     "url": ""
     }
    ],
    "references": [
@@ -482,10 +676,64 @@ window.BFS218 = {
    "phaseId": "inquiring",
    "title": "Default Discrimination",
    "concept": "Default discrimination",
-   "overview": "Racism and the Digital Age: Understanding Techno-Racism   |   Online-Asynchronous section\nWhere you are in the journey: Part II, the Anatomy, continues. Last week we took apart the first dimension of the New Jim Code, engineered inequity. This week we take the second dimension, default discrimination, and ask Benjamin's sharp question: is the glitch systemic?\nThis is the self-paced, online-asynchronous section. Work through the materials in order at your own pace: the Key Concepts and Readings, then the lecture deck with the narration while you fill in the Guided Notes, then the videos, and add your weekly entry to the Living Cartography.\nDefault discrimination is Benjamin's second dimension of the New Jim Code. By the end of the week you should be able to define it, explain the glitch-versus-systemic test, and recognize a real default that quietly carries inequity forward while looking like an accident.",
-   "welcome": "Welcome to Week 4. Part II of the course continues. Last week we took the first dimension of the New Jim Code, engineered inequity, the design that amplifies a gap on purpose. This week we take the second, and it is quieter: default discrimination.",
+   "overview": [
+    {
+     "type": "text",
+     "text": "Where you are in the journey: Part II, the Anatomy, continues. Last week we took apart the first dimension of the New Jim Code, engineered inequity. This week we take the second dimension, default discrimination, and ask Benjamin's sharp question: is the glitch systemic?"
+    },
+    {
+     "type": "head",
+     "text": "How this week works"
+    },
+    {
+     "type": "text",
+     "text": "This is the self-paced, online-asynchronous section. Work through the materials in order at your own pace: the Key Concepts and Readings, then the lecture deck with the narration while you fill in the Guided Notes, then the videos, and add your weekly entry to the Living Cartography."
+    },
+    {
+     "type": "head",
+     "text": "What this week is for"
+    },
+    {
+     "type": "text",
+     "text": "Default discrimination is Benjamin's second dimension of the New Jim Code. By the end of the week you should be able to define it, explain the glitch-versus-systemic test, and recognize a real default that quietly carries inequity forward while looking like an accident."
+    },
+    {
+     "type": "head",
+     "text": "The dimension: default discrimination"
+    },
+    {
+     "type": "text",
+     "text": "Engineered inequity, last week, was active: a design that amplifies a gap. Default discrimination is quieter. It is the harm that arrives through defaults, the taken-for-granted settings, data, and assumptions that treat one group's world as the norm. No one has to intend harm; the inequity is already in the defaults, and no one designed against it."
+    },
+    {
+     "type": "text",
+     "text": "Is the glitch systemic?"
+    },
+    {
+     "type": "text",
+     "text": "Benjamin's framing question is: is the glitch systemic? When Google Maps read Malcolm X Boulevard aloud as Malcolm Ten, that looked like a small glitch, yet it revealed whose knowledge is treated as the default. Benjamin's point is that database design is an exercise in worldbuilding: programmers project a world, and that world too often reproduces the technology of race. A harm dismissed as a glitch is often the system working exactly as it was built."
+    },
+    {
+     "type": "head",
+     "text": "What carries forward"
+    },
+    {
+     "type": "text",
+     "text": "Default discrimination is harm carried by defaults and inaction, not only by active design."
+    },
+    {
+     "type": "text",
+     "text": "Is the glitch systemic? Ask it of every failure that gets explained away."
+    },
+    {
+     "type": "text",
+     "text": "Add a default-discrimination entry to your Living Cartography this week."
+    }
+   ],
    "purpose": {
-    "statement": "Week 4 continues Part II, where we dissect the New Jim Code dimension by dimension. This week's dimension is default discrimination, the way technology can carry inequity forward through defaults and inaction, so that systemic harm looks like a mere glitch.",
+    "statement": [
+     "Week 4 continues Part II, where we dissect the New Jim Code dimension by dimension. This week's dimension is default discrimination, the way technology can carry inequity forward through defaults and inaction, so that systemic harm looks like a mere glitch."
+    ],
     "outcomes": [
      "Define default discrimination as harm that arrives through the defaults, data, and assumptions of a system, not only through active design.",
      "Apply Benjamin's glitch-versus-systemic test to a real technological failure.",
@@ -503,9 +751,8 @@ window.BFS218 = {
    "concepts": [
     {
      "term": "Default discrimination",
-     "parts": [
-      "Default discrimination is Benjamin's second dimension: harm that arrives through the defaults of a system, the settings, data, and assumptions that treat one group's world as the norm.",
-      "It does not require a racist designer; it requires only that the existing inequity is left in the defaults and that no one designs against it."
+     "paras": [
+      "Default discrimination is Benjamin's second dimension: harm that arrives through the defaults of a system, the settings, data, and assumptions that treat one group's world as the norm. It does not require a racist designer; it requires only that the existing inequity is left in the defaults and that no one designs against it."
      ],
      "cites": [
       "Benjamin, R. (2019). Race after technology: Abolitionist tools for the New Jim Code. Polity Press. (Default discrimination, the second dimension; the chapter Is the Glitch Systemic? and the section Automating Anti-Blackness.)"
@@ -513,11 +760,9 @@ window.BFS218 = {
     },
     {
      "term": "Is the glitch systemic?",
-     "parts": [
-      "This is Benjamin's framing question for the dimension.",
-      "A glitch is supposed to be minor and temporary, a brief irregularity.",
-      "Benjamin asks whether the glitch is actually systemic, that is, whether the failure is not an accident but the predictable result of how the system was built.",
-      "When the answer is yes, the word glitch is doing work: it makes a designed harm sound like bad luck."
+     "paras": [
+      "This is Benjamin's framing question for the dimension. A glitch is supposed to be minor and temporary, a brief irregularity.",
+      "Benjamin asks whether the glitch is actually systemic, that is, whether the failure is not an accident but the predictable result of how the system was built. When the answer is yes, the word glitch is doing work: it makes a designed harm sound like bad luck."
      ],
      "cites": [
       "Benjamin, R. (2019). Race after technology: Abolitionist tools for the New Jim Code. Polity Press. (Default discrimination, the second dimension; the chapter Is the Glitch Systemic? and the section Automating Anti-Blackness.)"
@@ -525,9 +770,8 @@ window.BFS218 = {
     },
     {
      "term": "Design as worldbuilding",
-     "parts": [
-      "Benjamin describes database design as an exercise in worldbuilding: programmers project their assumptions, interests, and view of the world into the system, and that world too often reproduces the technology of race.",
-      "The Malcolm X Boulevard that a map reads aloud as Malcolm Ten is a small sign of whose knowledge is set as the default."
+     "paras": [
+      "Benjamin describes database design as an exercise in worldbuilding: programmers project their assumptions, interests, and view of the world into the system, and that world too often reproduces the technology of race. The Malcolm X Boulevard that a map reads aloud as Malcolm Ten is a small sign of whose knowledge is set as the default."
      ],
      "cites": [
       "Benjamin, R. (2019). Race after technology: Abolitionist tools for the New Jim Code. Polity Press. (Default discrimination, the second dimension; the chapter Is the Glitch Systemic? and the section Automating Anti-Blackness.)"
@@ -537,35 +781,43 @@ window.BFS218 = {
    "readings": [
     {
      "type": "text",
-     "text": "This week's reading is Benjamin on the second dimension of the New Jim Code. Read for the precise meaning of default discrimination and for her question, is the glitch systemic?"
+     "text": "This week's reading is Benjamin on the second dimension of the New Jim Code. Read for the precise meaning of default discrimination and for her question, is the glitch systemic?",
+     "url": ""
     },
     {
      "type": "head",
-     "text": "Essential read (read this closely)"
+     "text": "Essential read (read this closely)",
+     "url": ""
     },
     {
      "type": "cite",
-     "text": "Benjamin, R. (2019). Race after technology: Abolitionist tools for the New Jim Code. Polity Press. Read the second dimension, default discrimination (the chapter Is the Glitch Systemic?, including the section Automating Anti-Blackness)."
+     "text": "Benjamin, R. (2019). Race after technology: Abolitionist tools for the New Jim Code. Polity Press. Read the second dimension, default discrimination (the chapter Is the Glitch Systemic?, including the section Automating Anti-Blackness).",
+     "url": ""
     },
     {
      "type": "text",
-     "text": "Read for two things. First, the definition: default discrimination is harm carried by the defaults of a system, not only by active design. Second, the glitch-versus-systemic test, and her claim that database design is an exercise in worldbuilding."
+     "text": "Read for two things. First, the definition: default discrimination is harm carried by the defaults of a system, not only by active design. Second, the glitch-versus-systemic test, and her claim that database design is an exercise in worldbuilding.",
+     "url": ""
     },
     {
      "type": "head",
-     "text": "How to read this week"
+     "text": "How to read this week",
+     "url": ""
     },
     {
      "type": "text",
-     "text": "Underline where Benjamin asks whether a glitch is systemic, and note what the word glitch hides."
+     "text": "Underline where Benjamin asks whether a glitch is systemic, and note what the word glitch hides.",
+     "url": ""
     },
     {
      "type": "text",
-     "text": "Mark the Malcolm Ten example and what it reveals about defaults."
+     "text": "Mark the Malcolm Ten example and what it reveals about defaults.",
+     "url": ""
     },
     {
      "type": "text",
-     "text": "Bring one real example of a default that disadvantages a group, and add it to your Living Cartography."
+     "text": "Bring one real example of a default that disadvantages a group, and add it to your Living Cartography.",
+     "url": ""
     }
    ],
    "references": [
@@ -590,10 +842,64 @@ window.BFS218 = {
    "phaseId": "inquiring",
    "title": "Coded Exposure",
    "concept": "Coded exposure",
-   "overview": "Racism and the Digital Age: Understanding Techno-Racism   |   Online-Asynchronous section\nWhere you are in the journey: Part II, the Anatomy, continues. We have taken engineered inequity, which amplifies a gap on purpose, and default discrimination, which harms through the defaults. This week is the third dimension, coded exposure, and Benjamin's question: is visibility a trap?\nThis is the self-paced, online-asynchronous section. Work through the materials in order at your own pace: the Key Concepts and Readings, then the lecture deck with the narration while you fill in the Guided Notes, then the videos, and add your weekly entry to the Living Cartography.\nCoded exposure is Benjamin's third dimension of the New Jim Code. By the end of the week you should be able to define it, explain the double bind of visibility, and recognize the coded gaze, the way a camera or system sees some people well and fails others.",
-   "welcome": "Welcome to Week 5. Part II of the course continues. We have taken two dimensions of the New Jim Code: engineered inequity, which amplifies a gap on purpose, and default discrimination, which harms through the defaults. This week we take the third, and it turns from how systems decide to how systems see. It is coded exposure.",
+   "overview": [
+    {
+     "type": "text",
+     "text": "Where you are in the journey: Part II, the Anatomy, continues. We have taken engineered inequity, which amplifies a gap on purpose, and default discrimination, which harms through the defaults. This week is the third dimension, coded exposure, and Benjamin's question: is visibility a trap?"
+    },
+    {
+     "type": "head",
+     "text": "How this week works"
+    },
+    {
+     "type": "text",
+     "text": "This is the self-paced, online-asynchronous section. Work through the materials in order at your own pace: the Key Concepts and Readings, then the lecture deck with the narration while you fill in the Guided Notes, then the videos, and add your weekly entry to the Living Cartography."
+    },
+    {
+     "type": "head",
+     "text": "What this week is for"
+    },
+    {
+     "type": "text",
+     "text": "Coded exposure is Benjamin's third dimension of the New Jim Code. By the end of the week you should be able to define it, explain the double bind of visibility, and recognize the coded gaze, the way a camera or system sees some people well and fails others."
+    },
+    {
+     "type": "head",
+     "text": "The dimension: coded exposure"
+    },
+    {
+     "type": "text",
+     "text": "Coded exposure is about visibility itself. Racialized people are often made too visible, watched, scanned, and surveilled, and at the same time too invisible, not recognized, not served, failed by systems built for lighter skin. Benjamin plays on every meaning of exposure: light on a sensor, a secret disclosed, being unprotected, being at risk, being put on display. The question is whether visibility, in a system like this, is ever simply safe."
+    },
+    {
+     "type": "text",
+     "text": "Is visibility a trap?"
+    },
+    {
+     "type": "text",
+     "text": "A webcam user once said, I think my Blackness is interfering with the computer's ability to follow me. The coded gaze is the name for that: the camera sees lighter skin well and darker skin badly. Joy Buolamwini and Timnit Gebru measured it in 2018: commercial facial-analysis systems were nearly perfect on lighter-skinned men and far worse on darker-skinned women. To be unseen is a harm. To be hyper-seen, watched and scanned, is also a harm. That double bind is the trap."
+    },
+    {
+     "type": "head",
+     "text": "What carries forward"
+    },
+    {
+     "type": "text",
+     "text": "Coded exposure is the politics of visibility: too watched and too unseen at once."
+    },
+    {
+     "type": "text",
+     "text": "The coded gaze: who a camera sees well, and who it fails."
+    },
+    {
+     "type": "text",
+     "text": "Add a coded-exposure entry to your Living Cartography this week."
+    }
+   ],
    "purpose": {
-    "statement": "Week 5 continues Part II, where we dissect the New Jim Code dimension by dimension. This week's dimension is coded exposure, the politics of visibility, where racialized people are made both too visible and too invisible by technical systems.",
+    "statement": [
+     "Week 5 continues Part II, where we dissect the New Jim Code dimension by dimension. This week's dimension is coded exposure, the politics of visibility, where racialized people are made both too visible and too invisible by technical systems."
+    ],
     "outcomes": [
      "Define coded exposure as the uneven, designed distribution of visibility across race.",
      "Explain the double bind of being over-exposed and under-recognized at the same time.",
@@ -611,9 +917,8 @@ window.BFS218 = {
    "concepts": [
     {
      "term": "Coded exposure",
-     "parts": [
-      "Coded exposure is Benjamin's third dimension: visibility itself is designed unevenly.",
-      "Some people are made hyper-visible to systems, watched, scanned, and tracked, while others are made invisible, unrecognized and unserved.",
+     "paras": [
+      "Coded exposure is Benjamin's third dimension: visibility itself is designed unevenly. Some people are made hyper-visible to systems, watched, scanned, and tracked, while others are made invisible, unrecognized and unserved.",
       "Benjamin uses every sense of the word exposure: light on a sensor, a secret revealed, being unprotected, being at risk, being put on display."
      ],
      "cites": [
@@ -622,9 +927,8 @@ window.BFS218 = {
     },
     {
      "term": "The coded gaze",
-     "parts": [
-      "The coded gaze, a term from Joy Buolamwini, names whose face a system is built to see.",
-      "The webcam user who said my Blackness is interfering with the computer's ability to follow me was describing it.",
+     "paras": [
+      "The coded gaze, a term from Joy Buolamwini, names whose face a system is built to see. The webcam user who said my Blackness is interfering with the computer's ability to follow me was describing it.",
       "Buolamwini and Gebru's 2018 Gender Shades study measured it: facial-analysis systems were nearly perfect on lighter-skinned men and far worse on darker-skinned women."
      ],
      "cites": [
@@ -633,11 +937,9 @@ window.BFS218 = {
     },
     {
      "term": "Is visibility a trap?",
-     "parts": [
-      "This is Benjamin's framing question.",
-      "Being unseen by a system is a harm: you are not recognized, not served.",
-      "But being hyper-seen is also a harm: you are surveilled, scanned, and exposed to risk.",
-      "For racialized communities, visibility can cut both ways at once, which is why Benjamin calls it a trap rather than a simple good."
+     "paras": [
+      "This is Benjamin's framing question. Being unseen by a system is a harm: you are not recognized, not served.",
+      "But being hyper-seen is also a harm: you are surveilled, scanned, and exposed to risk. For racialized communities, visibility can cut both ways at once, which is why Benjamin calls it a trap rather than a simple good."
      ],
      "cites": [
       "Benjamin, R. (2019). Race after technology: Abolitionist tools for the New Jim Code. Polity Press. (Coded exposure, the third dimension; the chapter Is Visibility a Trap?)"
@@ -647,39 +949,48 @@ window.BFS218 = {
    "readings": [
     {
      "type": "text",
-     "text": "This week's reading is Benjamin on the third dimension of the New Jim Code, paired with the empirical study behind the coded gaze."
+     "text": "This week's reading is Benjamin on the third dimension of the New Jim Code, paired with the empirical study behind the coded gaze.",
+     "url": ""
     },
     {
      "type": "head",
-     "text": "Essential reads (read these closely)"
+     "text": "Essential reads (read these closely)",
+     "url": ""
     },
     {
      "type": "cite",
-     "text": "Benjamin, R. (2019). Race after technology: Abolitionist tools for the New Jim Code. Polity Press. Read the third dimension, coded exposure (the chapter Is Visibility a Trap?)."
+     "text": "Benjamin, R. (2019). Race after technology: Abolitionist tools for the New Jim Code. Polity Press. Read the third dimension, coded exposure (the chapter Is Visibility a Trap?).",
+     "url": ""
     },
     {
      "type": "cite",
-     "text": "Buolamwini, J., and Gebru, T. (2018). Gender shades: Intersectional accuracy disparities in commercial gender classification. Proceedings of Machine Learning Research, 81, 1-15."
+     "text": "Buolamwini, J., and Gebru, T. (2018). Gender shades: Intersectional accuracy disparities in commercial gender classification. Proceedings of Machine Learning Research, 81, 1-15.",
+     "url": ""
     },
     {
      "type": "text",
-     "text": "Read for two things. First, the double bind: how the same people can be both over-exposed and unseen. Second, the evidence: how Gender Shades measured the coded gaze across skin tone and gender."
+     "text": "Read for two things. First, the double bind: how the same people can be both over-exposed and unseen. Second, the evidence: how Gender Shades measured the coded gaze across skin tone and gender.",
+     "url": ""
     },
     {
      "type": "head",
-     "text": "How to read this week"
+     "text": "How to read this week",
+     "url": ""
     },
     {
      "type": "text",
-     "text": "Mark where Benjamin lists the meanings of exposure, and how she uses them together."
+     "text": "Mark where Benjamin lists the meanings of exposure, and how she uses them together.",
+     "url": ""
     },
     {
      "type": "text",
-     "text": "Note the Gender Shades error pattern, and whom it falls on hardest."
+     "text": "Note the Gender Shades error pattern, and whom it falls on hardest.",
+     "url": ""
     },
     {
      "type": "text",
-     "text": "Bring one real example of coded exposure, and add it to your Living Cartography."
+     "text": "Bring one real example of coded exposure, and add it to your Living Cartography.",
+     "url": ""
     }
    ],
    "references": [
@@ -705,10 +1016,68 @@ window.BFS218 = {
    "phaseId": "inquiring",
    "title": "Algorithms in Canada",
    "concept": "Algorithmic policing",
-   "overview": "Borders, Policing, and Housing   |   Online-Asynchronous section\nWhere you are in the journey: Part II, the Anatomy, continues, but this week we bring the lens home. We have named the dimensions of the New Jim Code in the abstract. This week we watch them operate in Canada, in three domains: borders, policing, and housing. Call it the code in our backyard.\nThis is the self-paced, online-asynchronous section. Work through the materials in order at your own pace: the Key Concepts and Readings, then the lecture deck with the narration while you fill in the Guided Notes, then the videos, and add your weekly entry to the Living Cartography.\nThis week shows the dimensions you have learned, engineered inequity, default discrimination, and coded exposure, working in real Canadian systems. By the end of the week you should be able to name a documented Canadian case in borders, policing, or corrections, and connect it to a dimension.",
-   "welcome": "Welcome to Week 6. For three weeks we built the anatomy of the New Jim Code in the abstract: engineered inequity, default discrimination, coded exposure. This week we bring it home to Canada.",
+   "overview": [
+    {
+     "type": "text",
+     "text": "Borders, Policing, and Housing   |   Online-Asynchronous section"
+    },
+    {
+     "type": "text",
+     "text": "Where you are in the journey: Part II, the Anatomy, continues, but this week we bring the lens home. We have named the dimensions of the New Jim Code in the abstract. This week we watch them operate in Canada, in three domains: borders, policing, and housing. Call it the code in our backyard."
+    },
+    {
+     "type": "head",
+     "text": "How this week works"
+    },
+    {
+     "type": "text",
+     "text": "This is the self-paced, online-asynchronous section. Work through the materials in order at your own pace: the Key Concepts and Readings, then the lecture deck with the narration while you fill in the Guided Notes, then the videos, and add your weekly entry to the Living Cartography."
+    },
+    {
+     "type": "head",
+     "text": "What this week is for"
+    },
+    {
+     "type": "text",
+     "text": "This week shows the dimensions you have learned, engineered inequity, default discrimination, and coded exposure, working in real Canadian systems. By the end of the week you should be able to name a documented Canadian case in borders, policing, or corrections, and connect it to a dimension."
+    },
+    {
+     "type": "head",
+     "text": "The code in our backyard"
+    },
+    {
+     "type": "text",
+     "text": "It is easy to think of techno-racism as something that happens elsewhere. It does not. Petra Molnar shows how digital border technologies, surveillance, biometrics, and automated decisions, work through logics of exclusion, with migrants and refugees treated as a testing ground. Robertson, Khoo, and Song document algorithmic policing across Canada, and Shawn Singh notes that much of it has been authorized through court rulings rather than clear legislation."
+    },
+    {
+     "type": "head",
+     "text": "Two cases to hold"
+    },
+    {
+     "type": "text",
+     "text": "Two Canadian cases anchor the week. The Office of the Privacy Commissioner found that the RCMP's use of Clearview AI facial recognition violated federal privacy law. And in Ewert v Canada (2018), the Supreme Court of Canada found that Correctional Service Canada breached its duty by relying on risk-assessment tools that had not been shown to be valid for Indigenous offenders. The New Jim Code is not hypothetical here; it is in our law reports."
+    },
+    {
+     "type": "head",
+     "text": "What carries forward"
+    },
+    {
+     "type": "text",
+     "text": "The dimensions are not abstract; they run in Canadian borders, policing, and corrections."
+    },
+    {
+     "type": "text",
+     "text": "Two anchors: the OPC Clearview finding, and Ewert v Canada (2018)."
+    },
+    {
+     "type": "text",
+     "text": "Add a Canadian entry to your Living Cartography this week."
+    }
+   ],
    "purpose": {
-    "statement": "Week 6 grounds the New Jim Code in Canada. Having named the dimensions, students now examine documented Canadian cases in borders, policing, and corrections, and connect each to the harm it produces for racialized and Indigenous communities.",
+    "statement": [
+     "Week 6 grounds the New Jim Code in Canada. Having named the dimensions, students now examine documented Canadian cases in borders, policing, and corrections, and connect each to the harm it produces for racialized and Indigenous communities."
+    ],
     "outcomes": [
      "Describe at least one documented Canadian case of algorithmic harm in borders, policing, or corrections.",
      "Explain the OPC finding on the RCMP's use of Clearview AI, and the holding in Ewert v Canada (2018).",
@@ -726,9 +1095,8 @@ window.BFS218 = {
    "concepts": [
     {
      "term": "Algorithmic policing",
-     "parts": [
-      "Algorithmic policing is the use of data-driven tools, predictive policing, facial recognition, and social-media surveillance, by law enforcement.",
-      "Robertson, Khoo, and Song (2020) document its spread in Canada, and Singh (2021) notes that much of it has been authorized through court rulings rather than clear legislation, leaving a gap in oversight."
+     "paras": [
+      "Algorithmic policing is the use of data-driven tools, predictive policing, facial recognition, and social-media surveillance, by law enforcement. Robertson, Khoo, and Song (2020) document its spread in Canada, and Singh (2021) notes that much of it has been authorized through court rulings rather than clear legislation, leaving a gap in oversight."
      ],
      "cites": [
       "Robertson, K., Khoo, C., and Song, Y. (2020). To surveil and predict: A human rights analysis of algorithmic policing in Canada. Citizen Lab and International Human Rights Program, University of Toronto.",
@@ -738,9 +1106,8 @@ window.BFS218 = {
     },
     {
      "term": "Digital border technologies",
-     "parts": [
-      "Petra Molnar (2023) describes the surveillance, biometrics, and automated decision systems used at borders as digital border technologies that operate through logics of exclusion.",
-      "Migrants and refugees, with the least power to refuse, are often the testing ground for tools later used more widely."
+     "paras": [
+      "Petra Molnar (2023) describes the surveillance, biometrics, and automated decision systems used at borders as digital border technologies that operate through logics of exclusion. Migrants and refugees, with the least power to refuse, are often the testing ground for tools later used more widely."
      ],
      "cites": [
       "Molnar, P. (2023). Digital border technologies, techno-racism and logics of exclusion. International Migration. https://doi.org/10.1111/imig.13187"
@@ -748,9 +1115,8 @@ window.BFS218 = {
     },
     {
      "term": "Two Canadian anchors",
-     "parts": [
-      "The Office of the Privacy Commissioner of Canada (2021) found that the RCMP's use of Clearview AI facial recognition violated federal privacy law.",
-      "In Ewert v Canada (2018) SCC 30, the Supreme Court found that Correctional Service Canada breached its statutory duty by relying on risk-assessment tools not shown to be valid for Indigenous offenders.",
+     "paras": [
+      "The Office of the Privacy Commissioner of Canada (2021) found that the RCMP's use of Clearview AI facial recognition violated federal privacy law. In Ewert v Canada (2018) SCC 30, the Supreme Court found that Correctional Service Canada breached its statutory duty by relying on risk-assessment tools not shown to be valid for Indigenous offenders.",
       "Both show the New Jim Code in Canadian institutions."
      ],
      "cites": [
@@ -763,51 +1129,63 @@ window.BFS218 = {
    "readings": [
     {
      "type": "text",
-     "text": "This week's readings document the New Jim Code in Canada. Read for the cases and for the gap between technology and oversight."
+     "text": "This week's readings document the New Jim Code in Canada. Read for the cases and for the gap between technology and oversight.",
+     "url": ""
     },
     {
      "type": "head",
-     "text": "Essential reads (read these closely)"
+     "text": "Essential reads (read these closely)",
+     "url": ""
     },
     {
      "type": "text",
-     "text": "Robertson, K., Khoo, C., and Song, Y. (2020). To surveil and predict: A human rights analysis of algorithmic policing in Canada. Citizen Lab and International Human Rights Program, University of Toronto. (Read the executive summary and the section on facial recognition.)"
+     "text": "Robertson, K., Khoo, C., and Song, Y. (2020). To surveil and predict: A human rights analysis of algorithmic policing in Canada. Citizen Lab and International Human Rights Program, University of Toronto. (Read the executive summary and the section on facial recognition.)",
+     "url": ""
     },
     {
      "type": "text",
-     "text": "Molnar, P. (2023). Digital border technologies, techno-racism and logics of exclusion. International Migration. https://doi.org/10.1111/imig.13187"
+     "text": "Molnar, P. (2023). Digital border technologies, techno-racism and logics of exclusion. International Migration. https://doi.org/10.1111/imig.13187",
+     "url": "https://doi.org/10.1111/imig.13187"
     },
     {
      "type": "head",
-     "text": "Recommended"
+     "text": "Recommended",
+     "url": ""
     },
     {
      "type": "cite",
-     "text": "Office of the Privacy Commissioner of Canada. (2021). Police use of facial recognition technology in Canada and the way forward. Special report to Parliament."
+     "text": "Office of the Privacy Commissioner of Canada. (2021). Police use of facial recognition technology in Canada and the way forward. Special report to Parliament.",
+     "url": ""
     },
     {
      "type": "text",
-     "text": "Ewert v Canada, 2018 SCC 30. (See also Hill, E., and Wolfe, J. (2020). Ewert v. Canada: Shining light on corrections and Indigenous people. Supreme Court Law Review, 94.)"
+     "text": "Ewert v Canada, 2018 SCC 30. (See also Hill, E., and Wolfe, J. (2020). Ewert v. Canada: Shining light on corrections and Indigenous people. Supreme Court Law Review, 94.)",
+     "url": ""
     },
     {
      "type": "cite",
-     "text": "Singh, S. (2021). Algorithmic policing technologies in Canada."
+     "text": "Singh, S. (2021). Algorithmic policing technologies in Canada.",
+     "url": ""
     },
     {
      "type": "head",
-     "text": "How to read this week"
+     "text": "How to read this week",
+     "url": ""
     },
     {
      "type": "text",
-     "text": "From the policing report, note one specific tool and one human-rights concern it raises."
+     "text": "From the policing report, note one specific tool and one human-rights concern it raises.",
+     "url": ""
     },
     {
      "type": "text",
-     "text": "From Molnar, note what logics of exclusion means and who is the testing ground."
+     "text": "From Molnar, note what logics of exclusion means and who is the testing ground.",
+     "url": ""
     },
     {
      "type": "text",
-     "text": "Bring one Canadian example, and add it to your Living Cartography."
+     "text": "Bring one Canadian example, and add it to your Living Cartography.",
+     "url": ""
     }
    ],
    "references": [
@@ -837,10 +1215,68 @@ window.BFS218 = {
    "phaseId": "inquiring",
    "title": "Assembling the Anatomy",
    "concept": "Engineered inequity (dimension one)",
-   "overview": "Part II Consolidation, plus your first Knowledge Check video   |   Online-Asynchronous section\nWhere you are in the journey: this week closes Part II, the Anatomy. We have named three dimensions of the New Jim Code, engineered inequity, default discrimination, and coded exposure, and we have watched them operate in Canada. This week we assemble the pieces into one picture, and you complete the first of two Knowledge Check videos.\nThis is the self-paced, online-asynchronous section. There is no new reading; you revisit Weeks 3 to 6, move through the consolidation deck and videos, and complete the Knowledge Check video on your own schedule.\nThis is a consolidation week. By the end of it you should be able to hold the whole anatomy in one view: the three dimensions, how they differ, and how they show up together in real Canadian systems. The Knowledge Check video is where you show that you can do it with one system of your own.",
-   "welcome": "Welcome to Week 7. This week closes Part II. There is no new reading. Instead we assemble the anatomy of the New Jim Code, the three dimensions you have learned, into one picture, and you complete your first Knowledge Check video.",
+   "overview": [
+    {
+     "type": "text",
+     "text": "Part II Consolidation, plus your first Knowledge Check video   |   Online-Asynchronous section"
+    },
+    {
+     "type": "text",
+     "text": "Where you are in the journey: this week closes Part II, the Anatomy. We have named three dimensions of the New Jim Code, engineered inequity, default discrimination, and coded exposure, and we have watched them operate in Canada. This week we assemble the pieces into one picture, and you complete the first of two Knowledge Check videos."
+    },
+    {
+     "type": "head",
+     "text": "How this week works"
+    },
+    {
+     "type": "text",
+     "text": "This is the self-paced, online-asynchronous section. There is no new reading; you revisit Weeks 3 to 6, move through the consolidation deck and videos, and complete the Knowledge Check video on your own schedule."
+    },
+    {
+     "type": "head",
+     "text": "What this week is for"
+    },
+    {
+     "type": "text",
+     "text": "This is a consolidation week. By the end of it you should be able to hold the whole anatomy in one view: the three dimensions, how they differ, and how they show up together in real Canadian systems. The Knowledge Check video is where you show that you can do it with one system of your own."
+    },
+    {
+     "type": "head",
+     "text": "Your first Knowledge Check video"
+    },
+    {
+     "type": "text",
+     "text": "Knowledge Check 1 is a short video, not a written quiz. You choose one system from your own Living Cartography, share your screen, and in your own voice walk through which dimension or dimensions of the New Jim Code it reveals, who is harmed, and how you would tell whether the harm is designed or incidental. It is built so that no one, and no AI, can do it for you. Full instructions are in the Knowledge Check 1 file."
+    },
+    {
+     "type": "head",
+     "text": "Looking ahead"
+    },
+    {
+     "type": "text",
+     "text": "After the Study Week, Part III opens. We meet Benjamin's fourth dimension, technological benevolence, the false promise of help, and then turn from naming the problem to responding to it."
+    },
+    {
+     "type": "head",
+     "text": "What carries forward"
+    },
+    {
+     "type": "text",
+     "text": "The anatomy is assembled: three dimensions, seen together and in Canada."
+    },
+    {
+     "type": "text",
+     "text": "Knowledge Check 1 is your own voice, walking through your own example on screen."
+    },
+    {
+     "type": "text",
+     "text": "Part III, after the Study Week, turns from naming harm to answering it."
+    }
+   ],
    "purpose": {
-    "statement": "Week 7 consolidates Part II. Students assemble the three dimensions of the New Jim Code and the Canadian cases into one working picture, and demonstrate that understanding in the first Knowledge Check video, an individual, AI-resistant assessment.",
+    "statement": [
+     "Week 7 consolidates Part II. Students assemble the three dimensions of the New Jim Code and the Canadian cases into one working picture, and demonstrate that understanding in the first Knowledge Check video, an individual, AI-resistant assessment."
+    ],
     "outcomes": [
      "Define and distinguish the three dimensions of the New Jim Code studied so far.",
      "Analyse a real system and name which dimension or dimensions it reveals.",
@@ -858,9 +1294,8 @@ window.BFS218 = {
    "concepts": [
     {
      "term": "Engineered inequity (dimension one)",
-     "parts": [
-      "Technology that, by its design, amplifies an existing hierarchy of race, class, or gender.",
-      "The harm is active and built in.",
+     "paras": [
+      "Technology that, by its design, amplifies an existing hierarchy of race, class, or gender. The harm is active and built in.",
       "The key word is amplify, not create."
      ],
      "cites": [
@@ -869,9 +1304,8 @@ window.BFS218 = {
     },
     {
      "term": "Default discrimination (dimension two)",
-     "parts": [
-      "Harm that arrives through the defaults, the settings, data, and assumptions that treat one group's world as normal.",
-      "The key question is: is the glitch systemic?"
+     "paras": [
+      "Harm that arrives through the defaults, the settings, data, and assumptions that treat one group's world as normal. The key question is: is the glitch systemic?"
      ],
      "cites": [
       "Benjamin, R. (2019). Race after technology: Abolitionist tools for the New Jim Code. Polity Press. (Engineered inequity; default discrimination; coded exposure.)"
@@ -879,11 +1313,9 @@ window.BFS218 = {
     },
     {
      "term": "Coded exposure (dimension three)",
-     "parts": [
-      "The uneven, designed distribution of visibility: some people watched too closely, others not seen at all.",
-      "The key question is: is visibility a trap?",
-      "How they fit together These are not separate machines; they are three ways the same systemic racism enters technology.",
-      "A single system can show more than one at once, and in Canada we saw them in borders, policing, and corrections.",
+     "paras": [
+      "The uneven, designed distribution of visibility: some people watched too closely, others not seen at all. The key question is: is visibility a trap?",
+      "How they fit together These are not separate machines; they are three ways the same systemic racism enters technology. A single system can show more than one at once, and in Canada we saw them in borders, policing, and corrections.",
       "After the Study Week, Part III adds the fourth dimension, technological benevolence."
      ],
      "cites": [
@@ -894,39 +1326,48 @@ window.BFS218 = {
    "readings": [
     {
      "type": "text",
-     "text": "There is no new reading this week. Instead, revisit the readings from Weeks 3 to 6 and pull them together for your Knowledge Check video."
+     "text": "There is no new reading this week. Instead, revisit the readings from Weeks 3 to 6 and pull them together for your Knowledge Check video.",
+     "url": ""
     },
     {
      "type": "head",
-     "text": "Revisit"
+     "text": "Revisit",
+     "url": ""
     },
     {
      "type": "cite",
-     "text": "Benjamin (2019), the three dimensions: engineered inequity, default discrimination, coded exposure."
+     "text": "Benjamin (2019), the three dimensions: engineered inequity, default discrimination, coded exposure.",
+     "url": ""
     },
     {
      "type": "cite",
-     "text": "Buolamwini and Gebru (2018), Gender Shades, for the coded gaze."
+     "text": "Buolamwini and Gebru (2018), Gender Shades, for the coded gaze.",
+     "url": ""
     },
     {
      "type": "cite",
-     "text": "Robertson, Khoo, and Song (2020) and Molnar (2023), for the Canadian cases."
+     "text": "Robertson, Khoo, and Song (2020) and Molnar (2023), for the Canadian cases.",
+     "url": ""
     },
     {
      "type": "head",
-     "text": "How to review this week"
+     "text": "How to review this week",
+     "url": ""
     },
     {
      "type": "text",
-     "text": "Reread your own Guided Notes from Weeks 3 to 6; they are your map of the anatomy."
+     "text": "Reread your own Guided Notes from Weeks 3 to 6; they are your map of the anatomy.",
+     "url": ""
     },
     {
      "type": "text",
-     "text": "Skim your Living Cartography entries and choose the one system you will use for the Knowledge Check video."
+     "text": "Skim your Living Cartography entries and choose the one system you will use for the Knowledge Check video.",
+     "url": ""
     },
     {
      "type": "text",
-     "text": "Write one sentence per dimension in your own words before you record."
+     "text": "Write one sentence per dimension in your own words before you record.",
+     "url": ""
     }
    ],
    "references": [
@@ -951,10 +1392,68 @@ window.BFS218 = {
    "phaseId": "rooting",
    "title": "Indigenous Data Sovereignty",
    "concept": "Indigenous data sovereignty",
-   "overview": "OCAP and a Different Relation to Data   |   Online-Asynchronous section\nWhere you are in the journey: Part III opens. For seven weeks we learned to see the New Jim Code and name its anatomy. Now the course turns from naming the problem to answering it, and it begins, deliberately, not with a Western fix but with a different relation to data altogether: Indigenous data sovereignty and the principles known as OCAP.\nThis is the self-paced, online-asynchronous section. Work through the materials in order at your own pace: the Key Concepts and Readings, then the lecture deck with the narration while you fill in the Guided Notes, then the videos, and add your weekly entry to the Living Cartography.\nThis week reframes the whole question. Instead of asking only how a system is biased, we ask who should govern the data, and on whose terms. By the end of the week you should be able to explain Indigenous data sovereignty, describe the OCAP principles, and say why a community holding its own data is a form of agency, not just a critique.",
-   "welcome": "Welcome to Week 8, and welcome to Part III. For seven weeks we learned to see the New Jim Code and name its anatomy. Now the course turns from naming the problem to answering it, and we begin, deliberately, with a different relation to data: Indigenous data sovereignty.",
+   "overview": [
+    {
+     "type": "text",
+     "text": "OCAP and a Different Relation to Data   |   Online-Asynchronous section"
+    },
+    {
+     "type": "text",
+     "text": "Where you are in the journey: Part III opens. For seven weeks we learned to see the New Jim Code and name its anatomy. Now the course turns from naming the problem to answering it, and it begins, deliberately, not with a Western fix but with a different relation to data altogether: Indigenous data sovereignty and the principles known as OCAP."
+    },
+    {
+     "type": "head",
+     "text": "How this week works"
+    },
+    {
+     "type": "text",
+     "text": "This is the self-paced, online-asynchronous section. Work through the materials in order at your own pace: the Key Concepts and Readings, then the lecture deck with the narration while you fill in the Guided Notes, then the videos, and add your weekly entry to the Living Cartography."
+    },
+    {
+     "type": "head",
+     "text": "What this week is for"
+    },
+    {
+     "type": "text",
+     "text": "This week reframes the whole question. Instead of asking only how a system is biased, we ask who should govern the data, and on whose terms. By the end of the week you should be able to explain Indigenous data sovereignty, describe the OCAP principles, and say why a community holding its own data is a form of agency, not just a critique."
+    },
+    {
+     "type": "head",
+     "text": "A different relation to data"
+    },
+    {
+     "type": "text",
+     "text": "Most systems assume that whoever collects the data owns it. Indigenous data sovereignty begins from the opposite principle: that First Nations, Inuit, and Metis peoples have the right to govern the data about their own communities. Thomas King reminds us, in The Truth About Stories, that stories are not neutral and that whose story gets told shapes what is real. Data is a kind of story about people. Who tells it, and who keeps it, matters."
+    },
+    {
+     "type": "head",
+     "text": "OCAP, in brief"
+    },
+    {
+     "type": "text",
+     "text": "OCAP names four First Nations principles for data governance, stewarded by the First Nations Information Governance Centre: Ownership, Control, Access, and Possession. Together they hold that communities, not outside institutions, should own their information, control how it is collected and used, be able to access data about themselves, and physically steward it. We treat OCAP with care, as a living framework that belongs to First Nations, not as a slogan."
+    },
+    {
+     "type": "head",
+     "text": "What carries forward"
+    },
+    {
+     "type": "text",
+     "text": "Part III asks not only how a system is biased, but who should govern the data."
+    },
+    {
+     "type": "text",
+     "text": "OCAP: Ownership, Control, Access, Possession, the First Nations principles for data governance."
+    },
+    {
+     "type": "text",
+     "text": "Data is a kind of story; who holds the pen is a question of power and agency."
+    }
+   ],
    "purpose": {
-    "statement": "Week 8 opens Part III by reframing the central question from bias to governance. Students learn Indigenous data sovereignty and the OCAP principles as a model of agency, and meet decolonial approaches to AI.",
+    "statement": [
+     "Week 8 opens Part III by reframing the central question from bias to governance. Students learn Indigenous data sovereignty and the OCAP principles as a model of agency, and meet decolonial approaches to AI."
+    ],
     "outcomes": [
      "Explain Indigenous data sovereignty as the right of communities to govern data about themselves.",
      "Describe the four OCAP principles and what each protects.",
@@ -972,9 +1471,8 @@ window.BFS218 = {
    "concepts": [
     {
      "term": "Indigenous data sovereignty",
-     "parts": [
-      "Indigenous data sovereignty is the principle that First Nations, Inuit, and Metis peoples have the right to govern the collection, ownership, and use of data about their own communities, lands, and knowledge.",
-      "It reframes data from something extracted by outsiders to something a community holds and governs."
+     "paras": [
+      "Indigenous data sovereignty is the principle that First Nations, Inuit, and Metis peoples have the right to govern the collection, ownership, and use of data about their own communities, lands, and knowledge. It reframes data from something extracted by outsiders to something a community holds and governs."
      ],
      "cites": [
       "Full citations are listed in the Key Concepts file for this week."
@@ -982,13 +1480,10 @@ window.BFS218 = {
     },
     {
      "term": "OCAP: Ownership, Control, Access, Possession",
-     "parts": [
-      "OCAP names four First Nations principles for data governance, stewarded by the First Nations Information Governance Centre.",
-      "Ownership: a community collectively owns its information.",
-      "Control: the community controls how data about it is collected and used.",
-      "Access: the community can access data about itself.",
-      "Possession: the community physically holds and stewards that data.",
-      "OCAP belongs to First Nations; we study it with respect, not as a generic toolkit."
+     "paras": [
+      "OCAP names four First Nations principles for data governance, stewarded by the First Nations Information Governance Centre. Ownership: a community collectively owns its information.",
+      "Control: the community controls how data about it is collected and used. Access: the community can access data about itself.",
+      "Possession: the community physically holds and stewards that data. OCAP belongs to First Nations; we study it with respect, not as a generic toolkit."
      ],
      "cites": [
       "Full citations are listed in the Key Concepts file for this week."
@@ -996,9 +1491,8 @@ window.BFS218 = {
     },
     {
      "term": "Decolonial AI",
-     "parts": [
-      "Mohamed, Png, and Isaac (2020) argue that decolonial and postcolonial theory should guide the development of artificial intelligence.",
-      "They warn against algorithmic colonialism, where tools built elsewhere are imposed on communities, and call for centring those most affected in how systems are designed and governed."
+     "paras": [
+      "Mohamed, Png, and Isaac (2020) argue that decolonial and postcolonial theory should guide the development of artificial intelligence. They warn against algorithmic colonialism, where tools built elsewhere are imposed on communities, and call for centring those most affected in how systems are designed and governed."
      ],
      "cites": [
       "Full citations are listed in the Key Concepts file for this week."
@@ -1008,47 +1502,58 @@ window.BFS218 = {
    "readings": [
     {
      "type": "text",
-     "text": "This week's readings move from critique to a different relation to data. Read for the idea of governance and for whose story data tells."
+     "text": "This week's readings move from critique to a different relation to data. Read for the idea of governance and for whose story data tells.",
+     "url": ""
     },
     {
      "type": "head",
-     "text": "Essential reads (read these closely)"
+     "text": "Essential reads (read these closely)",
+     "url": ""
     },
     {
      "type": "cite",
-     "text": "Mohamed, S., Png, M.-T., and Isaac, W. (2020). Decolonial AI: Decolonial theory as sociotechnical foresight in artificial intelligence. Philosophy & Technology, 33, 659-684."
+     "text": "Mohamed, S., Png, M.-T., and Isaac, W. (2020). Decolonial AI: Decolonial theory as sociotechnical foresight in artificial intelligence. Philosophy & Technology, 33, 659-684.",
+     "url": ""
     },
     {
      "type": "text",
-     "text": "King, T. (2003). The truth about stories: A native narrative. House of Anansi Press. (Read the first lecture for the power of stories.)"
+     "text": "King, T. (2003). The truth about stories: A native narrative. House of Anansi Press. (Read the first lecture for the power of stories.)",
+     "url": ""
     },
     {
      "type": "head",
-     "text": "Recommended"
+     "text": "Recommended",
+     "url": ""
     },
     {
      "type": "cite",
-     "text": "Smillie-Adjarkwa, C. (2005). Is the internet a useful resource for Indigenous women living in remote communities? National Network for Aboriginal Mental Health Research."
+     "text": "Smillie-Adjarkwa, C. (2005). Is the internet a useful resource for Indigenous women living in remote communities? National Network for Aboriginal Mental Health Research.",
+     "url": ""
     },
     {
      "type": "text",
-     "text": "First Nations Information Governance Centre. The First Nations principles of OCAP. (Consult the FNIGC site for the primary statement.)"
+     "text": "First Nations Information Governance Centre. The First Nations principles of OCAP. (Consult the FNIGC site for the primary statement.)",
+     "url": ""
     },
     {
      "type": "head",
-     "text": "How to read this week"
+     "text": "How to read this week",
+     "url": ""
     },
     {
      "type": "text",
-     "text": "From Mohamed, Png, and Isaac, note what algorithmic colonialism means and what a decolonial approach centres."
+     "text": "From Mohamed, Png, and Isaac, note what algorithmic colonialism means and what a decolonial approach centres.",
+     "url": ""
     },
     {
      "type": "text",
-     "text": "From King, note one line about stories you want to carry, and connect it to data."
+     "text": "From King, note one line about stories you want to carry, and connect it to data.",
+     "url": ""
     },
     {
      "type": "text",
-     "text": "Bring one example where a community could govern its own data, and add it to your Living Cartography."
+     "text": "Bring one example where a community could govern its own data, and add it to your Living Cartography.",
+     "url": ""
     }
    ],
    "references": [
@@ -1073,10 +1578,68 @@ window.BFS218 = {
    "phaseId": "rooting",
    "title": "Technological Benevolence",
    "concept": "Technological benevolence",
-   "overview": "The False Promise of Help   |   Online-Asynchronous section\nWhere you are in the journey: Part III continues. Last week offered a model of agency, Indigenous data sovereignty. This week we meet the fourth and final dimension of the New Jim Code, the one Benjamin saves for the turn toward response: technological benevolence, the false promise of help.\nThis is the self-paced, online-asynchronous section. Work through the materials in order at your own pace: the Key Concepts and Readings, then the lecture deck with the narration while you fill in the Guided Notes, then the videos, and add your weekly entry to the Living Cartography.\nTechnological benevolence is the fourth dimension, and it completes the anatomy. By the end of the week you should be able to define it, recognize the benevolence trap, and ask Benjamin's hard question of any proposed fix: will it actually fix it, or does the language of help simply make the harm harder to question?",
-   "welcome": "Welcome to Week 9. Part III continues. Last week offered a model of agency, Indigenous data sovereignty. This week we meet the fourth and final dimension of the New Jim Code: technological benevolence, the false promise of help.",
+   "overview": [
+    {
+     "type": "head",
+     "text": "The False Promise of Help   |   Online-Asynchronous section"
+    },
+    {
+     "type": "text",
+     "text": "Where you are in the journey: Part III continues. Last week offered a model of agency, Indigenous data sovereignty. This week we meet the fourth and final dimension of the New Jim Code, the one Benjamin saves for the turn toward response: technological benevolence, the false promise of help."
+    },
+    {
+     "type": "head",
+     "text": "How this week works"
+    },
+    {
+     "type": "text",
+     "text": "This is the self-paced, online-asynchronous section. Work through the materials in order at your own pace: the Key Concepts and Readings, then the lecture deck with the narration while you fill in the Guided Notes, then the videos, and add your weekly entry to the Living Cartography."
+    },
+    {
+     "type": "head",
+     "text": "What this week is for"
+    },
+    {
+     "type": "text",
+     "text": "Technological benevolence is the fourth dimension, and it completes the anatomy. By the end of the week you should be able to define it, recognize the benevolence trap, and ask Benjamin's hard question of any proposed fix: will it actually fix it, or does the language of help simply make the harm harder to question?"
+    },
+    {
+     "type": "head",
+     "text": "The dimension: technological benevolence"
+    },
+    {
+     "type": "text",
+     "text": "The most dangerous systems may be the ones that arrive as help. Technological benevolence is technology promoted as good for us, a fix, an upgrade, an act of care, that still carries the old harms, while its benevolent framing disarms criticism. A tool sold as the solution is harder to question than one that is openly harmful, and that is exactly what makes it dangerous."
+    },
+    {
+     "type": "head",
+     "text": "Raising robots, and the politics of help"
+    },
+    {
+     "type": "text",
+     "text": "In Raising Robots, Benjamin examines how robots and automation are imagined as helpers and even as servants, and how the disposability of robots travels alongside the denigration of racialized people. She points to examples like police throwbots, machines sent in first so that officers can, in one team's words, own the real estate with their eyes before they pay for it with their bodies. The lesson is to look past the friendly framing and ask who the help actually serves."
+    },
+    {
+     "type": "head",
+     "text": "What carries forward"
+    },
+    {
+     "type": "text",
+     "text": "Technological benevolence is the fourth dimension: harm wrapped in the language of help."
+    },
+    {
+     "type": "text",
+     "text": "The benevolence trap: a fix sold as care is harder to question than open harm."
+    },
+    {
+     "type": "text",
+     "text": "Add a technological-benevolence entry to your Living Cartography this week."
+    }
+   ],
    "purpose": {
-    "statement": "Week 9 completes the four dimensions of the New Jim Code with technological benevolence, the false promise of help. Students learn to look past benevolent framing and to ask whether a proposed fix actually addresses the harm.",
+    "statement": [
+     "Week 9 completes the four dimensions of the New Jim Code with technological benevolence, the false promise of help. Students learn to look past benevolent framing and to ask whether a proposed fix actually addresses the harm."
+    ],
     "outcomes": [
      "Define technological benevolence as harm carried inside the language of help.",
      "Recognize the benevolence trap, where a fix sold as care disarms criticism.",
@@ -1093,9 +1656,8 @@ window.BFS218 = {
    "concepts": [
     {
      "term": "Technological benevolence",
-     "parts": [
-      "Technological benevolence is Benjamin's fourth dimension: technology promoted as good for us, a fix, an upgrade, an act of help, that still carries existing harms.",
-      "The benevolent framing is not a side effect; it is part of how the harm survives, because help is hard to argue with."
+     "paras": [
+      "Technological benevolence is Benjamin's fourth dimension: technology promoted as good for us, a fix, an upgrade, an act of help, that still carries existing harms. The benevolent framing is not a side effect; it is part of how the harm survives, because help is hard to argue with."
      ],
      "cites": [
       "Benjamin, R. (2019). Race after technology: Abolitionist tools for the New Jim Code. Polity Press. (Technological benevolence, the fourth dimension; the chapter section Raising Robots.)"
@@ -1103,11 +1665,9 @@ window.BFS218 = {
     },
     {
      "term": "The benevolence trap",
-     "parts": [
-      "The benevolence trap is what makes this dimension dangerous.",
-      "A tool sold as the solution disarms criticism in advance.",
-      "To question it can feel like opposing progress or refusing help.",
-      "So the trap is not only the harm itself, but the difficulty of naming it once it wears the language of care."
+     "paras": [
+      "The benevolence trap is what makes this dimension dangerous. A tool sold as the solution disarms criticism in advance.",
+      "To question it can feel like opposing progress or refusing help. So the trap is not only the harm itself, but the difficulty of naming it once it wears the language of care."
      ],
      "cites": [
       "Benjamin, R. (2019). Race after technology: Abolitionist tools for the New Jim Code. Polity Press. (Technological benevolence, the fourth dimension; the chapter section Raising Robots.)"
@@ -1115,11 +1675,9 @@ window.BFS218 = {
     },
     {
      "term": "Will the fix fix it?",
-     "parts": [
-      "This is Benjamin's working question for the dimension.",
-      "For any proposed fix, ask what it actually changes and for whom.",
-      "In Raising Robots she shows how machines framed as helpers, including police throwbots, can serve power while being sold as safety, and how the disposability of robots travels with the denigration of racialized people.",
-      "The test is to separate real repair from a comfortable story about one."
+     "paras": [
+      "This is Benjamin's working question for the dimension. For any proposed fix, ask what it actually changes and for whom.",
+      "In Raising Robots she shows how machines framed as helpers, including police throwbots, can serve power while being sold as safety, and how the disposability of robots travels with the denigration of racialized people. The test is to separate real repair from a comfortable story about one."
      ],
      "cites": [
       "Benjamin, R. (2019). Race after technology: Abolitionist tools for the New Jim Code. Polity Press. (Technological benevolence, the fourth dimension; the chapter section Raising Robots.)"
@@ -1129,35 +1687,43 @@ window.BFS218 = {
    "readings": [
     {
      "type": "text",
-     "text": "This week's reading is Benjamin on the fourth dimension. Read for the politics of help and for the question, will the fix fix it?"
+     "text": "This week's reading is Benjamin on the fourth dimension. Read for the politics of help and for the question, will the fix fix it?",
+     "url": ""
     },
     {
      "type": "head",
-     "text": "Essential read (read this closely)"
+     "text": "Essential read (read this closely)",
+     "url": ""
     },
     {
      "type": "cite",
-     "text": "Benjamin, R. (2019). Race after technology: Abolitionist tools for the New Jim Code. Polity Press. Read the fourth dimension, technological benevolence (the section Raising Robots)."
+     "text": "Benjamin, R. (2019). Race after technology: Abolitionist tools for the New Jim Code. Polity Press. Read the fourth dimension, technological benevolence (the section Raising Robots).",
+     "url": ""
     },
     {
      "type": "text",
-     "text": "Read for two things. First, the definition: harm carried inside the language of help. Second, the argument that machines framed as helpers can serve power, and that the disposability of robots travels with the denigration of racialized people."
+     "text": "Read for two things. First, the definition: harm carried inside the language of help. Second, the argument that machines framed as helpers can serve power, and that the disposability of robots travels with the denigration of racialized people.",
+     "url": ""
     },
     {
      "type": "head",
-     "text": "How to read this week"
+     "text": "How to read this week",
+     "url": ""
     },
     {
      "type": "text",
-     "text": "Mark where the language of help disarms criticism."
+     "text": "Mark where the language of help disarms criticism.",
+     "url": ""
     },
     {
      "type": "text",
-     "text": "Note the throwbot example and what it reveals about who help serves."
+     "text": "Note the throwbot example and what it reveals about who help serves.",
+     "url": ""
     },
     {
      "type": "text",
-     "text": "Bring one technology sold as a fix, and add it to your Living Cartography."
+     "text": "Bring one technology sold as a fix, and add it to your Living Cartography.",
+     "url": ""
     }
    ],
    "references": [
@@ -1182,10 +1748,68 @@ window.BFS218 = {
    "phaseId": "rooting",
    "title": "Algorithmic Gatekeeping",
    "concept": "Algorithmic gatekeeping",
-   "overview": "Who Is Let Through the Gate   |   Online-Asynchronous section\nWhere you are in the journey: Part III continues, the part where we move from naming the New Jim Code to confronting it in the systems that govern real opportunity. This week is about gatekeeping: the automated systems that decide who is let through the gate, in hiring, in lending, and in education.\nThis is the self-paced, online-asynchronous section. Work through the materials in order at your own pace: the Key Concepts and Readings, then the lecture deck with the narration while you fill in the Guided Notes, then the videos, and add your weekly entry to the Living Cartography.\nGatekeeping is where the dimensions you have learned meet a person's life chances. By the end of the week you should be able to explain how an automated gate can reproduce racial inequity at scale, and name who is accountable when it does.",
-   "welcome": "Welcome to Week 10. Part III continues, and this week the New Jim Code arrives close to your own life: the gate. We look at the automated systems that decide who is let through, in hiring, lending, and education.",
+   "overview": [
+    {
+     "type": "head",
+     "text": "Who Is Let Through the Gate   |   Online-Asynchronous section"
+    },
+    {
+     "type": "text",
+     "text": "Where you are in the journey: Part III continues, the part where we move from naming the New Jim Code to confronting it in the systems that govern real opportunity. This week is about gatekeeping: the automated systems that decide who is let through the gate, in hiring, in lending, and in education."
+    },
+    {
+     "type": "head",
+     "text": "How this week works"
+    },
+    {
+     "type": "text",
+     "text": "This is the self-paced, online-asynchronous section. Work through the materials in order at your own pace: the Key Concepts and Readings, then the lecture deck with the narration while you fill in the Guided Notes, then the videos, and add your weekly entry to the Living Cartography."
+    },
+    {
+     "type": "head",
+     "text": "What this week is for"
+    },
+    {
+     "type": "text",
+     "text": "Gatekeeping is where the dimensions you have learned meet a person's life chances. By the end of the week you should be able to explain how an automated gate can reproduce racial inequity at scale, and name who is accountable when it does."
+    },
+    {
+     "type": "head",
+     "text": "The gate, and who guards it"
+    },
+    {
+     "type": "text",
+     "text": "Every gate that an algorithm now guards was once guarded by a person who could be asked to explain a decision. Predictive analytics increasingly sit at those gates. Bird, Castleman, and Song (2023) studied predictive models used to flag community college students likely to succeed or fail, and found that algorithmic bias can reinforce racial inequities in who is supported and who is written off. The same logic runs through hiring tools and credit scoring."
+    },
+    {
+     "type": "head",
+     "text": "Power within and without the algorithm"
+    },
+    {
+     "type": "text",
+     "text": "Devlin (2023) argues that inequality in AI is not only inside the model, in its data and design, but also outside it, in who builds these systems and who is subject to them. Safiya Umoja Noble's work on algorithms of oppression makes a related point: that search and ranking systems can reproduce racism and sexism, often against Black women, while appearing to be neutral utilities. We treat Noble's argument carefully and point you to her book for the primary text."
+    },
+    {
+     "type": "head",
+     "text": "What carries forward"
+    },
+    {
+     "type": "text",
+     "text": "An algorithmic gate can reproduce racial inequity at scale, quietly, with no one to ask."
+    },
+    {
+     "type": "text",
+     "text": "Inequality lives within and without the algorithm: in the data, and in who builds and is judged by it."
+    },
+    {
+     "type": "text",
+     "text": "Add a gatekeeping entry to your Living Cartography this week."
+    }
+   ],
    "purpose": {
-    "statement": "Week 10 examines algorithmic gatekeeping, the automated systems that decide access in hiring, lending, and education. Students analyse how these gates can reproduce racial inequity at scale, and ask who is accountable when they do.",
+    "statement": [
+     "Week 10 examines algorithmic gatekeeping, the automated systems that decide access in hiring, lending, and education. Students analyse how these gates can reproduce racial inequity at scale, and ask who is accountable when they do."
+    ],
     "outcomes": [
      "Explain algorithmic gatekeeping and give an example from hiring, lending, or education.",
      "Summarise the Bird, Castleman, and Song (2023) finding on bias in predicting student success.",
@@ -1203,9 +1827,8 @@ window.BFS218 = {
    "concepts": [
     {
      "term": "Algorithmic gatekeeping",
-     "parts": [
-      "Algorithmic gatekeeping is the use of automated systems to decide who is granted access: who is hired, who is approved for credit, who is admitted or flagged in education.",
-      "The gate operates at scale and at speed, and the person kept out often has no one to ask and no decision to appeal."
+     "paras": [
+      "Algorithmic gatekeeping is the use of automated systems to decide who is granted access: who is hired, who is approved for credit, who is admitted or flagged in education. The gate operates at scale and at speed, and the person kept out often has no one to ask and no decision to appeal."
      ],
      "cites": [
       "Full citations are listed in the Key Concepts file for this week."
@@ -1213,9 +1836,8 @@ window.BFS218 = {
     },
     {
      "term": "Bias in predicting success",
-     "parts": [
-      "Bird, Castleman, and Song (2023) examined predictive analytics used to flag community college students as likely to succeed or fail.",
-      "They found that algorithmic bias can reinforce racial inequities, so that a model meant to help can instead label some students, early and wrongly, as poor bets.",
+     "paras": [
+      "Bird, Castleman, and Song (2023) examined predictive analytics used to flag community college students as likely to succeed or fail. They found that algorithmic bias can reinforce racial inequities, so that a model meant to help can instead label some students, early and wrongly, as poor bets.",
       "The harm is not abstract; it shapes who gets support and who is quietly written off."
      ],
      "cites": [
@@ -1224,9 +1846,8 @@ window.BFS218 = {
     },
     {
      "term": "Inequality within and without the algorithm",
-     "parts": [
-      "Devlin (2023) argues that inequality in AI sits both within the algorithm, in its data and design, and without it, in who builds these systems and who is subject to them.",
-      "Safiya Umoja Noble's algorithms of oppression makes a related case: that search and ranking systems can reproduce racism and sexism, especially against Black women, while presenting as neutral tools."
+     "paras": [
+      "Devlin (2023) argues that inequality in AI sits both within the algorithm, in its data and design, and without it, in who builds these systems and who is subject to them. Safiya Umoja Noble's algorithms of oppression makes a related case: that search and ranking systems can reproduce racism and sexism, especially against Black women, while presenting as neutral tools."
      ],
      "cites": [
       "Full citations are listed in the Key Concepts file for this week."
@@ -1236,43 +1857,53 @@ window.BFS218 = {
    "readings": [
     {
      "type": "text",
-     "text": "This week's readings follow the algorithmic gate into education, hiring, and search. Read for the evidence and for the question of accountability."
+     "text": "This week's readings follow the algorithmic gate into education, hiring, and search. Read for the evidence and for the question of accountability.",
+     "url": ""
     },
     {
      "type": "head",
-     "text": "Essential reads (read these closely)"
+     "text": "Essential reads (read these closely)",
+     "url": ""
     },
     {
      "type": "text",
-     "text": "Bird, K. A., Castleman, B. L., and Song, Y. (2023). Are algorithms biased in education? Exploring racial bias in predicting community college student success. EdWorkingPaper, University of Virginia. (Read the abstract and the findings.)"
+     "text": "Bird, K. A., Castleman, B. L., and Song, Y. (2023). Are algorithms biased in education? Exploring racial bias in predicting community college student success. EdWorkingPaper, University of Virginia. (Read the abstract and the findings.)",
+     "url": ""
     },
     {
      "type": "cite",
-     "text": "Devlin, K. (2023). Power in AI: Inequality within and without the algorithm. Wiley-Blackwell."
+     "text": "Devlin, K. (2023). Power in AI: Inequality within and without the algorithm. Wiley-Blackwell.",
+     "url": ""
     },
     {
      "type": "head",
-     "text": "Recommended"
+     "text": "Recommended",
+     "url": ""
     },
     {
      "type": "cite",
-     "text": "Noble, S. U. (2018). Algorithms of oppression: How search engines reinforce racism. NYU Press."
+     "text": "Noble, S. U. (2018). Algorithms of oppression: How search engines reinforce racism. NYU Press.",
+     "url": ""
     },
     {
      "type": "head",
-     "text": "How to read this week"
+     "text": "How to read this week",
+     "url": ""
     },
     {
      "type": "text",
-     "text": "From Bird, Castleman, and Song, note one finding about bias in predicting student success."
+     "text": "From Bird, Castleman, and Song, note one finding about bias in predicting student success.",
+     "url": ""
     },
     {
      "type": "text",
-     "text": "From Devlin, note the difference between inequality within and without the algorithm."
+     "text": "From Devlin, note the difference between inequality within and without the algorithm.",
+     "url": ""
     },
     {
      "type": "text",
-     "text": "Bring one gate from your own life, and add it to your Living Cartography."
+     "text": "Bring one gate from your own life, and add it to your Living Cartography.",
+     "url": ""
     }
    ],
    "references": [
@@ -1297,10 +1928,68 @@ window.BFS218 = {
    "phaseId": "weaving",
    "title": "Resistance and Abolitionist Tools",
    "concept": "Design justice",
-   "overview": "The Fight Back, plus your second Knowledge Check video   |   Online-Asynchronous section\nWhere you are in the journey: this week is the turn the whole course has been building toward. We stop tracing harm and start asking how to build differently. The subtitle of Benjamin's book is Abolitionist Tools for the New Jim Code, and this is the week we pick up those tools. You also complete your second and final Knowledge Check video.\nThis is the self-paced, online-asynchronous section. Work through the materials in order at your own pace, then complete the second Knowledge Check video on your own schedule.\nThis week reframes the course from critique to construction. By the end of it you should be able to explain design justice and abolitionist tools, tell the difference between a reform that leaves a system intact and a real repair, and bring a response, not only a diagnosis, to a system in your own map.",
-   "welcome": "Welcome to Week 11, the week the course has been building toward. For ten weeks we learned to see the New Jim Code and trace its harms. This week we turn from seeing to building: resistance and abolitionist tools.",
+   "overview": [
+    {
+     "type": "text",
+     "text": "The Fight Back, plus your second Knowledge Check video   |   Online-Asynchronous section"
+    },
+    {
+     "type": "text",
+     "text": "Where you are in the journey: this week is the turn the whole course has been building toward. We stop tracing harm and start asking how to build differently. The subtitle of Benjamin's book is Abolitionist Tools for the New Jim Code, and this is the week we pick up those tools. You also complete your second and final Knowledge Check video."
+    },
+    {
+     "type": "head",
+     "text": "How this week works"
+    },
+    {
+     "type": "text",
+     "text": "This is the self-paced, online-asynchronous section. Work through the materials in order at your own pace, then complete the second Knowledge Check video on your own schedule."
+    },
+    {
+     "type": "head",
+     "text": "What this week is for"
+    },
+    {
+     "type": "text",
+     "text": "This week reframes the course from critique to construction. By the end of it you should be able to explain design justice and abolitionist tools, tell the difference between a reform that leaves a system intact and a real repair, and bring a response, not only a diagnosis, to a system in your own map."
+    },
+    {
+     "type": "head",
+     "text": "Design justice"
+    },
+    {
+     "type": "text",
+     "text": "Design justice, drawn together by Sasha Costanza-Chock and the Design Justice Network, rethinks design so that it centres the people normally marginalized by it. Its published principles include centring the voices of those directly impacted, prioritizing design's impact on the community over the designer's intentions, treating everyone as an expert in their own lived experience, and looking first for what is already working at the community level, honouring traditional, Indigenous, and local knowledge."
+    },
+    {
+     "type": "head",
+     "text": "Abolitionist tools"
+    },
+    {
+     "type": "text",
+     "text": "Benjamin calls for abolitionist tools: not patches that make an unjust system run more smoothly, but tools that refuse it and help build something more just. Tiera Tanksley (2023) shows what this looks like in teaching, an abolitionist, critical race pedagogy in computer science that centres the voices, experiences, and technological innovations of Black youth. The throughline is the same: those most affected, leading the design."
+    },
+    {
+     "type": "head",
+     "text": "Your second Knowledge Check video"
+    },
+    {
+     "type": "text",
+     "text": "Knowledge Check 2 is your second short video. As before, you walk through one system from your own Living Cartography, in your own voice and on your own screen. This time you add the Part III move: not only what is wrong, but what a design-justice or abolitionist response would change. Full instructions are in the Knowledge Check 2 file."
+    },
+    {
+     "type": "head",
+     "text": "What carries forward"
+    },
+    {
+     "type": "text",
+     "text": "Resistance is construction: from refusing a harmful system to building a just one."
+    }
+   ],
    "purpose": {
-    "statement": "Week 11 turns the course from critique to construction. Students learn design justice and abolitionist tools as concrete anti-racist strategies, and demonstrate both diagnosis and response in the second Knowledge Check video.",
+    "statement": [
+     "Week 11 turns the course from critique to construction. Students learn design justice and abolitionist tools as concrete anti-racist strategies, and demonstrate both diagnosis and response in the second Knowledge Check video."
+    ],
     "outcomes": [
      "Explain design justice and name several of its principles.",
      "Explain what Benjamin means by abolitionist tools, as opposed to patches.",
@@ -1318,9 +2007,8 @@ window.BFS218 = {
    "concepts": [
     {
      "term": "Design justice",
-     "parts": [
-      "Design justice, developed by the Design Justice Network and drawn together by Sasha Costanza-Chock (2020), rethinks design to centre people normally marginalized by it.",
-      "Its principles include centring the voices of those directly impacted, prioritizing impact over the designer's intentions, treating everyone as an expert by lived experience, working toward community-led outcomes, and looking first for what already works at the community level."
+     "paras": [
+      "Design justice, developed by the Design Justice Network and drawn together by Sasha Costanza-Chock (2020), rethinks design to centre people normally marginalized by it. Its principles include centring the voices of those directly impacted, prioritizing impact over the designer's intentions, treating everyone as an expert by lived experience, working toward community-led outcomes, and looking first for what already works at the community level."
      ],
      "cites": [
       "Costanza-Chock, S. (2020). Design justice: Community-led practices to build the worlds we need. MIT Press."
@@ -1328,9 +2016,8 @@ window.BFS218 = {
     },
     {
      "term": "Abolitionist tools",
-     "parts": [
-      "Benjamin's subtitle is Abolitionist Tools for the New Jim Code.",
-      "An abolitionist tool does not make an unjust system run more smoothly; it refuses that system and helps build a just alternative.",
+     "paras": [
+      "Benjamin's subtitle is Abolitionist Tools for the New Jim Code. An abolitionist tool does not make an unjust system run more smoothly; it refuses that system and helps build a just alternative.",
       "The distinction is between reform, which preserves the structure, and abolition, which reimagines it."
      ],
      "cites": [
@@ -1339,11 +2026,9 @@ window.BFS218 = {
     },
     {
      "term": "Reform versus real repair",
-     "parts": [
-      "The working distinction this week is between a reform and a repair.",
-      "A reform can leave the harmful system intact while easing its worst edges.",
-      "A real repair changes who holds power and who carries the cost.",
-      "Tanksley (2023) models this in education, an abolitionist, critical race pedagogy in computer science that centres Black youth as innovators, not only as those harmed."
+     "paras": [
+      "The working distinction this week is between a reform and a repair. A reform can leave the harmful system intact while easing its worst edges.",
+      "A real repair changes who holds power and who carries the cost. Tanksley (2023) models this in education, an abolitionist, critical race pedagogy in computer science that centres Black youth as innovators, not only as those harmed."
      ],
      "cites": [
       "Tanksley, T. (2023). Employing an abolitionist, critical race pedagogy in CS: Centering the voices, experiences and technological innovations of Black youth. Journal of Computer Science Integration, 6(1)."
@@ -1353,43 +2038,53 @@ window.BFS218 = {
    "readings": [
     {
      "type": "text",
-     "text": "This week's readings turn from critique to construction. Read for what an alternative actually looks like, and who leads it."
+     "text": "This week's readings turn from critique to construction. Read for what an alternative actually looks like, and who leads it.",
+     "url": ""
     },
     {
      "type": "head",
-     "text": "Essential reads (read these closely)"
+     "text": "Essential reads (read these closely)",
+     "url": ""
     },
     {
      "type": "text",
-     "text": "Costanza-Chock, S. (2020). Design justice: Community-led practices to build the worlds we need. MIT Press. (Read the Introduction and the Design Justice Network Principles.)"
+     "text": "Costanza-Chock, S. (2020). Design justice: Community-led practices to build the worlds we need. MIT Press. (Read the Introduction and the Design Justice Network Principles.)",
+     "url": ""
     },
     {
      "type": "cite",
-     "text": "Tanksley, T. (2023). Employing an abolitionist, critical race pedagogy in CS. Journal of Computer Science Integration, 6(1)."
+     "text": "Tanksley, T. (2023). Employing an abolitionist, critical race pedagogy in CS. Journal of Computer Science Integration, 6(1).",
+     "url": ""
     },
     {
      "type": "head",
-     "text": "Recommended"
+     "text": "Recommended",
+     "url": ""
     },
     {
      "type": "text",
-     "text": "Benjamin, R. (2019). Race after technology: Abolitionist tools for the New Jim Code. Polity Press. (Revisit the closing argument on abolitionist tools.)"
+     "text": "Benjamin, R. (2019). Race after technology: Abolitionist tools for the New Jim Code. Polity Press. (Revisit the closing argument on abolitionist tools.)",
+     "url": ""
     },
     {
      "type": "head",
-     "text": "How to read this week"
+     "text": "How to read this week",
+     "url": ""
     },
     {
      "type": "text",
-     "text": "From Costanza-Chock, note two design justice principles and what each would change."
+     "text": "From Costanza-Chock, note two design justice principles and what each would change.",
+     "url": ""
     },
     {
      "type": "text",
-     "text": "From Tanksley, note what it means to centre Black youth as innovators, not only as harmed."
+     "text": "From Tanksley, note what it means to centre Black youth as innovators, not only as harmed.",
+     "url": ""
     },
     {
      "type": "text",
-     "text": "Bring one response you would argue for, and use it in your Knowledge Check video."
+     "text": "Bring one response you would argue for, and use it in your Knowledge Check video.",
+     "url": ""
     }
    ],
    "references": [
@@ -1417,10 +2112,60 @@ window.BFS218 = {
    "phaseId": "weaving",
    "title": "Tech Accountability and Policy Futures",
    "concept": "AI governance and its gaps",
-   "overview": "Building the Alternatives at the Level of Law and Institutions   |   Online-Asynchronous section\nWhere you are in the journey: this is the last content week of Part III, and it lifts the question up a level. Last week you proposed responses to single systems. This week we ask what holds technology accountable at the scale of law, institutions, and international human rights, and what just policy futures could look like.\nThis is the self-paced, online-asynchronous section. Work through the materials in order at your own pace: the Key Concepts and Readings, then the lecture deck with the narration while you fill in the Guided Notes, then the videos, and add your weekly entry to the Living Cartography.\nIndividual fixes are not enough if the rules permit the harm. By the end of the week you should be able to name how Canadian law, international human rights, and decolonial frameworks each try to hold technology accountable, and where each falls short.",
-   "welcome": "Welcome to Week 12, the last content week of Part III. This week lifts our question up a level. Last week you proposed responses to single systems; this week we ask what holds technology accountable at the scale of law, institutions, and human rights.",
+   "overview": [
+    {
+     "type": "text",
+     "text": "Building the Alternatives at the Level of Law and Institutions   |   Online-Asynchronous section"
+    },
+    {
+     "type": "text",
+     "text": "Where you are in the journey: this is the last content week of Part III, and it lifts the question up a level. Last week you proposed responses to single systems. This week we ask what holds technology accountable at the scale of law, institutions, and international human rights, and what just policy futures could look like."
+    },
+    {
+     "type": "head",
+     "text": "How this week works"
+    },
+    {
+     "type": "text",
+     "text": "This is the self-paced, online-asynchronous section. Work through the materials in order at your own pace: the Key Concepts and Readings, then the lecture deck with the narration while you fill in the Guided Notes, then the videos, and add your weekly entry to the Living Cartography."
+    },
+    {
+     "type": "head",
+     "text": "What this week is for"
+    },
+    {
+     "type": "text",
+     "text": "Individual fixes are not enough if the rules permit the harm. By the end of the week you should be able to name how Canadian law, international human rights, and decolonial frameworks each try to hold technology accountable, and where each falls short."
+    },
+    {
+     "type": "head",
+     "text": "Three levels of accountability"
+    },
+    {
+     "type": "text",
+     "text": "We look at three. In Canada, the proposed Artificial Intelligence and Data Act, or AIDA, is an attempt to govern AI; Blair Attard-Frost (2023), in a brief to the Standing Committee on Industry and Technology, documents real gaps in it, including for artists and creators facing generative AI. Internationally, the UN Special Rapporteur's 2020 report frames racial discrimination in emerging digital technologies as a human rights matter. And Christian Ortiz's (2024) Decolonial Intelligence Algorithmic framework proposes building accountability in from the start, through epistemic decolonization and intersectional justice."
+    },
+    {
+     "type": "head",
+     "text": "What carries forward"
+    },
+    {
+     "type": "text",
+     "text": "Accountability operates at many levels: the system, the institution, the law, and international human rights."
+    },
+    {
+     "type": "text",
+     "text": "Canada has a draft AI law with documented gaps; the UN frames techno-racism as a human rights issue; the DIA framework builds justice in from the start."
+    },
+    {
+     "type": "text",
+     "text": "Add a policy or accountability entry to your Living Cartography this week."
+    }
+   ],
    "purpose": {
-    "statement": "Week 12 lifts the course to the level of accountability and policy. Students examine how Canadian law, international human rights, and decolonial frameworks try to govern technology, and evaluate where each succeeds and falls short.",
+    "statement": [
+     "Week 12 lifts the course to the level of accountability and policy. Students examine how Canadian law, international human rights, and decolonial frameworks try to govern technology, and evaluate where each succeeds and falls short."
+    ],
     "outcomes": [
      "Explain why accountability for technology must operate at the level of law and institutions, not only individual fixes.",
      "Identify one documented gap in Canada's proposed Artificial Intelligence and Data Act, after Attard-Frost (2023).",
@@ -1438,11 +2183,9 @@ window.BFS218 = {
    "concepts": [
     {
      "term": "AI governance and its gaps",
-     "parts": [
-      "AI governance is the set of laws, rules, and institutions that try to constrain how AI is built and used.",
-      "In Canada, the proposed Artificial Intelligence and Data Act (AIDA) is the leading attempt.",
-      "Blair Attard-Frost (2023), in a submission to the Standing Committee on Industry and Technology, documents real gaps in it, including weak protection for artists and creators facing generative AI.",
-      "A law with gaps still leaves people exposed."
+     "paras": [
+      "AI governance is the set of laws, rules, and institutions that try to constrain how AI is built and used. In Canada, the proposed Artificial Intelligence and Data Act (AIDA) is the leading attempt.",
+      "Blair Attard-Frost (2023), in a submission to the Standing Committee on Industry and Technology, documents real gaps in it, including weak protection for artists and creators facing generative AI. A law with gaps still leaves people exposed."
      ],
      "cites": [
       "Attard-Frost, B. (2023). Generative AI systems: Impacts on artists and creators and related gaps in the Artificial Intelligence and Data Act. Submission to the Standing Committee on Industry and Technology, Parliament of Canada."
@@ -1450,9 +2193,8 @@ window.BFS218 = {
     },
     {
      "term": "Techno-racism as a human rights issue",
-     "parts": [
-      "The UN Special Rapporteur on contemporary forms of racism, in a 2020 report, analyses racial discrimination in emerging digital technologies as a human rights matter.",
-      "Framing techno-racism as a rights violation, rather than a technical glitch, creates obligations on states and gives affected communities a stronger basis to demand change."
+     "paras": [
+      "The UN Special Rapporteur on contemporary forms of racism, in a 2020 report, analyses racial discrimination in emerging digital technologies as a human rights matter. Framing techno-racism as a rights violation, rather than a technical glitch, creates obligations on states and gives affected communities a stronger basis to demand change."
      ],
      "cites": [
       "Attard-Frost, B. (2023). Generative AI systems: Impacts on artists and creators and related gaps in the Artificial Intelligence and Data Act. Submission to the Standing Committee on Industry and Technology, Parliament of Canada."
@@ -1460,9 +2202,8 @@ window.BFS218 = {
     },
     {
      "term": "Building justice in from the start",
-     "parts": [
-      "Christian Ortiz's (2024) Decolonial Intelligence Algorithmic framework proposes designing AI through epistemic decolonization and intersectional justice, so that accountability is built in from the beginning rather than added after harm.",
-      "It is a governance counterpart to last week's design justice: not only how we build, but how we govern, with those most affected."
+     "paras": [
+      "Christian Ortiz's (2024) Decolonial Intelligence Algorithmic framework proposes designing AI through epistemic decolonization and intersectional justice, so that accountability is built in from the beginning rather than added after harm. It is a governance counterpart to last week's design justice: not only how we build, but how we govern, with those most affected."
      ],
      "cites": [
       "Ortiz, C. (2024). The Decolonial Intelligence Algorithmic (DIA) framework: Revolutionizing ethical AI development through epistemic decolonization and intersectional justice."
@@ -1472,43 +2213,53 @@ window.BFS218 = {
    "readings": [
     {
      "type": "text",
-     "text": "This week's readings move to law, human rights, and governance frameworks. Read for how each tries to hold technology accountable, and where it falls short."
+     "text": "This week's readings move to law, human rights, and governance frameworks. Read for how each tries to hold technology accountable, and where it falls short.",
+     "url": ""
     },
     {
      "type": "head",
-     "text": "Essential reads (read these closely)"
+     "text": "Essential reads (read these closely)",
+     "url": ""
     },
     {
      "type": "cite",
-     "text": "Attard-Frost, B. (2023). Generative AI systems: Impacts on artists and creators and related gaps in the Artificial Intelligence and Data Act. Submission to the Standing Committee on Industry and Technology."
+     "text": "Attard-Frost, B. (2023). Generative AI systems: Impacts on artists and creators and related gaps in the Artificial Intelligence and Data Act. Submission to the Standing Committee on Industry and Technology.",
+     "url": ""
     },
     {
      "type": "text",
-     "text": "United Nations Human Rights Council. (2020). Racial discrimination and emerging digital technologies: A human rights analysis (A/HRC/44/57). (Read the summary and recommendations.)"
+     "text": "United Nations Human Rights Council. (2020). Racial discrimination and emerging digital technologies: A human rights analysis (A/HRC/44/57). (Read the summary and recommendations.)",
+     "url": ""
     },
     {
      "type": "head",
-     "text": "Recommended"
+     "text": "Recommended",
+     "url": ""
     },
     {
      "type": "cite",
-     "text": "Ortiz, C. (2024). The Decolonial Intelligence Algorithmic (DIA) framework."
+     "text": "Ortiz, C. (2024). The Decolonial Intelligence Algorithmic (DIA) framework.",
+     "url": ""
     },
     {
      "type": "head",
-     "text": "How to read this week"
+     "text": "How to read this week",
+     "url": ""
     },
     {
      "type": "text",
-     "text": "From Attard-Frost, note one specific gap in AIDA and who it leaves exposed."
+     "text": "From Attard-Frost, note one specific gap in AIDA and who it leaves exposed.",
+     "url": ""
     },
     {
      "type": "text",
-     "text": "From the UN report, note what changes when techno-racism is named as a human rights violation."
+     "text": "From the UN report, note what changes when techno-racism is named as a human rights violation.",
+     "url": ""
     },
     {
      "type": "text",
-     "text": "Bring one policy or rule you would change, and add it to your Living Cartography."
+     "text": "Bring one policy or rule you would change, and add it to your Living Cartography.",
+     "url": ""
     }
    ],
    "references": [
@@ -1536,10 +2287,68 @@ window.BFS218 = {
    "phaseId": "weaving",
    "title": "Revisiting Your Cartography, Part 1",
    "concept": "The Living Cartography as a record of change",
-   "overview": "The Return   |   Online-Asynchronous section\nWhere you are in the journey: Part IV opens, and the course turns back toward you. For twelve weeks we travelled out, into the anatomy of the New Jim Code, into Canada, into agency, resistance, and policy. Now we come home to the map you have been keeping all term, your Living Cartography, and we read it again with the eyes you have grown.\nThis is the self-paced, online-asynchronous section. There is no new reading; you reread your own Living Cartography, move through the closing deck and videos, and begin the Final Revisiting Cartography video on your own schedule.\nThis is a return, not a new topic. By the end of the week you should be able to read your own map across the whole term, name how your seeing has changed since Week 1, and begin the Final Revisiting Cartography video, the capstone of the course.",
-   "welcome": "Welcome to Week 13, and to Part IV, the return. For twelve weeks we travelled outward. This week the course turns around and comes home to the map you have kept all term, your Living Cartography.",
+   "overview": [
+    {
+     "type": "head",
+     "text": "The Return   |   Online-Asynchronous section"
+    },
+    {
+     "type": "text",
+     "text": "Where you are in the journey: Part IV opens, and the course turns back toward you. For twelve weeks we travelled out, into the anatomy of the New Jim Code, into Canada, into agency, resistance, and policy. Now we come home to the map you have been keeping all term, your Living Cartography, and we read it again with the eyes you have grown."
+    },
+    {
+     "type": "head",
+     "text": "How this week works"
+    },
+    {
+     "type": "text",
+     "text": "This is the self-paced, online-asynchronous section. There is no new reading; you reread your own Living Cartography, move through the closing deck and videos, and begin the Final Revisiting Cartography video on your own schedule."
+    },
+    {
+     "type": "head",
+     "text": "What this week is for"
+    },
+    {
+     "type": "text",
+     "text": "This is a return, not a new topic. By the end of the week you should be able to read your own map across the whole term, name how your seeing has changed since Week 1, and begin the Final Revisiting Cartography video, the capstone of the course."
+    },
+    {
+     "type": "head",
+     "text": "Reading your map again"
+    },
+    {
+     "type": "text",
+     "text": "Open your Living Cartography from the beginning. Read your Week 1 entry beside your most recent one. The technologies did not change between them; you did. Trace the four dimensions, engineered inequity, default discrimination, coded exposure, and technological benevolence, across your entries, and notice the responses you began to imagine in Part III. What can you name now that you could not name then?"
+    },
+    {
+     "type": "head",
+     "text": "The Final Revisiting Cartography video"
+    },
+    {
+     "type": "text",
+     "text": "Your final assessment is a video, the capstone of the Living Cartography. Across this week and next, you will record a walkthrough of your whole map as it stands now: what you can see, how your reading changed, one entry that changed the most, and one commitment you carry into your field. Full instructions are in the Final Revisiting Cartography Video file. It is due at the end of Week 14."
+    },
+    {
+     "type": "head",
+     "text": "What carries forward"
+    },
+    {
+     "type": "text",
+     "text": "Part IV is the return: the course turns back toward you and your own map."
+    },
+    {
+     "type": "text",
+     "text": "Read your first entry beside your last; notice how your seeing changed."
+    },
+    {
+     "type": "text",
+     "text": "Begin the Final Revisiting Cartography video, due at the end of Week 14."
+    }
+   ],
    "purpose": {
-    "statement": "Week 13 opens Part IV, the return. Students reread their whole Living Cartography, trace how their analysis and their seeing changed across the term, and begin the Final Revisiting Cartography video, the capstone assessment.",
+    "statement": [
+     "Week 13 opens Part IV, the return. Students reread their whole Living Cartography, trace how their analysis and their seeing changed across the term, and begin the Final Revisiting Cartography video, the capstone assessment."
+    ],
     "outcomes": [
      "Read your own Living Cartography across the whole term as one connected analysis.",
      "Name how your seeing has changed since Week 1, with specific entries.",
@@ -1557,9 +2366,8 @@ window.BFS218 = {
    "concepts": [
     {
      "term": "The Living Cartography as a record of change",
-     "parts": [
-      "Your map is not only a record of harmful systems; it is a record of you, learning to see them.",
-      "Reread chronologically, it shows your own analysis deepening week by week.",
+     "paras": [
+      "Your map is not only a record of harmful systems; it is a record of you, learning to see them. Reread chronologically, it shows your own analysis deepening week by week.",
       "The point of the return is to make that growth visible to you."
      ],
      "cites": [
@@ -1568,9 +2376,8 @@ window.BFS218 = {
     },
     {
      "term": "The four dimensions, as a single lens",
-     "parts": [
-      "Engineered inequity, default discrimination, coded exposure, and technological benevolence are not four separate tests; together they are one way of reading any system.",
-      "By now you can hold them at once, and ask which are at work in a given case."
+     "paras": [
+      "Engineered inequity, default discrimination, coded exposure, and technological benevolence are not four separate tests; together they are one way of reading any system. By now you can hold them at once, and ask which are at work in a given case."
      ],
      "cites": [
       "No new readings this week. Your sources are your own Living Cartography entries and the readings from Weeks 1 to 12."
@@ -1578,9 +2385,8 @@ window.BFS218 = {
     },
     {
      "term": "From seeing to commitment",
-     "parts": [
-      "Seeing clearly is where this course began; it is not where it ends.",
-      "Part III moved you toward response, and the return asks you to name a commitment, something you will carry into your own field, now that you cannot unsee what you have learned."
+     "paras": [
+      "Seeing clearly is where this course began; it is not where it ends. Part III moved you toward response, and the return asks you to name a commitment, something you will carry into your own field, now that you cannot unsee what you have learned."
      ],
      "cites": [
       "No new readings this week. Your sources are your own Living Cartography entries and the readings from Weeks 1 to 12."
@@ -1590,39 +2396,48 @@ window.BFS218 = {
    "readings": [
     {
      "type": "text",
-     "text": "There is no new reading this week. The text is your own Living Cartography, read alongside the course's anchors."
+     "text": "There is no new reading this week. The text is your own Living Cartography, read alongside the course's anchors.",
+     "url": ""
     },
     {
      "type": "head",
-     "text": "Revisit"
+     "text": "Revisit",
+     "url": ""
     },
     {
      "type": "text",
-     "text": "Your own Living Cartography, from the first entry to the most recent."
+     "text": "Your own Living Cartography, from the first entry to the most recent.",
+     "url": ""
     },
     {
      "type": "cite",
-     "text": "Benjamin (2019), for the four dimensions and the New Jim Code."
+     "text": "Benjamin (2019), for the four dimensions and the New Jim Code.",
+     "url": ""
     },
     {
      "type": "cite",
-     "text": "Costanza-Chock (2020) and the response readings, for what an alternative looks like."
+     "text": "Costanza-Chock (2020) and the response readings, for what an alternative looks like.",
+     "url": ""
     },
     {
      "type": "head",
-     "text": "How to review this week"
+     "text": "How to review this week",
+     "url": ""
     },
     {
      "type": "text",
-     "text": "Reread your entries in order; mark the one that changed the most."
+     "text": "Reread your entries in order; mark the one that changed the most.",
+     "url": ""
     },
     {
      "type": "text",
-     "text": "Write one sentence on how your seeing changed since Week 1."
+     "text": "Write one sentence on how your seeing changed since Week 1.",
+     "url": ""
     },
     {
      "type": "text",
-     "text": "Draft the four answers for your Final Revisiting Cartography video."
+     "text": "Draft the four answers for your Final Revisiting Cartography video.",
+     "url": ""
     }
    ],
    "references": [
@@ -1648,10 +2463,68 @@ window.BFS218 = {
    "phaseId": "weaving",
    "title": "Revisiting Your Cartography, Part 2",
    "concept": "The whole arc, in one breath",
-   "overview": "The Close: The Question Re-Answered   |   Online-Asynchronous section\nWhere you are in the journey: this is the last week. Part IV closes, and so does the course. We finish the Final Revisiting Cartography video, we answer together the question we opened with on the very first day, and we name what you carry beyond this room.\nThis is the self-paced, online-asynchronous section. You finish and submit the Final Revisiting Cartography video, move through the closing deck and videos, and post a final reflection in the Map Exchange. The Final video is due this week.\nThis week completes the course and the capstone. By the end of it you should be able to answer, in your own words, whether a machine can be racist, point to your own map as the evidence, and name a commitment you carry into your field.",
-   "welcome": "A short, warm welcome to the final week.",
+   "overview": [
+    {
+     "type": "text",
+     "text": "The Close: The Question Re-Answered   |   Online-Asynchronous section"
+    },
+    {
+     "type": "text",
+     "text": "Where you are in the journey: this is the last week. Part IV closes, and so does the course. We finish the Final Revisiting Cartography video, we answer together the question we opened with on the very first day, and we name what you carry beyond this room."
+    },
+    {
+     "type": "head",
+     "text": "How this week works"
+    },
+    {
+     "type": "text",
+     "text": "This is the self-paced, online-asynchronous section. You finish and submit the Final Revisiting Cartography video, move through the closing deck and videos, and post a final reflection in the Map Exchange. The Final video is due this week."
+    },
+    {
+     "type": "head",
+     "text": "What this week is for"
+    },
+    {
+     "type": "text",
+     "text": "This week completes the course and the capstone. By the end of it you should be able to answer, in your own words, whether a machine can be racist, point to your own map as the evidence, and name a commitment you carry into your field."
+    },
+    {
+     "type": "head",
+     "text": "The question, re-answered"
+    },
+    {
+     "type": "text",
+     "text": "We began with a deceptively simple question: can a machine be racist? In Week 1 the honest answer was, it is complicated, and you could not yet say why. Now you can. A machine can carry racism through engineered inequity, through default discrimination, through coded exposure, and through technological benevolence, inside a society already structured by racism, no hatred required. And you also know the answer is not despair, because you have seen design justice, abolitionist tools, data sovereignty, and policy futures. The harm is real, and so is the response."
+    },
+    {
+     "type": "head",
+     "text": "Finishing your capstone"
+    },
+    {
+     "type": "text",
+     "text": "The Final Revisiting Cartography video is due this week. If you have not finished recording, this is the time: walk through your own map, name what you can see now that you could not name in Week 1, the entry that changed the most, and your one commitment. Full instructions remain in the Final video file."
+    },
+    {
+     "type": "head",
+     "text": "What carries forward"
+    },
+    {
+     "type": "text",
+     "text": "You can now answer the opening question, with your own map as the evidence."
+    },
+    {
+     "type": "text",
+     "text": "The harm is real, and so is the response; seeing is the beginning of both."
+    },
+    {
+     "type": "text",
+     "text": "Your Living Cartography, and your commitment, are yours to keep beyond the course."
+    }
+   ],
    "purpose": {
-    "statement": "Week 14 closes the course. Students complete the Final Revisiting Cartography video, answer the opening question with their own map as evidence, and name a commitment they carry into their field.",
+    "statement": [
+     "Week 14 closes the course. Students complete the Final Revisiting Cartography video, answer the opening question with their own map as evidence, and name a commitment they carry into their field."
+    ],
     "outcomes": [
      "Answer, in your own words and with evidence from your map, whether a machine can be racist.",
      "Summarise the whole arc of the course: seeing, anatomy, response, return.",
@@ -1668,11 +2541,9 @@ window.BFS218 = {
    "concepts": [
     {
      "term": "The whole arc, in one breath",
-     "parts": [
-      "Part I taught you to see: a harm needs no hatred, only a design, some data, and a default.",
-      "Part II took the New Jim Code apart into four dimensions.",
-      "Part III turned to response: data sovereignty, abolitionist tools, design justice, and policy.",
-      "Part IV brought it home to your own map.",
+     "paras": [
+      "Part I taught you to see: a harm needs no hatred, only a design, some data, and a default. Part II took the New Jim Code apart into four dimensions.",
+      "Part III turned to response: data sovereignty, abolitionist tools, design justice, and policy. Part IV brought it home to your own map.",
       "Seeing, anatomy, response, return."
      ],
      "cites": [
@@ -1681,11 +2552,9 @@ window.BFS218 = {
     },
     {
      "term": "The question, answered",
-     "parts": [
-      "Can a machine be racist?",
-      "Yes, it can carry racism forward through its design and defaults, inside an unequal society, with no one intending it.",
-      "But the answer does not end in despair, because the same course that showed you the harm also showed you the tools to respond.",
-      "Naming clearly is where change begins."
+     "paras": [
+      "Can a machine be racist? Yes, it can carry racism forward through its design and defaults, inside an unequal society, with no one intending it.",
+      "But the answer does not end in despair, because the same course that showed you the harm also showed you the tools to respond. Naming clearly is where change begins."
      ],
      "cites": [
       "No new readings this week. The course's full reading list spans Weeks 1 to 12; the anchor is Benjamin, R. (2019). Race after technology: Abolitionist tools for the New Jim Code. Polity Press."
@@ -1693,9 +2562,8 @@ window.BFS218 = {
     },
     {
      "term": "The map is yours to keep",
-     "parts": [
-      "Your Living Cartography does not end with the course.",
-      "The lens you built, the four dimensions, the response, the habit of asking who is harmed and who is accountable, goes with you into your field.",
+     "paras": [
+      "Your Living Cartography does not end with the course. The lens you built, the four dimensions, the response, the habit of asking who is harmed and who is accountable, goes with you into your field.",
       "The final task is not to finish a map, but to keep one."
      ],
      "cites": [
@@ -1706,39 +2574,48 @@ window.BFS218 = {
    "readings": [
     {
      "type": "text",
-     "text": "There is no new reading in the final week. The text is your own completed Living Cartography, and the course's anchor stays with you."
+     "text": "There is no new reading in the final week. The text is your own completed Living Cartography, and the course's anchor stays with you.",
+     "url": ""
     },
     {
      "type": "head",
-     "text": "Revisit and keep"
+     "text": "Revisit and keep",
+     "url": ""
     },
     {
      "type": "text",
-     "text": "Your completed Living Cartography, the record of a term of learning to see."
+     "text": "Your completed Living Cartography, the record of a term of learning to see.",
+     "url": ""
     },
     {
      "type": "cite",
-     "text": "Benjamin (2019), Race after technology, the spine of the course and a book to keep."
+     "text": "Benjamin (2019), Race after technology, the spine of the course and a book to keep.",
+     "url": ""
     },
     {
      "type": "cite",
-     "text": "The response readings, Costanza-Chock (2020) and the others, for the work ahead."
+     "text": "The response readings, Costanza-Chock (2020) and the others, for the work ahead.",
+     "url": ""
     },
     {
      "type": "head",
-     "text": "How to close this week"
+     "text": "How to close this week",
+     "url": ""
     },
     {
      "type": "text",
-     "text": "Finish and submit your Final Revisiting Cartography video."
+     "text": "Finish and submit your Final Revisiting Cartography video.",
+     "url": ""
     },
     {
      "type": "text",
-     "text": "Write your answer to the opening question, in one honest paragraph, for yourself."
+     "text": "Write your answer to the opening question, in one honest paragraph, for yourself.",
+     "url": ""
     },
     {
      "type": "text",
-     "text": "Choose one place to use the lens beyond this course."
+     "text": "Choose one place to use the lens beyond this course.",
+     "url": ""
     }
    ],
    "references": [
@@ -1764,7 +2641,7 @@ window.BFS218 = {
   {
    "term": "Abolitionist tools",
    "def": "Benjamin's subtitle is Abolitionist Tools for the New Jim Code. An abolitionist tool does not make an unjust system run more smoothly; it refuses that system and helps build a just alternative. The distinction is between reform, which preserves the structure, and abolition, which reimagines it.",
-   "ex": "",
+   "cite": "Benjamin, R. (2019). Race after technology: Abolitionist tools for the New Jim Code. Polity Press.",
    "weeks": [
     11
    ]
@@ -1772,7 +2649,7 @@ window.BFS218 = {
   {
    "term": "AI governance and its gaps",
    "def": "AI governance is the set of laws, rules, and institutions that try to constrain how AI is built and used. In Canada, the proposed Artificial Intelligence and Data Act (AIDA) is the leading attempt. Blair Attard-Frost (2023), in a submission to the Standing Committee on Industry and Technology, documents real gaps in it, including weak protection for artists and creators facing generative AI. A law with gaps still leaves people exposed.",
-   "ex": "",
+   "cite": "Attard-Frost, B. (2023). Generative AI systems: Impacts on artists and creators and related gaps in the Artificial Intelligence and Data Act. Submission to the Standing Committee on Industry and Technology, Parliament of Canada.",
    "weeks": [
     12
    ]
@@ -1780,7 +2657,7 @@ window.BFS218 = {
   {
    "term": "Algorithmic gatekeeping",
    "def": "Algorithmic gatekeeping is the use of automated systems to decide who is granted access: who is hired, who is approved for credit, who is admitted or flagged in education. The gate operates at scale and at speed, and the person kept out often has no one to ask and no decision to appeal.",
-   "ex": "",
+   "cite": "Full citations are listed in the Key Concepts file for this week.",
    "weeks": [
     10
    ]
@@ -1788,7 +2665,7 @@ window.BFS218 = {
   {
    "term": "Algorithmic policing",
    "def": "Algorithmic policing is the use of data-driven tools, predictive policing, facial recognition, and social-media surveillance, by law enforcement. Robertson, Khoo, and Song (2020) document its spread in Canada, and Singh (2021) notes that much of it has been authorized through court rulings rather than clear legislation, leaving a gap in oversight.",
-   "ex": "",
+   "cite": "Robertson, K., Khoo, C., and Song, Y. (2020). To surveil and predict: A human rights analysis of algorithmic policing in Canada. Citizen Lab and International Human Rights Program, University of Toronto.",
    "weeks": [
     6
    ]
@@ -1796,7 +2673,7 @@ window.BFS218 = {
   {
    "term": "Amplify, not create",
    "def": "The careful move this week is the word amplify. Engineered inequity does not conjure inequality out of nothing; it takes an existing inequity and makes it wider, faster, or harder to escape. That is why the fix is never just better intentions; it is different design.",
-   "ex": "",
+   "cite": "Benjamin, R. (2019). Race after technology: Abolitionist tools for the New Jim Code. Polity Press. (Engineered inequity, the first dimension; the chapter Are Robots Racist?)",
    "weeks": [
     3
    ]
@@ -1804,7 +2681,7 @@ window.BFS218 = {
   {
    "term": "Are robots racist?",
    "def": "This is Benjamin's framing question for the dimension. Her answer: robots can be racist, not because a machine has hatred in it, but because it is designed inside a society already structured by racism and carries that structure forward. The question moves us, once again, from intent to design.",
-   "ex": "",
+   "cite": "Benjamin, R. (2019). Race after technology: Abolitionist tools for the New Jim Code. Polity Press. (Engineered inequity, the first dimension; the chapter Are Robots Racist?)",
    "weeks": [
     3
    ]
@@ -1812,7 +2689,7 @@ window.BFS218 = {
   {
    "term": "Bias in predicting success",
    "def": "Bird, Castleman, and Song (2023) examined predictive analytics used to flag community college students as likely to succeed or fail. They found that algorithmic bias can reinforce racial inequities, so that a model meant to help can instead label some students, early and wrongly, as poor bets. The harm is not abstract; it shapes who gets support and who is quietly written off.",
-   "ex": "",
+   "cite": "Full citations are listed in the Key Concepts file for this week.",
    "weeks": [
     10
    ]
@@ -1820,7 +2697,7 @@ window.BFS218 = {
   {
    "term": "Building justice in from the start",
    "def": "Christian Ortiz's (2024) Decolonial Intelligence Algorithmic framework proposes designing AI through epistemic decolonization and intersectional justice, so that accountability is built in from the beginning rather than added after harm. It is a governance counterpart to last week's design justice: not only how we build, but how we govern, with those most affected.",
-   "ex": "",
+   "cite": "Ortiz, C. (2024). The Decolonial Intelligence Algorithmic (DIA) framework: Revolutionizing ethical AI development through epistemic decolonization and intersectional justice.",
    "weeks": [
     12
    ]
@@ -1828,7 +2705,7 @@ window.BFS218 = {
   {
    "term": "Coded exposure",
    "def": "Coded exposure is Benjamin's third dimension: visibility itself is designed unevenly. Some people are made hyper-visible to systems, watched, scanned, and tracked, while others are made invisible, unrecognized and unserved. Benjamin uses every sense of the word exposure: light on a sensor, a secret revealed, being unprotected, being at risk, being put on display.",
-   "ex": "",
+   "cite": "Benjamin, R. (2019). Race after technology: Abolitionist tools for the New Jim Code. Polity Press. (Coded exposure, the third dimension; the chapter Is Visibility a Trap?)",
    "weeks": [
     5
    ]
@@ -1836,7 +2713,7 @@ window.BFS218 = {
   {
    "term": "Coded exposure (dimension three)",
    "def": "The uneven, designed distribution of visibility: some people watched too closely, others not seen at all. The key question is: is visibility a trap? How they fit together These are not separate machines; they are three ways the same systemic racism enters technology. A single system can show more than one at once, and in Canada we saw them in borders, policing, and corrections. After the Study Week, Part III adds the fourth dimension, technological benevolence.",
-   "ex": "",
+   "cite": "Benjamin, R. (2019). Race after technology: Abolitionist tools for the New Jim Code. Polity Press. (Engineered inequity; default discrimination; coded exposure.)",
    "weeks": [
     7
    ]
@@ -1844,7 +2721,7 @@ window.BFS218 = {
   {
    "term": "Critical race theory (CRT)",
    "def": "Critical race theory is a body of scholarship holding that racism is ordinary and structural: built into laws, institutions, and everyday systems, not only into individual prejudice. A central CRT claim is that systems can produce racially unequal outcomes while appearing neutral. Kimberle Crenshaw (1991), whose intersectionality you met in Week 1, is one of CRT's founding scholars.",
-   "ex": "",
+   "cite": "Crenshaw, K. (1991). Mapping the margins: Intersectionality, identity politics, and violence against women of color. Stanford Law Review, 43(6), 1241-1299.",
    "weeks": [
     2
    ]
@@ -1852,7 +2729,7 @@ window.BFS218 = {
   {
    "term": "Decolonial AI",
    "def": "Mohamed, Png, and Isaac (2020) argue that decolonial and postcolonial theory should guide the development of artificial intelligence. They warn against algorithmic colonialism, where tools built elsewhere are imposed on communities, and call for centring those most affected in how systems are designed and governed.",
-   "ex": "",
+   "cite": "Full citations are listed in the Key Concepts file for this week.",
    "weeks": [
     8
    ]
@@ -1860,7 +2737,7 @@ window.BFS218 = {
   {
    "term": "Default discrimination",
    "def": "Default discrimination is Benjamin's second dimension: harm that arrives through the defaults of a system, the settings, data, and assumptions that treat one group's world as the norm. It does not require a racist designer; it requires only that the existing inequity is left in the defaults and that no one designs against it.",
-   "ex": "",
+   "cite": "Benjamin, R. (2019). Race after technology: Abolitionist tools for the New Jim Code. Polity Press. (Default discrimination, the second dimension; the chapter Is the Glitch Systemic? and the section Automating Anti-Blackness.)",
    "weeks": [
     4
    ]
@@ -1868,7 +2745,7 @@ window.BFS218 = {
   {
    "term": "Default discrimination (dimension two)",
    "def": "Harm that arrives through the defaults, the settings, data, and assumptions that treat one group's world as normal. The key question is: is the glitch systemic?",
-   "ex": "",
+   "cite": "Benjamin, R. (2019). Race after technology: Abolitionist tools for the New Jim Code. Polity Press. (Engineered inequity; default discrimination; coded exposure.)",
    "weeks": [
     7
    ]
@@ -1876,7 +2753,7 @@ window.BFS218 = {
   {
    "term": "Design as worldbuilding",
    "def": "Benjamin describes database design as an exercise in worldbuilding: programmers project their assumptions, interests, and view of the world into the system, and that world too often reproduces the technology of race. The Malcolm X Boulevard that a map reads aloud as Malcolm Ten is a small sign of whose knowledge is set as the default.",
-   "ex": "",
+   "cite": "Benjamin, R. (2019). Race after technology: Abolitionist tools for the New Jim Code. Polity Press. (Default discrimination, the second dimension; the chapter Is the Glitch Systemic? and the section Automating Anti-Blackness.)",
    "weeks": [
     4
    ]
@@ -1884,7 +2761,7 @@ window.BFS218 = {
   {
    "term": "Design justice",
    "def": "Design justice, developed by the Design Justice Network and drawn together by Sasha Costanza-Chock (2020), rethinks design to centre people normally marginalized by it. Its principles include centring the voices of those directly impacted, prioritizing impact over the designer's intentions, treating everyone as an expert by lived experience, working toward community-led outcomes, and looking first for what already works at the community level.",
-   "ex": "",
+   "cite": "Costanza-Chock, S. (2020). Design justice: Community-led practices to build the worlds we need. MIT Press.",
    "weeks": [
     11
    ]
@@ -1892,7 +2769,7 @@ window.BFS218 = {
   {
    "term": "Digital border technologies",
    "def": "Petra Molnar (2023) describes the surveillance, biometrics, and automated decision systems used at borders as digital border technologies that operate through logics of exclusion. Migrants and refugees, with the least power to refuse, are often the testing ground for tools later used more widely.",
-   "ex": "",
+   "cite": "Molnar, P. (2023). Digital border technologies, techno-racism and logics of exclusion. International Migration. https://doi.org/10.1111/imig.13187",
    "weeks": [
     6
    ]
@@ -1900,7 +2777,7 @@ window.BFS218 = {
   {
    "term": "Engineered inequity",
    "def": "Engineered inequity is Benjamin's first dimension of the New Jim Code: technology that, by its design, explicitly amplifies social hierarchies based on race, class, and gender. The harm is built into the design, and it presents itself as neutral or efficient while widening a gap that already exists.",
-   "ex": "",
+   "cite": "Benjamin, R. (2019). Race after technology: Abolitionist tools for the New Jim Code. Polity Press. (Engineered inequity, the first dimension; the chapter Are Robots Racist?)",
    "weeks": [
     3
    ]
@@ -1908,7 +2785,7 @@ window.BFS218 = {
   {
    "term": "Engineered inequity (dimension one)",
    "def": "Technology that, by its design, amplifies an existing hierarchy of race, class, or gender. The harm is active and built in. The key word is amplify, not create.",
-   "ex": "",
+   "cite": "Benjamin, R. (2019). Race after technology: Abolitionist tools for the New Jim Code. Polity Press. (Engineered inequity; default discrimination; coded exposure.)",
    "weeks": [
     7
    ]
@@ -1916,7 +2793,7 @@ window.BFS218 = {
   {
    "term": "From seeing to commitment",
    "def": "Seeing clearly is where this course began; it is not where it ends. Part III moved you toward response, and the return asks you to name a commitment, something you will carry into your own field, now that you cannot unsee what you have learned.",
-   "ex": "",
+   "cite": "No new readings this week. Your sources are your own Living Cartography entries and the readings from Weeks 1 to 12.",
    "weeks": [
     13
    ]
@@ -1924,7 +2801,7 @@ window.BFS218 = {
   {
    "term": "Indigenous data sovereignty",
    "def": "Indigenous data sovereignty is the principle that First Nations, Inuit, and Metis peoples have the right to govern the collection, ownership, and use of data about their own communities, lands, and knowledge. It reframes data from something extracted by outsiders to something a community holds and governs.",
-   "ex": "",
+   "cite": "Full citations are listed in the Key Concepts file for this week.",
    "weeks": [
     8
    ]
@@ -1932,7 +2809,7 @@ window.BFS218 = {
   {
    "term": "Inequality within and without the algorithm",
    "def": "Devlin (2023) argues that inequality in AI sits both within the algorithm, in its data and design, and without it, in who builds these systems and who is subject to them. Safiya Umoja Noble's algorithms of oppression makes a related case: that search and ranking systems can reproduce racism and sexism, especially against Black women, while presenting as neutral tools.",
-   "ex": "",
+   "cite": "Full citations are listed in the Key Concepts file for this week.",
    "weeks": [
     10
    ]
@@ -1940,7 +2817,7 @@ window.BFS218 = {
   {
    "term": "Intentions versus outcomes",
    "def": "The key analytic shift this week: stop asking whether a system intends harm and start asking what it does, to whom, and who pays. A system with no intent can still produce a racial harm, and CRT trains you to see it.",
-   "ex": "",
+   "cite": "Benjamin, R. (2019). Race after technology: Abolitionist tools for the New Jim Code. Polity Press.",
    "weeks": [
     2
    ]
@@ -1948,7 +2825,7 @@ window.BFS218 = {
   {
    "term": "Intersectionality",
    "def": "Intersectionality, from legal scholar Kimberle Crenshaw (1991), is the idea that systems of identity and power do not act one at a time. Race, gender, class, and other categories overlap, and a person at the intersection can face a harm that looking at any single category would miss. Why introduce it in Week 1 of a technology course? Because the harms we will study are rarely about race alone. Buolamwini and Gebru (2018) found that facial-analysis systems failed most often not for darker-skinned people in general, nor for women in general, but specifically for darker-skinned women, the intersection. Intersectionality is the tool that lets you ask the sharper question: who exactly does this system fail, and at which overlap?",
-   "ex": "",
+   "cite": "Buolamwini, J., & Gebru, T. (2018). Gender shades: Intersectional accuracy disparities in commercial gender classification. Proceedings of Machine Learning Research, 81, 1 to 15.",
    "weeks": [
     1
    ]
@@ -1956,7 +2833,7 @@ window.BFS218 = {
   {
    "term": "Is the glitch systemic?",
    "def": "This is Benjamin's framing question for the dimension. A glitch is supposed to be minor and temporary, a brief irregularity. Benjamin asks whether the glitch is actually systemic, that is, whether the failure is not an accident but the predictable result of how the system was built. When the answer is yes, the word glitch is doing work: it makes a designed harm sound like bad luck.",
-   "ex": "",
+   "cite": "Benjamin, R. (2019). Race after technology: Abolitionist tools for the New Jim Code. Polity Press. (Default discrimination, the second dimension; the chapter Is the Glitch Systemic? and the section Automating Anti-Blackness.)",
    "weeks": [
     4
    ]
@@ -1964,7 +2841,7 @@ window.BFS218 = {
   {
    "term": "Is visibility a trap?",
    "def": "This is Benjamin's framing question. Being unseen by a system is a harm: you are not recognized, not served. But being hyper-seen is also a harm: you are surveilled, scanned, and exposed to risk. For racialized communities, visibility can cut both ways at once, which is why Benjamin calls it a trap rather than a simple good.",
-   "ex": "",
+   "cite": "Benjamin, R. (2019). Race after technology: Abolitionist tools for the New Jim Code. Polity Press. (Coded exposure, the third dimension; the chapter Is Visibility a Trap?)",
    "weeks": [
     5
    ]
@@ -1972,7 +2849,7 @@ window.BFS218 = {
   {
    "term": "OCAP: Ownership, Control, Access, Possession",
    "def": "OCAP names four First Nations principles for data governance, stewarded by the First Nations Information Governance Centre. Ownership: a community collectively owns its information. Control: the community controls how data about it is collected and used. Access: the community can access data about itself. Possession: the community physically holds and stewards that data. OCAP belongs to First Nations; we study it with respect, not as a generic toolkit.",
-   "ex": "",
+   "cite": "Full citations are listed in the Key Concepts file for this week.",
    "weeks": [
     8
    ]
@@ -1980,7 +2857,7 @@ window.BFS218 = {
   {
    "term": "Reform versus real repair",
    "def": "The working distinction this week is between a reform and a repair. A reform can leave the harmful system intact while easing its worst edges. A real repair changes who holds power and who carries the cost. Tanksley (2023) models this in education, an abolitionist, critical race pedagogy in computer science that centres Black youth as innovators, not only as those harmed.",
-   "ex": "",
+   "cite": "Tanksley, T. (2023). Employing an abolitionist, critical race pedagogy in CS: Centering the voices, experiences and technological innovations of Black youth. Journal of Computer Science Integration, 6(1).",
    "weeks": [
     11
    ]
@@ -1988,7 +2865,7 @@ window.BFS218 = {
   {
    "term": "Structural and systemic racism",
    "def": "Structural racism is racism that lives in how systems are designed and how they routinely operate, so that unequal outcomes recur even when no single person intends them. This is why the course studies design and data, not only attitudes.",
-   "ex": "",
+   "cite": "Benjamin, R. (2019). Race after technology: Abolitionist tools for the New Jim Code. Polity Press.",
    "weeks": [
     2
    ]
@@ -1996,7 +2873,7 @@ window.BFS218 = {
   {
    "term": "Techno-racism",
    "def": "Techno-racism names the way racial bias is embedded inside technical systems: the algorithms, datasets, defaults, and design choices that shape digital life. It is racism that operates through technology rather than only through individual people. A landlord can refuse a tenant; a tenant-screening algorithm can do the same thing at scale, quietly, and call it a risk score. The key move is to stop treating technology as separate from society. The course outline puts it directly: these systems are often shaped by people with racial, ethnic, and cultural privilege, who can build, without meaning to, systems that treat whiteness as the default. Techno-racism is the result, and learning to see it is the work of this course.",
-   "ex": "",
+   "cite": "Benjamin, R. (2019). Race after technology: Abolitionist tools for the New Jim Code. Polity Press.",
    "weeks": [
     1
    ]
@@ -2004,7 +2881,7 @@ window.BFS218 = {
   {
    "term": "Techno-racism as a human rights issue",
    "def": "The UN Special Rapporteur on contemporary forms of racism, in a 2020 report, analyses racial discrimination in emerging digital technologies as a human rights matter. Framing techno-racism as a rights violation, rather than a technical glitch, creates obligations on states and gives affected communities a stronger basis to demand change.",
-   "ex": "",
+   "cite": "Attard-Frost, B. (2023). Generative AI systems: Impacts on artists and creators and related gaps in the Artificial Intelligence and Data Act. Submission to the Standing Committee on Industry and Technology, Parliament of Canada.",
    "weeks": [
     12
    ]
@@ -2012,7 +2889,7 @@ window.BFS218 = {
   {
    "term": "Technological benevolence",
    "def": "Technological benevolence is Benjamin's fourth dimension: technology promoted as good for us, a fix, an upgrade, an act of help, that still carries existing harms. The benevolent framing is not a side effect; it is part of how the harm survives, because help is hard to argue with.",
-   "ex": "",
+   "cite": "Benjamin, R. (2019). Race after technology: Abolitionist tools for the New Jim Code. Polity Press. (Technological benevolence, the fourth dimension; the chapter section Raising Robots.)",
    "weeks": [
     9
    ]
@@ -2020,7 +2897,7 @@ window.BFS218 = {
   {
    "term": "The benevolence trap",
    "def": "The benevolence trap is what makes this dimension dangerous. A tool sold as the solution disarms criticism in advance. To question it can feel like opposing progress or refusing help. So the trap is not only the harm itself, but the difficulty of naming it once it wears the language of care.",
-   "ex": "",
+   "cite": "Benjamin, R. (2019). Race after technology: Abolitionist tools for the New Jim Code. Polity Press. (Technological benevolence, the fourth dimension; the chapter section Raising Robots.)",
    "weeks": [
     9
    ]
@@ -2028,7 +2905,7 @@ window.BFS218 = {
   {
    "term": "The coded gaze",
    "def": "The coded gaze, a term from Joy Buolamwini, names whose face a system is built to see. The webcam user who said my Blackness is interfering with the computer's ability to follow me was describing it. Buolamwini and Gebru's 2018 Gender Shades study measured it: facial-analysis systems were nearly perfect on lighter-skinned men and far worse on darker-skinned women.",
-   "ex": "",
+   "cite": "Buolamwini, J., and Gebru, T. (2018). Gender shades: Intersectional accuracy disparities in commercial gender classification. Proceedings of Machine Learning Research, 81, 1-15.",
    "weeks": [
     5
    ]
@@ -2036,7 +2913,7 @@ window.BFS218 = {
   {
    "term": "The four dimensions, as a single lens",
    "def": "Engineered inequity, default discrimination, coded exposure, and technological benevolence are not four separate tests; together they are one way of reading any system. By now you can hold them at once, and ask which are at work in a given case.",
-   "ex": "",
+   "cite": "No new readings this week. Your sources are your own Living Cartography entries and the readings from Weeks 1 to 12.",
    "weeks": [
     13
    ]
@@ -2044,7 +2921,7 @@ window.BFS218 = {
   {
    "term": "The Living Cartography as a record of change",
    "def": "Your map is not only a record of harmful systems; it is a record of you, learning to see them. Reread chronologically, it shows your own analysis deepening week by week. The point of the return is to make that growth visible to you.",
-   "ex": "",
+   "cite": "No new readings this week. Your sources are your own Living Cartography entries and the readings from Weeks 1 to 12.",
    "weeks": [
     13
    ]
@@ -2052,7 +2929,7 @@ window.BFS218 = {
   {
    "term": "The map is yours to keep",
    "def": "Your Living Cartography does not end with the course. The lens you built, the four dimensions, the response, the habit of asking who is harmed and who is accountable, goes with you into your field. The final task is not to finish a map, but to keep one.",
-   "ex": "",
+   "cite": "No new readings this week. The course's full reading list spans Weeks 1 to 12; the anchor is Benjamin, R. (2019). Race after technology: Abolitionist tools for the New Jim Code. Polity Press.",
    "weeks": [
     14
    ]
@@ -2060,7 +2937,7 @@ window.BFS218 = {
   {
    "term": "The New Jim Code",
    "def": "This is the engine of the whole course. Ruha Benjamin (2019) defines the New Jim Code as the employment of new technologies that reflect and reproduce existing inequities but that are promoted and perceived as more objective or progressive than the discriminatory systems of a previous era. Three things to hold onto. First, the technology reproduces an old inequity; it does not invent racism, it carries it forward. Second, the technology is dressed in the language of progress; it looks neutral, fair, or even benevolent. Third, that appearance of objectivity is exactly what makes it dangerous, because it discourages the very scrutiny that would catch it. Benjamin names this lineage on purpose: the New Jim Code echoes the New Jim Crow and the older Jim Crow, the legal and social machinery of segregation, now rebuilt in code. Benjamin proposes four dimensions of the New Jim Code, and they organize the middle of our term: engineered inequity (designs that openly amplify hierarchy), default discrimination (designs that ignore social context and so replicate it), coded exposure (being watched but not truly seen), and technological benevolence (fixes that claim to help but can deepen harm). You meet each one in its own week.",
-   "ex": "",
+   "cite": "Benjamin, R. (2019). Race after technology: Abolitionist tools for the New Jim Code. Polity Press.",
    "weeks": [
     1
    ]
@@ -2068,7 +2945,7 @@ window.BFS218 = {
   {
    "term": "The New Jim Code as applied critical race theory",
    "def": "Ruha Benjamin (2019) defines the New Jim Code as the employment of new technologies that reflect and reproduce existing inequities while being promoted and experienced as more objective or progressive than the systems of an earlier era. Read it as CRT applied to code: the same structural racism, now carried by technology that looks like progress.",
-   "ex": "",
+   "cite": "Benjamin, R. (2019). Race after technology: Abolitionist tools for the New Jim Code. Polity Press.",
    "weeks": [
     2
    ]
@@ -2076,7 +2953,7 @@ window.BFS218 = {
   {
    "term": "The question, answered",
    "def": "Can a machine be racist? Yes, it can carry racism forward through its design and defaults, inside an unequal society, with no one intending it. But the answer does not end in despair, because the same course that showed you the harm also showed you the tools to respond. Naming clearly is where change begins.",
-   "ex": "",
+   "cite": "No new readings this week. The course's full reading list spans Weeks 1 to 12; the anchor is Benjamin, R. (2019). Race after technology: Abolitionist tools for the New Jim Code. Polity Press.",
    "weeks": [
     14
    ]
@@ -2084,7 +2961,7 @@ window.BFS218 = {
   {
    "term": "The whole arc, in one breath",
    "def": "Part I taught you to see: a harm needs no hatred, only a design, some data, and a default. Part II took the New Jim Code apart into four dimensions. Part III turned to response: data sovereignty, abolitionist tools, design justice, and policy. Part IV brought it home to your own map. Seeing, anatomy, response, return.",
-   "ex": "",
+   "cite": "No new readings this week. The course's full reading list spans Weeks 1 to 12; the anchor is Benjamin, R. (2019). Race after technology: Abolitionist tools for the New Jim Code. Polity Press.",
    "weeks": [
     14
    ]
@@ -2092,7 +2969,7 @@ window.BFS218 = {
   {
    "term": "Two Canadian anchors",
    "def": "The Office of the Privacy Commissioner of Canada (2021) found that the RCMP's use of Clearview AI facial recognition violated federal privacy law. In Ewert v Canada (2018) SCC 30, the Supreme Court found that Correctional Service Canada breached its statutory duty by relying on risk-assessment tools not shown to be valid for Indigenous offenders. Both show the New Jim Code in Canadian institutions.",
-   "ex": "",
+   "cite": "Office of the Privacy Commissioner of Canada. (2021). Police use of facial recognition technology in Canada and the way forward. Special report to Parliament.",
    "weeks": [
     6
    ]
@@ -2100,7 +2977,7 @@ window.BFS218 = {
   {
    "term": "Will the fix fix it?",
    "def": "This is Benjamin's working question for the dimension. For any proposed fix, ask what it actually changes and for whom. In Raising Robots she shows how machines framed as helpers, including police throwbots, can serve power while being sold as safety, and how the disposability of robots travels with the denigration of racialized people. The test is to separate real repair from a comfortable story about one.",
-   "ex": "",
+   "cite": "Benjamin, R. (2019). Race after technology: Abolitionist tools for the New Jim Code. Polity Press. (Technological benevolence, the fourth dimension; the chapter section Raising Robots.)",
    "weeks": [
     9
    ]
@@ -2109,91 +2986,91 @@ window.BFS218 = {
  "cards": [
   {
    "front": "Abolitionist tools",
-   "back": "Benjamin's subtitle is Abolitionist Tools for the New Jim Code. An abolitionist tool does not make an unjust system run more smoothly; it refuses that system and helps build a just alternative. The distinction is between reform, which prese",
+   "back": "Benjamin's subtitle is Abolitionist Tools for the New Jim Code. An abolitionist tool does not make an unjust system run more smoothly; it refuses that system and helps build a just alternative. The distinction is between reform, which preserves the structure, ",
    "weeks": [
     11
    ]
   },
   {
    "front": "AI governance and its gaps",
-   "back": "AI governance is the set of laws, rules, and institutions that try to constrain how AI is built and used. In Canada, the proposed Artificial Intelligence and Data Act (AIDA) is the leading attempt. Blair Attard-Frost (2023), in a submission",
+   "back": "AI governance is the set of laws, rules, and institutions that try to constrain how AI is built and used. In Canada, the proposed Artificial Intelligence and Data Act (AIDA) is the leading attempt. Blair Attard-Frost (2023), in a submission to the Standing Com",
    "weeks": [
     12
    ]
   },
   {
    "front": "Algorithmic gatekeeping",
-   "back": "Algorithmic gatekeeping is the use of automated systems to decide who is granted access: who is hired, who is approved for credit, who is admitted or flagged in education. The gate operates at scale and at speed, and the person kept out oft",
+   "back": "Algorithmic gatekeeping is the use of automated systems to decide who is granted access: who is hired, who is approved for credit, who is admitted or flagged in education. The gate operates at scale and at speed, and the person kept out often has no one to ask",
    "weeks": [
     10
    ]
   },
   {
    "front": "Algorithmic policing",
-   "back": "Algorithmic policing is the use of data-driven tools, predictive policing, facial recognition, and social-media surveillance, by law enforcement. Robertson, Khoo, and Song (2020) document its spread in Canada, and Singh (2021) notes that mu",
+   "back": "Algorithmic policing is the use of data-driven tools, predictive policing, facial recognition, and social-media surveillance, by law enforcement. Robertson, Khoo, and Song (2020) document its spread in Canada, and Singh (2021) notes that much of it has been au",
    "weeks": [
     6
    ]
   },
   {
    "front": "Amplify, not create",
-   "back": "The careful move this week is the word amplify. Engineered inequity does not conjure inequality out of nothing; it takes an existing inequity and makes it wider, faster, or harder to escape. That is why the fix is never just better intentio",
+   "back": "The careful move this week is the word amplify. Engineered inequity does not conjure inequality out of nothing; it takes an existing inequity and makes it wider, faster, or harder to escape. That is why the fix is never just better intentions; it is different ",
    "weeks": [
     3
    ]
   },
   {
    "front": "Are robots racist?",
-   "back": "This is Benjamin's framing question for the dimension. Her answer: robots can be racist, not because a machine has hatred in it, but because it is designed inside a society already structured by racism and carries that structure forward. Th",
+   "back": "This is Benjamin's framing question for the dimension. Her answer: robots can be racist, not because a machine has hatred in it, but because it is designed inside a society already structured by racism and carries that structure forward. The question moves us,",
    "weeks": [
     3
    ]
   },
   {
    "front": "Bias in predicting success",
-   "back": "Bird, Castleman, and Song (2023) examined predictive analytics used to flag community college students as likely to succeed or fail. They found that algorithmic bias can reinforce racial inequities, so that a model meant to help can instead",
+   "back": "Bird, Castleman, and Song (2023) examined predictive analytics used to flag community college students as likely to succeed or fail. They found that algorithmic bias can reinforce racial inequities, so that a model meant to help can instead label some students",
    "weeks": [
     10
    ]
   },
   {
    "front": "Building justice in from the start",
-   "back": "Christian Ortiz's (2024) Decolonial Intelligence Algorithmic framework proposes designing AI through epistemic decolonization and intersectional justice, so that accountability is built in from the beginning rather than added after harm. It",
+   "back": "Christian Ortiz's (2024) Decolonial Intelligence Algorithmic framework proposes designing AI through epistemic decolonization and intersectional justice, so that accountability is built in from the beginning rather than added after harm. It is a governance cou",
    "weeks": [
     12
    ]
   },
   {
    "front": "Coded exposure",
-   "back": "Coded exposure is Benjamin's third dimension: visibility itself is designed unevenly. Some people are made hyper-visible to systems, watched, scanned, and tracked, while others are made invisible, unrecognized and unserved. Benjamin uses ev",
+   "back": "Coded exposure is Benjamin's third dimension: visibility itself is designed unevenly. Some people are made hyper-visible to systems, watched, scanned, and tracked, while others are made invisible, unrecognized and unserved. Benjamin uses every sense of the wor",
    "weeks": [
     5
    ]
   },
   {
    "front": "Coded exposure (dimension three)",
-   "back": "The uneven, designed distribution of visibility: some people watched too closely, others not seen at all. The key question is: is visibility a trap? How they fit together These are not separate machines; they are three ways the same systemi",
+   "back": "The uneven, designed distribution of visibility: some people watched too closely, others not seen at all. The key question is: is visibility a trap? How they fit together These are not separate machines; they are three ways the same systemic racism enters tech",
    "weeks": [
     7
    ]
   },
   {
    "front": "Critical race theory (CRT)",
-   "back": "Critical race theory is a body of scholarship holding that racism is ordinary and structural: built into laws, institutions, and everyday systems, not only into individual prejudice. A central CRT claim is that systems can produce racially ",
+   "back": "Critical race theory is a body of scholarship holding that racism is ordinary and structural: built into laws, institutions, and everyday systems, not only into individual prejudice. A central CRT claim is that systems can produce racially unequal outcomes whi",
    "weeks": [
     2
    ]
   },
   {
    "front": "Decolonial AI",
-   "back": "Mohamed, Png, and Isaac (2020) argue that decolonial and postcolonial theory should guide the development of artificial intelligence. They warn against algorithmic colonialism, where tools built elsewhere are imposed on communities, and cal",
+   "back": "Mohamed, Png, and Isaac (2020) argue that decolonial and postcolonial theory should guide the development of artificial intelligence. They warn against algorithmic colonialism, where tools built elsewhere are imposed on communities, and call for centring those",
    "weeks": [
     8
    ]
   },
   {
    "front": "Default discrimination",
-   "back": "Default discrimination is Benjamin's second dimension: harm that arrives through the defaults of a system, the settings, data, and assumptions that treat one group's world as the norm. It does not require a racist designer; it requires only",
+   "back": "Default discrimination is Benjamin's second dimension: harm that arrives through the defaults of a system, the settings, data, and assumptions that treat one group's world as the norm. It does not require a racist designer; it requires only that the existing i",
    "weeks": [
     4
    ]
@@ -2207,28 +3084,28 @@ window.BFS218 = {
   },
   {
    "front": "Design as worldbuilding",
-   "back": "Benjamin describes database design as an exercise in worldbuilding: programmers project their assumptions, interests, and view of the world into the system, and that world too often reproduces the technology of race. The Malcolm X Boulevard",
+   "back": "Benjamin describes database design as an exercise in worldbuilding: programmers project their assumptions, interests, and view of the world into the system, and that world too often reproduces the technology of race. The Malcolm X Boulevard that a map reads al",
    "weeks": [
     4
    ]
   },
   {
    "front": "Design justice",
-   "back": "Design justice, developed by the Design Justice Network and drawn together by Sasha Costanza-Chock (2020), rethinks design to centre people normally marginalized by it. Its principles include centring the voices of those directly impacted, ",
+   "back": "Design justice, developed by the Design Justice Network and drawn together by Sasha Costanza-Chock (2020), rethinks design to centre people normally marginalized by it. Its principles include centring the voices of those directly impacted, prioritizing impact ",
    "weeks": [
     11
    ]
   },
   {
    "front": "Digital border technologies",
-   "back": "Petra Molnar (2023) describes the surveillance, biometrics, and automated decision systems used at borders as digital border technologies that operate through logics of exclusion. Migrants and refugees, with the least power to refuse, are o",
+   "back": "Petra Molnar (2023) describes the surveillance, biometrics, and automated decision systems used at borders as digital border technologies that operate through logics of exclusion. Migrants and refugees, with the least power to refuse, are often the testing gro",
    "weeks": [
     6
    ]
   },
   {
    "front": "Engineered inequity",
-   "back": "Engineered inequity is Benjamin's first dimension of the New Jim Code: technology that, by its design, explicitly amplifies social hierarchies based on race, class, and gender. The harm is built into the design, and it presents itself as ne",
+   "back": "Engineered inequity is Benjamin's first dimension of the New Jim Code: technology that, by its design, explicitly amplifies social hierarchies based on race, class, and gender. The harm is built into the design, and it presents itself as neutral or efficient w",
    "weeks": [
     3
    ]
@@ -2242,21 +3119,21 @@ window.BFS218 = {
   },
   {
    "front": "From seeing to commitment",
-   "back": "Seeing clearly is where this course began; it is not where it ends. Part III moved you toward response, and the return asks you to name a commitment, something you will carry into your own field, now that you cannot unsee what you have lear",
+   "back": "Seeing clearly is where this course began; it is not where it ends. Part III moved you toward response, and the return asks you to name a commitment, something you will carry into your own field, now that you cannot unsee what you have learned.",
    "weeks": [
     13
    ]
   },
   {
    "front": "Indigenous data sovereignty",
-   "back": "Indigenous data sovereignty is the principle that First Nations, Inuit, and Metis peoples have the right to govern the collection, ownership, and use of data about their own communities, lands, and knowledge. It reframes data from something",
+   "back": "Indigenous data sovereignty is the principle that First Nations, Inuit, and Metis peoples have the right to govern the collection, ownership, and use of data about their own communities, lands, and knowledge. It reframes data from something extracted by outsid",
    "weeks": [
     8
    ]
   },
   {
    "front": "Inequality within and without the algorithm",
-   "back": "Devlin (2023) argues that inequality in AI sits both within the algorithm, in its data and design, and without it, in who builds these systems and who is subject to them. Safiya Umoja Noble's algorithms of oppression makes a related case: t",
+   "back": "Devlin (2023) argues that inequality in AI sits both within the algorithm, in its data and design, and without it, in who builds these systems and who is subject to them. Safiya Umoja Noble's algorithms of oppression makes a related case: that search and ranki",
    "weeks": [
     10
    ]
@@ -2270,35 +3147,35 @@ window.BFS218 = {
   },
   {
    "front": "Intersectionality",
-   "back": "Intersectionality, from legal scholar Kimberle Crenshaw (1991), is the idea that systems of identity and power do not act one at a time. Race, gender, class, and other categories overlap, and a person at the intersection can face a harm tha",
+   "back": "Intersectionality, from legal scholar Kimberle Crenshaw (1991), is the idea that systems of identity and power do not act one at a time. Race, gender, class, and other categories overlap, and a person at the intersection can face a harm that looking at any sin",
    "weeks": [
     1
    ]
   },
   {
    "front": "Is the glitch systemic?",
-   "back": "This is Benjamin's framing question for the dimension. A glitch is supposed to be minor and temporary, a brief irregularity. Benjamin asks whether the glitch is actually systemic, that is, whether the failure is not an accident but the pred",
+   "back": "This is Benjamin's framing question for the dimension. A glitch is supposed to be minor and temporary, a brief irregularity. Benjamin asks whether the glitch is actually systemic, that is, whether the failure is not an accident but the predictable result of ho",
    "weeks": [
     4
    ]
   },
   {
    "front": "Is visibility a trap?",
-   "back": "This is Benjamin's framing question. Being unseen by a system is a harm: you are not recognized, not served. But being hyper-seen is also a harm: you are surveilled, scanned, and exposed to risk. For racialized communities, visibility can c",
+   "back": "This is Benjamin's framing question. Being unseen by a system is a harm: you are not recognized, not served. But being hyper-seen is also a harm: you are surveilled, scanned, and exposed to risk. For racialized communities, visibility can cut both ways at once",
    "weeks": [
     5
    ]
   },
   {
    "front": "OCAP: Ownership, Control, Access, Possession",
-   "back": "OCAP names four First Nations principles for data governance, stewarded by the First Nations Information Governance Centre. Ownership: a community collectively owns its information. Control: the community controls how data about it is colle",
+   "back": "OCAP names four First Nations principles for data governance, stewarded by the First Nations Information Governance Centre. Ownership: a community collectively owns its information. Control: the community controls how data about it is collected and used. Acces",
    "weeks": [
     8
    ]
   },
   {
    "front": "Reform versus real repair",
-   "back": "The working distinction this week is between a reform and a repair. A reform can leave the harmful system intact while easing its worst edges. A real repair changes who holds power and who carries the cost. Tanksley (2023) models this in ed",
+   "back": "The working distinction this week is between a reform and a repair. A reform can leave the harmful system intact while easing its worst edges. A real repair changes who holds power and who carries the cost. Tanksley (2023) models this in education, an abolitio",
    "weeks": [
     11
    ]
@@ -2312,42 +3189,42 @@ window.BFS218 = {
   },
   {
    "front": "Techno-racism",
-   "back": "Techno-racism names the way racial bias is embedded inside technical systems: the algorithms, datasets, defaults, and design choices that shape digital life. It is racism that operates through technology rather than only through individual ",
+   "back": "Techno-racism names the way racial bias is embedded inside technical systems: the algorithms, datasets, defaults, and design choices that shape digital life. It is racism that operates through technology rather than only through individual people. A landlord c",
    "weeks": [
     1
    ]
   },
   {
    "front": "Techno-racism as a human rights issue",
-   "back": "The UN Special Rapporteur on contemporary forms of racism, in a 2020 report, analyses racial discrimination in emerging digital technologies as a human rights matter. Framing techno-racism as a rights violation, rather than a technical glit",
+   "back": "The UN Special Rapporteur on contemporary forms of racism, in a 2020 report, analyses racial discrimination in emerging digital technologies as a human rights matter. Framing techno-racism as a rights violation, rather than a technical glitch, creates obligati",
    "weeks": [
     12
    ]
   },
   {
    "front": "Technological benevolence",
-   "back": "Technological benevolence is Benjamin's fourth dimension: technology promoted as good for us, a fix, an upgrade, an act of help, that still carries existing harms. The benevolent framing is not a side effect; it is part of how the harm surv",
+   "back": "Technological benevolence is Benjamin's fourth dimension: technology promoted as good for us, a fix, an upgrade, an act of help, that still carries existing harms. The benevolent framing is not a side effect; it is part of how the harm survives, because help i",
    "weeks": [
     9
    ]
   },
   {
    "front": "The benevolence trap",
-   "back": "The benevolence trap is what makes this dimension dangerous. A tool sold as the solution disarms criticism in advance. To question it can feel like opposing progress or refusing help. So the trap is not only the harm itself, but the difficu",
+   "back": "The benevolence trap is what makes this dimension dangerous. A tool sold as the solution disarms criticism in advance. To question it can feel like opposing progress or refusing help. So the trap is not only the harm itself, but the difficulty of naming it onc",
    "weeks": [
     9
    ]
   },
   {
    "front": "The coded gaze",
-   "back": "The coded gaze, a term from Joy Buolamwini, names whose face a system is built to see. The webcam user who said my Blackness is interfering with the computer's ability to follow me was describing it. Buolamwini and Gebru's 2018 Gender Shade",
+   "back": "The coded gaze, a term from Joy Buolamwini, names whose face a system is built to see. The webcam user who said my Blackness is interfering with the computer's ability to follow me was describing it. Buolamwini and Gebru's 2018 Gender Shades study measured it:",
    "weeks": [
     5
    ]
   },
   {
    "front": "The four dimensions, as a single lens",
-   "back": "Engineered inequity, default discrimination, coded exposure, and technological benevolence are not four separate tests; together they are one way of reading any system. By now you can hold them at once, and ask which are at work in a given ",
+   "back": "Engineered inequity, default discrimination, coded exposure, and technological benevolence are not four separate tests; together they are one way of reading any system. By now you can hold them at once, and ask which are at work in a given case.",
    "weeks": [
     13
    ]
@@ -2361,49 +3238,49 @@ window.BFS218 = {
   },
   {
    "front": "The map is yours to keep",
-   "back": "Your Living Cartography does not end with the course. The lens you built, the four dimensions, the response, the habit of asking who is harmed and who is accountable, goes with you into your field. The final task is not to finish a map, but",
+   "back": "Your Living Cartography does not end with the course. The lens you built, the four dimensions, the response, the habit of asking who is harmed and who is accountable, goes with you into your field. The final task is not to finish a map, but to keep one.",
    "weeks": [
     14
    ]
   },
   {
    "front": "The New Jim Code",
-   "back": "This is the engine of the whole course. Ruha Benjamin (2019) defines the New Jim Code as the employment of new technologies that reflect and reproduce existing inequities but that are promoted and perceived as more objective or progressive ",
+   "back": "This is the engine of the whole course. Ruha Benjamin (2019) defines the New Jim Code as the employment of new technologies that reflect and reproduce existing inequities but that are promoted and perceived as more objective or progressive than the discriminat",
    "weeks": [
     1
    ]
   },
   {
    "front": "The New Jim Code as applied critical race theory",
-   "back": "Ruha Benjamin (2019) defines the New Jim Code as the employment of new technologies that reflect and reproduce existing inequities while being promoted and experienced as more objective or progressive than the systems of an earlier era. Rea",
+   "back": "Ruha Benjamin (2019) defines the New Jim Code as the employment of new technologies that reflect and reproduce existing inequities while being promoted and experienced as more objective or progressive than the systems of an earlier era. Read it as CRT applied ",
    "weeks": [
     2
    ]
   },
   {
    "front": "The question, answered",
-   "back": "Can a machine be racist? Yes, it can carry racism forward through its design and defaults, inside an unequal society, with no one intending it. But the answer does not end in despair, because the same course that showed you the harm also sh",
+   "back": "Can a machine be racist? Yes, it can carry racism forward through its design and defaults, inside an unequal society, with no one intending it. But the answer does not end in despair, because the same course that showed you the harm also showed you the tools t",
    "weeks": [
     14
    ]
   },
   {
    "front": "The whole arc, in one breath",
-   "back": "Part I taught you to see: a harm needs no hatred, only a design, some data, and a default. Part II took the New Jim Code apart into four dimensions. Part III turned to response: data sovereignty, abolitionist tools, design justice, and poli",
+   "back": "Part I taught you to see: a harm needs no hatred, only a design, some data, and a default. Part II took the New Jim Code apart into four dimensions. Part III turned to response: data sovereignty, abolitionist tools, design justice, and policy. Part IV brought ",
    "weeks": [
     14
    ]
   },
   {
    "front": "Two Canadian anchors",
-   "back": "The Office of the Privacy Commissioner of Canada (2021) found that the RCMP's use of Clearview AI facial recognition violated federal privacy law. In Ewert v Canada (2018) SCC 30, the Supreme Court found that Correctional Service Canada bre",
+   "back": "The Office of the Privacy Commissioner of Canada (2021) found that the RCMP's use of Clearview AI facial recognition violated federal privacy law. In Ewert v Canada (2018) SCC 30, the Supreme Court found that Correctional Service Canada breached its statutory ",
    "weeks": [
     6
    ]
   },
   {
    "front": "Will the fix fix it?",
-   "back": "This is Benjamin's working question for the dimension. For any proposed fix, ask what it actually changes and for whom. In Raising Robots she shows how machines framed as helpers, including police throwbots, can serve power while being sold",
+   "back": "This is Benjamin's working question for the dimension. For any proposed fix, ask what it actually changes and for whom. In Raising Robots she shows how machines framed as helpers, including police throwbots, can serve power while being sold as safety, and how ",
    "weeks": [
     9
    ]
