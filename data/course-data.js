@@ -191,7 +191,7 @@ window.BFS218 = {
       "Buolamwini and Gebru (2018) found that facial-analysis systems failed most often not for darker-skinned people in general, nor for women in general, but specifically for darker-skinned women, the intersection. Intersectionality is the tool that lets you ask the sharper question: who exactly does this system fail, and at which overlap?"
      ],
      "cites": [
-      "Buolamwini, J., & Gebru, T. (2018). Gender shades: Intersectional accuracy disparities in commercial gender classification. Proceedings of Machine Learning Research, 81, 1 to 15.",
+      "Buolamwini, J., & Gebru, T. (2018). Gender shades: Intersectional accuracy disparities in commercial gender classification. Proceedings of Machine Learning Research, 81, 77-91.",
       "Crenshaw, K. (1991). Mapping the margins: Intersectionality, identity politics, and violence against women of color. Stanford Law Review, 43(6), 1241 to 1299. https://doi.org/10.2307/1229039",
       "Noble, S. U. (2018). Algorithms of oppression: How search engines reinforce racism. New York University Press."
      ]
@@ -239,7 +239,7 @@ window.BFS218 = {
     },
     {
      "type": "cite",
-     "text": "Buolamwini, J., & Gebru, T. (2018). Gender shades: Intersectional accuracy disparities in commercial gender classification. Proceedings of Machine Learning Research, 81, 1 to 15.",
+     "text": "Buolamwini, J., & Gebru, T. (2018). Gender shades: Intersectional accuracy disparities in commercial gender classification. Proceedings of Machine Learning Research, 81, 77-91.",
      "url": "https://proceedings.mlr.press/v81/buolamwini18a/buolamwini18a.pdf"
     },
     {
@@ -285,7 +285,7 @@ window.BFS218 = {
    ],
    "references": [
     "Benjamin, R. (2019). Race after technology: Abolitionist tools for the New Jim Code. Polity Press.",
-    "Buolamwini, J., & Gebru, T. (2018). Gender shades: Intersectional accuracy disparities in commercial gender classification. Proceedings of Machine Learning Research, 81, 1 to 15.",
+    "Buolamwini, J., & Gebru, T. (2018). Gender shades: Intersectional accuracy disparities in commercial gender classification. Proceedings of Machine Learning Research, 81, 77-91.",
     "Crenshaw, K. (1991). Mapping the margins: Intersectionality, identity politics, and violence against women of color. Stanford Law Review, 43(6), 1241 to 1299. https://doi.org/10.2307/1229039",
     "Noble, S. U. (2018). Algorithms of oppression: How search engines reinforce racism. New York University Press."
    ],
@@ -1509,7 +1509,7 @@ window.BFS218 = {
       "Buolamwini and Gebru's 2018 Gender Shades study measured it: facial-analysis systems were nearly perfect on lighter-skinned men and far worse on darker-skinned women."
      ],
      "cites": [
-      "Buolamwini, J., and Gebru, T. (2018). Gender shades: Intersectional accuracy disparities in commercial gender classification. Proceedings of Machine Learning Research, 81, 1-15."
+      "Buolamwini, J., and Gebru, T. (2018). Gender shades: Intersectional accuracy disparities in commercial gender classification. Proceedings of Machine Learning Research, 81, 77-91."
      ]
     },
     {
@@ -1541,7 +1541,7 @@ window.BFS218 = {
     },
     {
      "type": "cite",
-     "text": "Buolamwini, J., and Gebru, T. (2018). Gender shades: Intersectional accuracy disparities in commercial gender classification. Proceedings of Machine Learning Research, 81, 1-15.",
+     "text": "Buolamwini, J., and Gebru, T. (2018). Gender shades: Intersectional accuracy disparities in commercial gender classification. Proceedings of Machine Learning Research, 81, 77-91.",
      "url": "https://proceedings.mlr.press/v81/buolamwini18a/buolamwini18a.pdf"
     },
     {
@@ -1572,7 +1572,7 @@ window.BFS218 = {
    ],
    "references": [
     "Benjamin, R. (2019). Race after technology: Abolitionist tools for the New Jim Code. Polity Press. (Coded exposure, the third dimension; the chapter Is Visibility a Trap?)",
-    "Buolamwini, J., and Gebru, T. (2018). Gender shades: Intersectional accuracy disparities in commercial gender classification. Proceedings of Machine Learning Research, 81, 1-15."
+    "Buolamwini, J., and Gebru, T. (2018). Gender shades: Intersectional accuracy disparities in commercial gender classification. Proceedings of Machine Learning Research, 81, 77-91."
    ],
    "mapPrompt": "Choose one digital moment where a system watches some people too closely or fails to recognize others.\nName who is over-exposed, who is unseen, whose images likely trained it, and who carries the cost.\nConnect the moment to your actual Seneca program, placement, workplace, or future field.\nAdd one proof of process without exposing private information.",
    "video": {
@@ -3608,20 +3608,12 @@ window.BFS218 = {
      "text": "Three levels of accountability"
     },
     {
-     "type": "text",
-     "text": "We look at three. In Canada, the proposed Artificial Intelligence and Data Act, or AIDA, is an attempt to govern AI; Blair Attard-Frost (2023), in a brief to the Standing Committee on Industry and Technology, documents real gaps in it, including for artists and creators facing generative AI. Internationally, the UN Special Rapporteur's 2020 report frames racial discrimination in emerging digital technologies as a human rights matter. And Christian Ortiz's (2024) Decolonial Intelligence Algorithmic framework proposes building accountability in from the start, through epistemic decolonization and intersectional justice."
-    },
-    {
      "type": "head",
      "text": "What carries forward"
     },
     {
      "type": "text",
      "text": "Accountability operates at many levels: the system, the institution, the law, and international human rights."
-    },
-    {
-     "type": "text",
-     "text": "Canada has a draft AI law with documented gaps; the UN frames techno-racism as a human rights issue; the DIA framework builds justice in from the start."
     },
     {
      "type": "text",
@@ -3643,7 +3635,6 @@ window.BFS218 = {
     "Why are individual fixes not enough when the rules themselves permit the harm?",
     "Attard-Frost documents gaps in Canada's draft AI law. What is one gap, and who does it leave unprotected?",
     "The UN frames techno-racism as a human rights issue. What changes when harm is named as a rights violation?",
-    "Ortiz's framework builds justice in from the start. How is that different from regulating after the fact?",
     "For a technology you use, what rule or policy would you change, and who would have to be at the table?"
    ],
    "concepts": [
@@ -3663,16 +3654,16 @@ window.BFS218 = {
       "The UN Special Rapporteur on contemporary forms of racism, in a 2020 report, analyses racial discrimination in emerging digital technologies as a human rights matter. Framing techno-racism as a rights violation, rather than a technical glitch, creates obligations on states and gives affected communities a stronger basis to demand change."
      ],
      "cites": [
-      "Attard-Frost, B. (2023). Generative AI systems: Impacts on artists and creators and related gaps in the Artificial Intelligence and Data Act. Submission to the Standing Committee on Industry and Technology, Parliament of Canada."
+      "United Nations Human Rights Council. (2020). Racial discrimination and emerging digital technologies: A human rights analysis (A/HRC/44/57). Report of the Special Rapporteur on contemporary forms of racism."
      ]
     },
     {
      "term": "Building justice in from the start",
      "paras": [
-      "Christian Ortiz's (2024) Decolonial Intelligence Algorithmic framework proposes designing AI through epistemic decolonization and intersectional justice, so that accountability is built in from the beginning rather than added after harm. It is a governance counterpart to last week's design justice: not only how we build, but how we govern, with those most affected."
+      "It is a governance counterpart to last week's design justice: not only how we build, but how we govern, with those most affected."
      ],
      "cites": [
-      "Ortiz, C. (2024). The Decolonial Intelligence Algorithmic (DIA) framework: Revolutionizing ethical AI development through epistemic decolonization and intersectional justice."
+      "Attard-Frost, B. (2023). Generative AI systems: Impacts on artists and creators and related gaps in the Artificial Intelligence and Data Act. Submission to the Standing Committee on Industry and Technology, Parliament of Canada."
      ]
     }
    ],
@@ -3703,10 +3694,6 @@ window.BFS218 = {
      "url": ""
     },
     {
-     "type": "cite",
-     "text": "Ortiz, C. (2024). The Decolonial Intelligence Algorithmic (DIA) framework."
-    },
-    {
      "type": "head",
      "text": "How to read this week",
      "url": ""
@@ -3730,7 +3717,6 @@ window.BFS218 = {
    "references": [
     "Attard-Frost, B. (2023). Generative AI systems: Impacts on artists and creators and related gaps in the Artificial Intelligence and Data Act. Submission to the Standing Committee on Industry and Technology, Parliament of Canada.",
     "United Nations Human Rights Council. (2020). Racial discrimination and emerging digital technologies: A human rights analysis (A/HRC/44/57). Report of the Special Rapporteur on contemporary forms of racism.",
-    "Ortiz, C. (2024). The Decolonial Intelligence Algorithmic (DIA) framework: Revolutionizing ethical AI development through epistemic decolonization and intersectional justice.",
     "Full citations are listed in the Key Concepts file for this week."
    ],
    "mapPrompt": "Choose one technology already in your Living Cartography.\nName the law, policy, or framework that governs it, and where it falls short.\nName who the gap leaves exposed, and who should be at the table to close it.\nAdd one public source, such as a law, report, or framework, without exposing private information.",
@@ -4514,14 +4500,6 @@ window.BFS218 = {
    ]
   },
   {
-   "term": "Building justice in from the start",
-   "def": "Christian Ortiz's (2024) Decolonial Intelligence Algorithmic framework proposes designing AI through epistemic decolonization and intersectional justice, so that accountability is built in from the beginning rather than added after harm. It is a governance counterpart to last week's design justice: not only how we build, but how we govern, with those most affected.",
-   "cite": "Ortiz, C. (2024). The Decolonial Intelligence Algorithmic (DIA) framework: Revolutionizing ethical AI development through epistemic decolonization and intersectional justice.",
-   "weeks": [
-    12
-   ]
-  },
-  {
    "term": "Coded exposure",
    "def": "Coded exposure is Benjamin's third dimension: visibility itself is designed unevenly. Some people are made hyper-visible to systems, watched, scanned, and tracked, while others are made invisible, unrecognized and unserved. Benjamin uses every sense of the word exposure: light on a sensor, a secret revealed, being unprotected, being at risk, being put on display.",
    "cite": "Benjamin, R. (2019). Race after technology: Abolitionist tools for the New Jim Code. Polity Press. (Coded exposure, the third dimension; the chapter Is Visibility a Trap?)",
@@ -4644,7 +4622,7 @@ window.BFS218 = {
   {
    "term": "Intersectionality",
    "def": "Intersectionality, from legal scholar Kimberle Crenshaw (1991), is the idea that systems of identity and power do not act one at a time. Race, gender, class, and other categories overlap, and a person at the intersection can face a harm that looking at any single category would miss. Why introduce it in Week 1 of a technology course? Because the harms we will study are rarely about race alone. Buolamwini and Gebru (2018) found that facial-analysis systems failed most often not for darker-skinned people in general, nor for women in general, but specifically for darker-skinned women, the intersection. Intersectionality is the tool that lets you ask the sharper question: who exactly does this system fail, and at which overlap?",
-   "cite": "Buolamwini, J., & Gebru, T. (2018). Gender shades: Intersectional accuracy disparities in commercial gender classification. Proceedings of Machine Learning Research, 81, 1 to 15.",
+   "cite": "Buolamwini, J., & Gebru, T. (2018). Gender shades: Intersectional accuracy disparities in commercial gender classification. Proceedings of Machine Learning Research, 81, 77-91.",
    "weeks": [
     1
    ]
@@ -4850,13 +4828,6 @@ window.BFS218 = {
    "back": "Bird, Castleman, and Song (2023) examined predictive analytics used to flag community college students as likely to succeed or fail.",
    "weeks": [
     10
-   ]
-  },
-  {
-   "front": "Building justice in from the start",
-   "back": "Christian Ortiz's (2024) Decolonial Intelligence Algorithmic framework proposes designing AI through epistemic decolonization and intersectional justice, so that accountability is built in from the beginning rather than added after harm.",
-   "weeks": [
-    12
    ]
   },
   {
