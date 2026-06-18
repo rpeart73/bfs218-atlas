@@ -230,8 +230,7 @@ window.BFS218 = {
     },
     {
      "type": "cite",
-     "text": "Noble, S. U. (2018). Algorithms of oppression: How search engines reinforce racism. New York University Press.",
-     "url": "https://nyupress.org/9781479837243/algorithms-of-oppression/"
+     "text": "Noble, S. U. (2018). Algorithms of oppression: How search engines reinforce racism. New York University Press."
     },
     {
      "type": "text",
@@ -595,7 +594,7 @@ window.BFS218 = {
     },
     {
      "type": "cite",
-     "text": "Crenshaw, K. (1991). Mapping the margins: Intersectionality, identity politics, and violence against women of color. Stanford Law Review, 43(6), 1241-1299.",
+     "text": "Crenshaw, K. (1991). Mapping the margins: Intersectionality, identity politics, and violence against women of color. Stanford Law Review, 43(6), 1241-1299. https://doi.org/10.2307/1229039",
      "url": "https://blogs.law.columbia.edu/critique1313/files/2020/02/1229039.pdf"
     },
     {
@@ -641,7 +640,7 @@ window.BFS218 = {
    ],
    "references": [
     "Benjamin, R. (2019). Race after technology: Abolitionist tools for the New Jim Code. Polity Press.",
-    "Crenshaw, K. (1991). Mapping the margins: Intersectionality, identity politics, and violence against women of color. Stanford Law Review, 43(6), 1241-1299."
+    "Crenshaw, K. (1991). Mapping the margins: Intersectionality, identity politics, and violence against women of color. Stanford Law Review, 43(6), 1241-1299. https://doi.org/10.2307/1229039"
    ],
    "mapPrompt": "Choose one digital moment from your map or Personal Cartography.\nLook at the outcome, not only the intention. Ask who the system serves, who it costs, and whose world it assumes.\nConnect the moment to your actual Seneca program, placement, workplace, or future field.\nAdd one proof of process without exposing private information.\nUse this entry to strengthen the Personal Cartography due this week.",
    "video": {
@@ -2186,18 +2185,15 @@ window.BFS218 = {
     },
     {
      "type": "cite",
-     "text": "Benjamin (2019), the three dimensions: engineered inequity, default discrimination, coded exposure.",
-     "url": ""
+     "text": "Benjamin (2019), the three dimensions: engineered inequity, default discrimination, coded exposure."
     },
     {
      "type": "cite",
-     "text": "Buolamwini and Gebru (2018), Gender Shades, for the coded gaze.",
-     "url": ""
+     "text": "Buolamwini and Gebru (2018), Gender Shades, for the coded gaze."
     },
     {
      "type": "cite",
-     "text": "Robertson, Khoo, and Song (2020) and Molnar (2023), for the Canadian cases.",
-     "url": ""
+     "text": "Robertson, Khoo, and Song (2020) and Molnar (2023), for the Canadian cases."
     },
     {
      "type": "head",
@@ -3105,8 +3101,7 @@ window.BFS218 = {
     },
     {
      "type": "cite",
-     "text": "Noble, S. U. (2018). Algorithms of oppression: How search engines reinforce racism. NYU Press.",
-     "url": "https://nyupress.org/9781479837243/algorithms-of-oppression/"
+     "text": "Noble, S. U. (2018). Algorithms of oppression: How search engines reinforce racism. NYU Press."
     },
     {
      "type": "head",
@@ -3709,8 +3704,7 @@ window.BFS218 = {
     },
     {
      "type": "cite",
-     "text": "Ortiz, C. (2024). The Decolonial Intelligence Algorithmic (DIA) framework.",
-     "url": "https://zenodo.org/records/13832036"
+     "text": "Ortiz, C. (2024). The Decolonial Intelligence Algorithmic (DIA) framework."
     },
     {
      "type": "head",
@@ -4005,8 +3999,7 @@ window.BFS218 = {
     },
     {
      "type": "cite",
-     "text": "Costanza-Chock (2020) and the response readings, for what an alternative looks like.",
-     "url": ""
+     "text": "Costanza-Chock (2020) and the response readings, for what an alternative looks like."
     },
     {
      "type": "head",
@@ -4302,8 +4295,7 @@ window.BFS218 = {
     },
     {
      "type": "cite",
-     "text": "The response readings, Costanza-Chock (2020) and the others, for the work ahead.",
-     "url": ""
+     "text": "The response readings, Costanza-Chock (2020) and the others, for the work ahead."
     },
     {
      "type": "head",

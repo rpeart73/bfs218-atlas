@@ -162,15 +162,15 @@ function home(){
     '<div class="herogrid"><div style="position:relative"><div class="htag">'+esc(c.code)+' &middot; '+esc(c.institution||'Seneca Polytechnic')+' &middot; Online, self-paced</div>'+
     '<h1>'+esc(c.title||'')+'</h1><p class="hsub">'+esc(c.subtitle||'')+'. Read, watch, and work through the course at your own pace, with tools that help the ideas take hold.</p>'+
     '<div class="hactions"><a class="btn btn-primary" href="#/week/1">Start with Week 1</a><a class="btn" href="#/glossary">Explore the tools</a></div></div>'+
-    '<div class="heroimg" style="position:relative"><img src="assets/img/bfs-home-1.jpg" alt="Abstract glowing network strands suggesting digital data and connectivity."></div></div></section>';
+    '<div class="heroimg" style="position:relative"><img src="assets/img/bfs-home-1.jpg" alt="A facial recognition system reading a human face into a machine readout."></div></div></section>';
   var tools='<h2>Learning tools</h2><div class="toolgrid">'+Object.keys(toolMeta).map(function(k){var t=toolMeta[k];return '<a class="toolcard" href="'+t[3]+'"><div class="ic" style="background:'+t[0]+'22;color:'+t[0]+'">'+t[4]+'</div><b>'+esc(t[1])+'</b><p style="margin:.3em 0 0;color:#4A4A4A;font-size:.92rem">'+esc(t[2])+'</p></a>';}).join('')+'</div>';
   var bands=(D.phases||[]).map(function(p){
     var tiles=(p.weeks||[]).map(function(n){var wk=week(n);if(!wk)return '';return '<a class="wktile" href="#/week/'+n+'" style="background:'+p.fill+'"><span class="wn" style="color:'+p.accent+'">WEEK '+pad(n)+'</span><b>'+esc(wk.title||'')+'</b><span class="muted" style="font-size:.8rem">'+esc(wk.concept||'')+'</span></a>';}).join('');
     return '<h3 style="margin:18px 0 8px;color:'+p.accent+'">'+esc(p.name)+' <span class="muted" style="font-weight:400">Weeks '+p.weeks[0]+' to '+p.weeks[p.weeks.length-1]+'</span></h3><div class="wkgrid">'+tiles+'</div>';
   }).join('');
   var foot='<div class="card" style="margin-top:24px"><div class="eyebrow">A companion, not the gradebook</div><p style="margin:0">This site holds the learning materials and tools. Your grades, the discussion board, and handing work in all live in Blackboard. Nothing here is graded, and nothing you do here is tracked.</p></div>';
-  var band='<div style="margin:22px 0 0;border-radius:14px;overflow:hidden;border:1px solid var(--hair)"><img src="assets/img/bfs-home-3.jpg" alt="A diverse group of students collaborating around a laptop." style="width:100%;max-height:230px;object-fit:cover;display:block;object-position:center 35%"></div>';
-  var credits='<p class="muted" style="font-size:.8rem;margin-top:16px">Images: Photo by JJ Ying and Photo by Vitaly Gariev on Unsplash (Unsplash License).</p>';
+  var band='<div style="margin:22px 0 0;border-radius:14px;overflow:hidden;border:1px solid var(--hair)"><img src="assets/img/bfs-home-2.jpg" alt="Two surveillance cameras watching a public space." style="width:100%;max-height:230px;object-fit:cover;display:block;object-position:center 40%"></div>';
+  var credits='<p class="muted" style="font-size:.8rem;margin-top:16px">Images: Photo by Maxim Tolchinskiy and Photo by Milosz Klinowski on Unsplash (Unsplash License).</p>';
   return hero+tools+band+'<h2 style="margin-top:26px">The 14 weeks</h2>'+bands+foot+credits;
 }
 
@@ -179,10 +179,8 @@ function structList(arr){
   return (arr||[]).map(function(it){ return it.type==='head' ? '<h4 style="margin:14px 0 6px">'+esc(it.text)+'</h4>' : '<p style="margin:.45em 0">'+esc(it.text)+'</p>'; }).join('');
 }
 function readingLink(r){
-  if(r.pdf) return '<a class="rlink" href="'+esc(r.pdf)+'" target="_blank" rel="noopener">Access Reading</a>';
   if(r.url) return '<a class="rlink" href="'+esc(r.url)+'" target="_blank" rel="noopener">Access Reading</a>';
-  var q=encodeURIComponent(String(r.text||'').replace(/\s+/g,' ').slice(0,180));
-  return '<a class="rlink" href="https://scholar.google.com/scholar?q='+q+'" target="_blank" rel="noopener">Access Reading</a>';
+  return '<span class="muted" style="font-size:.85rem">Available through the Seneca library.</span>';
 }
 function weekView(n){
   var wk=week(n); if(!wk) return '<p>Week not found.</p>';
