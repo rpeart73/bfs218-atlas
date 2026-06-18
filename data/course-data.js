@@ -1,4 +1,3 @@
-/* BFS218 Atlas course data, generated from real course docx. */
 window.BFS218 = {
  "course": {
   "code": "BFS218",
