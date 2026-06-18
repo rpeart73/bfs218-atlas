@@ -211,7 +211,7 @@ window.BFS218 = {
     {
      "type": "cite",
      "text": "Benjamin, R. (2019). Introduction: The New Jim Code. In Race after technology: Abolitionist tools for the New Jim Code (pp. 1 to 47). Polity Press.",
-     "url": ""
+     "url": "https://www.are.na/block/25150880"
     },
     {
      "type": "text",
@@ -231,7 +231,7 @@ window.BFS218 = {
     {
      "type": "cite",
      "text": "Noble, S. U. (2018). Algorithms of oppression: How search engines reinforce racism. New York University Press.",
-     "url": ""
+     "url": "https://nyupress.org/9781479837243/algorithms-of-oppression/"
     },
     {
      "type": "text",
@@ -241,7 +241,7 @@ window.BFS218 = {
     {
      "type": "cite",
      "text": "Buolamwini, J., & Gebru, T. (2018). Gender shades: Intersectional accuracy disparities in commercial gender classification. Proceedings of Machine Learning Research, 81, 1 to 15.",
-     "url": ""
+     "url": "https://proceedings.mlr.press/v81/buolamwini18a.html"
     },
     {
      "type": "text",
@@ -596,7 +596,7 @@ window.BFS218 = {
     {
      "type": "cite",
      "text": "Crenshaw, K. (1991). Mapping the margins: Intersectionality, identity politics, and violence against women of color. Stanford Law Review, 43(6), 1241-1299.",
-     "url": ""
+     "url": "https://blogs.law.columbia.edu/critique1313/files/2020/02/1229039.pdf"
     },
     {
      "type": "text",
@@ -611,7 +611,7 @@ window.BFS218 = {
     {
      "type": "cite",
      "text": "Benjamin, R. (2019). Introduction: The New Jim Code. In Race after technology: Abolitionist tools for the New Jim Code (pp. 1-32). Polity Press.",
-     "url": ""
+     "url": "https://www.are.na/block/25150880"
     },
     {
      "type": "text",
@@ -936,7 +936,7 @@ window.BFS218 = {
     {
      "type": "cite",
      "text": "Benjamin, R. (2019). Race after technology: Abolitionist tools for the New Jim Code. Polity Press. Read the first dimension, engineered inequity (the chapter framed as Are Robots Racist?).",
-     "url": ""
+     "url": "https://www.are.na/block/25150880"
     },
     {
      "type": "text",
@@ -1234,7 +1234,7 @@ window.BFS218 = {
     {
      "type": "cite",
      "text": "Benjamin, R. (2019). Race after technology: Abolitionist tools for the New Jim Code. Polity Press. Read the second dimension, default discrimination (the chapter Is the Glitch Systemic?, including the section Automating Anti-Blackness).",
-     "url": ""
+     "url": "https://www.are.na/block/25150880"
     },
     {
      "type": "text",
@@ -1538,12 +1538,12 @@ window.BFS218 = {
     {
      "type": "cite",
      "text": "Benjamin, R. (2019). Race after technology: Abolitionist tools for the New Jim Code. Polity Press. Read the third dimension, coded exposure (the chapter Is Visibility a Trap?).",
-     "url": ""
+     "url": "https://www.are.na/block/25150880"
     },
     {
      "type": "cite",
      "text": "Buolamwini, J., and Gebru, T. (2018). Gender shades: Intersectional accuracy disparities in commercial gender classification. Proceedings of Machine Learning Research, 81, 1-15.",
-     "url": ""
+     "url": "https://proceedings.mlr.press/v81/buolamwini18a.html"
     },
     {
      "type": "text",
@@ -1868,7 +1868,7 @@ window.BFS218 = {
     {
      "type": "cite",
      "text": "Office of the Privacy Commissioner of Canada. (2021). Police use of facial recognition technology in Canada and the way forward. Special report to Parliament.",
-     "url": ""
+     "url": "https://www.priv.gc.ca/en/opc-actions-and-decisions/ar_index/202021/sr_rcmp/"
     },
     {
      "type": "text",
@@ -1878,7 +1878,7 @@ window.BFS218 = {
     {
      "type": "cite",
      "text": "Singh, S. (2021). Algorithmic policing technologies in Canada.",
-     "url": ""
+     "url": "https://themanitobalawjournal.com/wp-content/uploads/articles/MLJ_44.6/446_Singh.pdf"
     },
     {
      "type": "head",
@@ -2495,7 +2495,7 @@ window.BFS218 = {
     {
      "type": "cite",
      "text": "Mohamed, S., Png, M.-T., and Isaac, W. (2020). Decolonial AI: Decolonial theory as sociotechnical foresight in artificial intelligence. Philosophy & Technology, 33, 659-684.",
-     "url": ""
+     "url": "https://arxiv.org/abs/2007.04068"
     },
     {
      "type": "text",
@@ -2510,7 +2510,7 @@ window.BFS218 = {
     {
      "type": "cite",
      "text": "Smillie-Adjarkwa, C. (2005). Is the internet a useful resource for Indigenous women living in remote communities? National Network for Aboriginal Mental Health Research.",
-     "url": ""
+     "url": "http://www.yorku.ca/anthna/DigitalDivide.pdf"
     },
     {
      "type": "text",
@@ -2803,7 +2803,7 @@ window.BFS218 = {
     {
      "type": "cite",
      "text": "Benjamin, R. (2019). Race after technology: Abolitionist tools for the New Jim Code. Polity Press. Read the fourth dimension, technological benevolence (the section Raising Robots).",
-     "url": ""
+     "url": "https://www.are.na/block/25150880"
     },
     {
      "type": "text",
@@ -3096,7 +3096,7 @@ window.BFS218 = {
     {
      "type": "cite",
      "text": "Devlin, K. (2023). Power in AI: Inequality within and without the algorithm. Wiley-Blackwell.",
-     "url": ""
+     "url": "https://doi.org/10.1002/9781119800729.ch8"
     },
     {
      "type": "head",
@@ -3106,7 +3106,7 @@ window.BFS218 = {
     {
      "type": "cite",
      "text": "Noble, S. U. (2018). Algorithms of oppression: How search engines reinforce racism. NYU Press.",
-     "url": ""
+     "url": "https://nyupress.org/9781479837243/algorithms-of-oppression/"
     },
     {
      "type": "head",
@@ -3402,7 +3402,7 @@ window.BFS218 = {
     {
      "type": "cite",
      "text": "Tanksley, T. (2023). Employing an abolitionist, critical race pedagogy in CS. Journal of Computer Science Integration, 6(1).",
-     "url": ""
+     "url": "https://digitalcommons.chapman.edu/jcsi/vol6/iss1/9/"
     },
     {
      "type": "head",
@@ -3695,7 +3695,7 @@ window.BFS218 = {
     {
      "type": "cite",
      "text": "Attard-Frost, B. (2023). Generative AI systems: Impacts on artists and creators and related gaps in the Artificial Intelligence and Data Act. Submission to the Standing Committee on Industry and Technology.",
-     "url": ""
+     "url": "https://www.ourcommons.ca/Content/Committee/441/INDU/Brief/BR12541028/br-external/AttardFrostBlair-e.pdf"
     },
     {
      "type": "text",
@@ -3710,7 +3710,7 @@ window.BFS218 = {
     {
      "type": "cite",
      "text": "Ortiz, C. (2024). The Decolonial Intelligence Algorithmic (DIA) framework.",
-     "url": ""
+     "url": "https://zenodo.org/records/13832036"
     },
     {
      "type": "head",
@@ -4001,7 +4001,7 @@ window.BFS218 = {
     {
      "type": "cite",
      "text": "Benjamin (2019), for the four dimensions and the New Jim Code.",
-     "url": ""
+     "url": "https://www.are.na/block/25150880"
     },
     {
      "type": "cite",
@@ -4298,7 +4298,7 @@ window.BFS218 = {
     {
      "type": "cite",
      "text": "Benjamin (2019), Race after technology, the spine of the course and a book to keep.",
-     "url": ""
+     "url": "https://www.are.na/block/25150880"
     },
     {
      "type": "cite",
