@@ -89,6 +89,11 @@ function videoEmbed(wk){
   }
   return '<video controls preload="metadata" '+(v.poster?'poster="'+esc(v.poster)+'"':'')+'><source src="'+esc(v.url)+'"></video>';
 }
+function urlEmbed(url,prov){
+  if(prov==='youtube'||/youtu/.test(url)){ var id=(String(url).match(/[?&]v=([^&]+)/)||[])[1]||String(url).split('/').pop(); return '<div class="aspect"><iframe src="https://www.youtube-nocookie.com/embed/'+esc(id)+'?rel=0" title="Reading video" allow="fullscreen" allowfullscreen></iframe></div>'; }
+  if(prov==='vimeo'||/vimeo/.test(url)){ var vid=String(url).split('/').pop(); return '<div class="aspect"><iframe src="https://player.vimeo.com/video/'+esc(vid)+'" title="Reading video" allowfullscreen></iframe></div>'; }
+  return '<div class="aspect"><video controls preload="none"><source src="'+esc(url)+'"></video></div>';
+}
 
 /* ---------- slideshow ---------- */
 function slideBlock(wk){
@@ -149,11 +154,11 @@ function weekView(n){
     sec('overview','Overview', (wk.welcome?'<div class="eyebrow">From your instructor</div><p>'+esc(wk.welcome)+'</p>':'')+(wk.overview?nl2p(wk.overview):'<p class="muted">Overview coming soon.</p>')) +
     sec('purpose','Purpose and Learning Outcomes', (pu.statement?'<p>'+esc(pu.statement)+'</p>':'')+((pu.outcomes&&pu.outcomes.length)?'<div class="eyebrow">By the end of this week you will be able to</div><ul style="line-height:1.7">'+pu.outcomes.map(li).join('')+'</ul>':((pu.statement)?'':'<p class="muted">Outcomes coming soon.</p>'))) +
     sec('guiding','Guiding Questions', (wk.guiding&&wk.guiding.length)?'<ol style="line-height:1.8">'+wk.guiding.map(li).join('')+'</ol>':'<p class="muted">Guiding questions coming soon.</p>') +
-    sec('concepts','Weekly Concepts', (wk.concepts&&wk.concepts.length)?wk.concepts.map(function(c){return '<div style="margin-bottom:14px"><b>'+esc(c.term)+'</b>'+(c.def?'<p style="margin:.3em 0">'+esc(c.def)+'</p>':'')+(c.ex?'<p class="muted" style="margin:0"><b>For example:</b> '+esc(c.ex)+'</p>':'')+'</div>';}).join(''):'<p class="muted">Concepts coming soon.</p>') +
-    sec('readings','Readings', (function(){var rs=clean(wk.readings);return rs.length?rs.map(function(r){return '<div class="reading"><p>'+esc(r)+'</p></div>';}).join('')+'<p class="muted" style="font-size:.9rem;margin-top:10px">Open any linked files in Blackboard.</p>':'<p class="muted">Readings will be listed here.</p>';})()) +
+    sec('concepts','Weekly Concepts', (wk.concepts&&wk.concepts.length)?wk.concepts.map(function(c,ci){return '<div style="margin-bottom:20px;padding-bottom:16px;border-bottom:1px solid var(--hair)"><h3 style="margin:0 0 .35em">'+esc((ci+1)+'. '+c.term)+'</h3>'+((c.parts||[]).map(function(s){return '<p style="margin:.35em 0">'+esc(s)+'</p>';}).join(''))+((c.cites&&c.cites.length)?'<p class="muted" style="margin:.5em 0 0;font-size:.85rem"><b>Source:</b> '+c.cites.map(function(x){return esc(x);}).join('<br>')+'</p>':'')+'</div>';}).join(''):'<p class="muted">Concepts coming soon.</p>') +
+    sec('readings','Readings', (function(){var rs=(wk.readings||[]);if(!rs.length)return '<p class="muted">Readings will be listed here.</p>';return rs.map(function(r){if(r.type==='head')return '<h4 style="margin:16px 0 6px">'+esc(r.text)+'</h4>';if(r.type==='video')return '<div class="reading">'+(r.label?'<p style="margin:0 0 8px"><b>'+esc(r.label)+'</b></p>':'')+urlEmbed(r.url,r.provider)+'</div>';if(r.type==='cite')return '<div class="reading"><p style="margin:0">'+esc(r.text)+'</p></div>';return '<p style="margin:.45em 0">'+esc(r.text)+'</p>';}).join('')+'<p class="muted" style="font-size:.9rem;margin-top:10px">Open any linked files in Blackboard.</p>';})()) +
     sec('slideshow','Interactive Slideshow', slideBlock(wk)+'<h3 style="margin-top:18px">Narrated walkthrough</h3>'+videoBlock(wk)+'<p class="muted" style="font-size:.9rem;margin-top:10px">Click through the slides at your own pace. Captions and a transcript are in the video once it is posted.</p>') +
     sec('case','Case Study', caseInner) +
-    sec('reflect','Reflection Corner', '<p>This is a quiet reflection, not a quiz. No score, no pass or fail.</p>'+((wk.checkpoint&&wk.checkpoint.prompt)?'<div class="notebar"><b>A question to keep, not to answer:</b><br>'+esc(wk.checkpoint.prompt)+'</div>':'')+((wk.checkpoint&&wk.checkpoint.next)?'<p class="muted" style="font-size:.9rem">A glimpse of next week: '+esc(wk.checkpoint.next)+'</p>':'')) +
+    sec('reflect','Reflection Corner', '<p class="muted">One question to carry through the whole course. It is not a quiz. There is no right answer. It is here to make you think.</p><blockquote style="border-left:4px solid '+p.accent+';margin:14px 0 0;padding:6px 0 6px 18px;font-size:1.2rem;line-height:1.5">'+esc((D.course||{}).reflectionQuestion||'')+'</blockquote>') +
     sec('references','References', (function(){var rf=clean(wk.references);return rf.length?rf.map(function(r){return '<div class="reading"><p>'+esc(r)+'</p></div>';}).join(''):'<p class="muted">References will be listed here.</p>';})());
   var toolCTA='<div class="card"><div class="eyebrow">Make it yours</div><p>'+esc(wk.mapPrompt||'Add a moment from your own digital life to your Living Cartography this week.')+'</p><a class="btn btn-primary" href="#/cartography?week='+n+'">Add this week to your Living Cartography</a></div>';
   return head+jump+sections+toolCTA;
