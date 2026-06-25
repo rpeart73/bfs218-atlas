@@ -50,11 +50,7 @@ var CSS = [
 ].join("\n");
 (function(){ var s=document.createElement('style'); s.textContent=CSS; document.head.appendChild(s); })();
 
-/* ---------- state (the student owns this; saved on their device) ---------- */
-var SKEY='bfs218-cartography-v1';
-function loadCarto(){ try{ var a=JSON.parse(localStorage.getItem(SKEY)||'[]'); return Array.isArray(a)?a:[]; }catch(e){ return []; } }
-function saveCarto(){ try{ localStorage.setItem(SKEY, JSON.stringify(CARTO)); }catch(e){} }
-var CARTO = loadCarto();
+/* ---------- state (saved on the student's own device) ---------- */
 var CKEY='bfs218-compare-v1';
 function loadCmp(){ try{ var a=JSON.parse(localStorage.getItem(CKEY)||'[]'); return Array.isArray(a)?a.slice(0,3):[]; }catch(e){ return []; } }
 function saveCmp(){ try{ localStorage.setItem(CKEY, JSON.stringify(CMP)); }catch(e){} }
@@ -117,8 +113,7 @@ var ROUTES=[
   {id:'home',label:'Home',hash:'#/home',icon:'grid'},
   {id:'glossary',label:'Glossary & Thinkers',hash:'#/glossary',icon:'book'},
   {id:'cards',label:'Self-check',hash:'#/cards',icon:'clipboard'},
-  {id:'compare',label:'Compare ideas',hash:'#/compare',icon:'columns'},
-  {id:'cartography',label:'Living Cartography',hash:'#/cartography',icon:'map'}
+  {id:'compare',label:'Compare ideas',hash:'#/compare',icon:'columns'}
 ];
 function renderNav(active){
   var nav=ROUTES.map(function(r){
@@ -220,8 +215,7 @@ function weekView(n){
     sec('slideshow','Interactive Slideshow', slideBlock(wk)+'<h3 style="margin-top:18px">Narrated walkthrough</h3>'+videoBlock(wk)+'<div class="notebar" style="margin-top:12px"><b>Pause and notice.</b> As you move through the slides, stop on one that surprises you and ask: who does this system assume I am, and who does it leave out?</div>')+
     sec('reflect','Reflection Corner', '<p class="muted">One question to carry through the whole course. It is not a quiz. There is no right answer. It is here to make you think.</p><blockquote style="border-left:4px solid '+p.accent+';margin:14px 0 0;padding:6px 0 6px 18px;font-size:1.2rem;line-height:1.5">'+esc((D.course||{}).reflectionQuestion||'')+'</blockquote>')+
     sec('references','References', (function(){var rf=wk.references||[];return rf.length?rf.map(function(r){return '<div class="reading"><p style="margin:0">'+linkify(r)+'</p></div>';}).join(''):'<p class="muted">References will be listed here.</p>';})());
-  var cta='<div class="card"><div class="eyebrow">Make it yours</div><p>'+esc(wk.mapPrompt||'Add a moment from your own digital life to your Living Cartography this week.')+'</p><a class="btn btn-primary" href="#/cartography?week='+n+'">Add this week to your Living Cartography</a></div>';
-  return head+jump+s+cta;
+  return head+jump+s;
 }
 
 /* ---------- glossary and thinkers, by week ---------- */
@@ -265,38 +259,6 @@ function cardGrid(wk){
   return '<div class="grid grid-2">'+cs.map(function(c){return '<div class="flip" data-action="flip" tabindex="0" role="button" aria-label="Flashcard: '+esc(c.front)+'. Activate to flip."><div class="flip-inner"><div class="flip-face"><div class="eyebrow">Recall</div><b style="font-size:1.1rem">'+esc(c.front)+'</b><span class="muted" style="margin-top:auto;font-size:.8rem">Click to flip</span></div><div class="flip-face flip-back"><div class="eyebrow">Definition</div><p style="margin:0">'+esc(c.back)+'</p></div></div></div>';}).join('')+'</div>';
 }
 
-/* ---------- living cartography (visual + save) ---------- */
-function cartography(){
-  var pre=(location.hash.split('?week=')[1])||'';
-  return '<h1>Living Cartography</h1><p class="lede">Your own growing map of where technology touches race in your digital life. It is yours, it saves on your device, and it is not assessed here.</p>'+
-    '<div class="notebar"><b>Your privacy comes first.</b> You never have to share anything personal. Describe a moment in words, map a public screen, or use a general example. All three are full and equal.</div>'+
-    '<div style="display:flex;flex-wrap:wrap;gap:10px;margin:14px 0"><button class="btn btn-primary" data-action="carto-add" data-week="'+esc(pre)+'">Add an entry</button><button class="btn" data-action="carto-export">Save to a file</button><button class="btn" data-action="carto-import">Load from a file</button><button class="btn btn-quiet" data-action="carto-clear">Clear my map</button><input type="file" id="carto-file" accept="application/json" hidden></div>'+
-    '<h2>Your map</h2><p class="muted" style="margin-top:-4px">Each pin is a moment you mapped. Watch your map fill across the term.</p>'+cartoMap()+
-    '<h2 style="margin-top:22px">Your entries ('+CARTO.length+')</h2>'+cartoEntries();
-}
-function cartoMap(){
-  return '<div class="cmap">'+(D.phases||[]).map(function(p){
-    var cols=(p.weeks||[]).map(function(n){
-      var es=CARTO.map(function(e,i){return {e:e,i:i};}).filter(function(o){return o.e.week===n;});
-      var pins=es.length?es.map(function(o){return '<button class="cpin" style="background:'+p.accent+'" data-action="carto-view" data-i="'+o.i+'" aria-label="Week '+n+' entry: '+esc(o.e.title)+'" title="'+esc(o.e.title)+'"></button>';}).join(''):'<span class="cempty" aria-hidden="true"></span>';
-      return '<div class="ccol" style="background:'+p.fill+'66"><span class="cw">W'+pad(n)+'</span>'+pins+'</div>';
-    }).join('');
-    return '<div class="cphase"><span class="pl" style="color:'+p.accent+'">'+esc(p.name)+'</span><div class="ccols">'+cols+'</div></div>';
-  }).join('')+'</div>';
-}
-function cartoEntries(){
-  if(!CARTO.length) return '<div class="card"><p class="muted" style="margin:0">Your map is empty. Add your first entry and a pin will appear above.</p></div>';
-  return CARTO.map(function(e,i){var p=phaseOf((week(e.week)||{}).phaseId);return '<div class="card"><div class="mono" style="font-size:.74rem;color:#54585A">W'+pad(e.week)+' &middot; '+esc(e.concept||'')+'</div><b>'+esc(e.title)+'</b><p style="margin:.4em 0">'+esc(e.note||'')+'</p><button class="btn btn-quiet" data-action="carto-del" data-i="'+i+'">Delete this entry</button></div>';}).join('');
-}
-function cartoForm(pre){
-  var opts=(D.weeks||[]).map(function(w){return '<option value="'+w.number+'"'+(String(w.number)===String(pre)?' selected':'')+'>Week '+pad(w.number)+': '+esc(w.title||'')+'</option>';}).join('');
-  return '<h2 style="margin-top:0">Add a map entry</h2><label for="ce-week">Which week</label><select id="ce-week">'+opts+'</select><label for="ce-title">A short title</label><input id="ce-title" placeholder="For example: The autofill that assumed"><label for="ce-note">What did you notice, and how does it tie to the concept?</label><textarea id="ce-note"></textarea><label for="ce-concept">Concept (optional)</label><input id="ce-concept" placeholder="For example: coded exposure"><div style="margin-top:16px;display:flex;gap:10px"><button class="btn btn-primary" data-action="carto-save">Place this pin</button><button class="btn btn-quiet" data-action="modal-close">Cancel</button></div>';
-}
-function cartoViewModal(i){
-  var e=CARTO[i]; if(!e) return; var p=phaseOf((week(e.week)||{}).phaseId);
-  openModal('<div class="eyebrow" style="color:'+p.accent+'">Week '+pad(e.week)+' &middot; '+esc(e.concept||'')+'</div><h2 style="margin:.2em 0 .4em">'+esc(e.title)+'</h2><p>'+esc(e.note||'')+'</p><div style="margin-top:14px;display:flex;gap:10px"><button class="btn btn-quiet" data-action="modal-close">Close</button><button class="btn btn-quiet" data-action="carto-del" data-i="'+i+'">Delete</button></div>');
-}
-
 /* ---------- compare ideas (hold concepts side by side + synthesize) ---------- */
 function allConcepts(){ var out=[]; (D.weeks||[]).forEach(function(w){ (w.concepts||[]).forEach(function(c,i){ out.push({id:'w'+w.number+'-'+i,week:w.number,term:c.term,text:(c.paras||[]).join(' '),cite:(c.cites&&c.cites[0])||'',wtitle:w.title||''}); }); }); return out; }
 function conceptById(id){ var a=allConcepts(); for(var i=0;i<a.length;i++) if(a[i].id===id) return a[i]; return null; }
@@ -335,7 +297,6 @@ function render(){
   var h=location.hash||'#/home', path=h.replace(/^#\//,'').split('?')[0], html, active;
   if(path.indexOf('week/')===0){ active='home'; html=weekView(parseInt(path.split('/')[1],10)); }
   else if(path==='glossary'){ active='glossary'; html=glossary(); }
-  else if(path==='cartography'){ active='cartography'; html=cartography(); }
   else if(path==='cards'){ active='cards'; html=cards(); }
   else if(path==='compare'){ active='compare'; html=compareView(); }
   else { active='home'; html=home(); }
@@ -350,13 +311,6 @@ document.addEventListener('click',function(e){
   else if(a==='jump'){ var je=document.getElementById(t.getAttribute('data-target')); if(je) je.scrollIntoView({behavior:'smooth',block:'start'}); }
   else if(a==='slide-prev'||a==='slide-next'){ stepSlide(t.closest('.slidewrap'),a==='slide-next'?1:-1); }
   else if(a==='flip'){ t.classList.toggle('flipped'); }
-  else if(a==='carto-add'){ openModal(cartoForm(t.getAttribute('data-week'))); }
-  else if(a==='carto-save'){ saveEntry(); }
-  else if(a==='carto-del'){ CARTO.splice(parseInt(t.getAttribute('data-i'),10),1); saveCarto(); closeModal(); render(); toast('Entry deleted.'); }
-  else if(a==='carto-view'){ cartoViewModal(parseInt(t.getAttribute('data-i'),10)); }
-  else if(a==='carto-export'){ if(!CARTO.length){ toast('Your map is empty.'); return; } dl('my-bfs218-cartography.json', JSON.stringify(CARTO,null,2)); toast('Saved to a file you keep.'); }
-  else if(a==='carto-import'){ document.getElementById('carto-file').click(); }
-  else if(a==='carto-clear'){ if(confirm('Clear your whole map? This cannot be undone. Save to a file first if you want to keep it.')){ CARTO=[]; saveCarto(); render(); toast('Your map was cleared.'); } }
   else if(a==='modal-close'){ closeModal(); }
   else if(a==='cmp-add'){ cmpToggle(t.getAttribute('data-id')); }
   else if(a==='cmp-clear'){ CMP=[]; SHOWSYN=false; saveCmp(); render(); }
@@ -375,15 +329,7 @@ document.addEventListener('input',function(e){
 document.addEventListener('change',function(e){
   if(e.target.id==='gweek'){ location.hash='#/glossary?week='+e.target.value; }
   else if(e.target.id==='card-week'){ document.getElementById('cardgrid').innerHTML=cardGrid(e.target.value); }
-  else if(e.target.id==='carto-file'){ var fl=e.target.files[0]; if(!fl) return; var rd=new FileReader(); rd.onload=function(){ try{ var a=JSON.parse(rd.result); if(Array.isArray(a)){ CARTO=a; saveCarto(); render(); toast('Your map was loaded.'); } else toast('That file did not look like a saved map.'); }catch(err){ toast('Could not read that file.'); } }; rd.readAsText(fl); }
 });
-function saveEntry(){
-  var t=document.getElementById('ce-title').value.trim();
-  if(!t){ toast('Add a short title to place your pin.'); return; }
-  CARTO.push({week:parseInt(document.getElementById('ce-week').value,10),title:t,note:document.getElementById('ce-note').value.trim(),concept:document.getElementById('ce-concept').value.trim()});
-  saveCarto(); closeModal(); render(); toast('Pin placed. Your map grew.');
-}
-
 window.addEventListener('hashchange',render);
 render();
 })();
