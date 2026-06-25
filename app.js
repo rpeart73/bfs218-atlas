@@ -56,6 +56,7 @@ function loadCmp(){ try{ var a=JSON.parse(localStorage.getItem(CKEY)||'[]'); ret
 function saveCmp(){ try{ localStorage.setItem(CKEY, JSON.stringify(CMP)); }catch(e){} }
 var CMP = loadCmp();
 var SHOWSYN = false;
+var HQ = '', HL = 'phase';
 
 /* ---------- helpers ---------- */
 function esc(s){ return String(s==null?'':s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];}); }
@@ -104,6 +105,10 @@ var ICON={
   book:['M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15.5H6.5A2.5 2.5 0 0 0 4 21z','M4 18.5A2.5 2.5 0 0 1 6.5 16H20'],
   clipboard:['M9 4.5h6v3H9z','M9 6H6v15h12V6h-3'],
   columns:['M4 4h7v16H4z','M13 4h7v16h-7z'],
+  search:['M11 18a7 7 0 1 0 0-14 7 7 0 0 0 0 14z','M20 20l-4-4'],
+  x:['M6 6l12 12','M18 6L6 18'],
+  layers:['M12 3l9 5-9 5-9-5z','M3 13l9 5 9-5'],
+  list:['M8 6h13','M8 12h13','M8 18h13','M3 6h.01','M3 12h.01','M3 18h.01'],
   map:['M9 4L3 6v14l6-2 6 2 6-2V4l-6 2-6-2z','M9 4v14','M15 6v14']
 };
 function ic(name,size,w){ var p=ICON[name]||ICON.grid,s=size||20,out='<svg width="'+s+'" height="'+s+'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="'+(w||1.8)+'" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'; for(var i=0;i<p.length;i++) out+='<path d="'+p[i]+'"></path>'; return out+'</svg>'; }
@@ -181,12 +186,48 @@ function home(){
     '</div>'+
     '<div style="display:flex;gap:10px;flex:none">'+stats.map(function(st){return '<div style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:12px;padding:12px 16px;text-align:center;min-width:78px"><div class="mono" style="font-size:1.7rem;font-weight:600;line-height:1">'+st[1]+'</div><div style="font-size:.6875rem;text-transform:uppercase;letter-spacing:.06em;color:rgba(255,255,255,.6);margin-top:5px">'+st[0]+'</div></div>';}).join('')+'</div>'+
     '</div></section>';
-  var bands=(D.phases||[]).map(function(p){
-    var cards=(p.weeks||[]).map(function(n){var wk=week(n);if(!wk)return '';return '<a href="#/week/'+n+'" style="text-decoration:none;color:inherit;background:var(--surface);border:1px solid var(--hair);border-radius:14px;overflow:hidden;box-shadow:0 1px 2px rgba(21,23,28,.04);display:flex;flex-direction:column"><div style="height:5px;background:'+p.accent+'"></div><div style="padding:15px 16px"><div class="mono" style="font-size:.6875rem;color:var(--ink-faint);letter-spacing:.04em">WEEK '+pad(n)+'</div><div style="font-weight:600;font-size:1rem;line-height:1.3;margin:5px 0 4px;color:var(--ink)">'+esc(wk.title||'')+'</div><div style="font-size:.8125rem;color:var(--ink-soft);line-height:1.45">'+esc(wk.concept||'')+'</div></div></a>';}).join('');
-    return '<section style="margin-bottom:22px"><div style="display:flex;align-items:baseline;gap:10px;margin-bottom:12px"><span style="display:inline-flex;align-items:center;height:24px;padding:0 10px;border-radius:8px;background:'+p.fill+';color:'+p.accent+';font-family:var(--mono);font-size:.75rem;font-weight:600">'+esc(p.name)+'</span><span class="muted" style="font-size:.8125rem">Weeks '+p.weeks[0]+' to '+p.weeks[p.weeks.length-1]+'</span><div style="flex:1;height:1px;background:var(--raised)"></div></div><div class="wkgrid">'+cards+'</div></section>';
-  }).join('');
+  var layoutDefs=[['phase','By phase','layers'],['tiles','Tiles','grid'],['index','Index','list']];
+  var chips=layoutDefs.map(function(d){ var on=HL===d[0]; return '<button data-action="home-layout" data-layout="'+d[0]+'" aria-pressed="'+on+'" style="display:flex;align-items:center;gap:6px;border:none;border-radius:7px;padding:6px 12px;font-size:.8125rem;font-weight:'+(on?'600':'500')+';background:'+(on?'#fff':'transparent')+';color:'+(on?'#15171C':'#474C57')+';box-shadow:'+(on?'0 1px 2px rgba(21,23,28,.12)':'none')+'">'+ic(d[2],15)+'<span>'+d[1]+'</span></button>'; }).join('');
+  var bar='<section style="background:var(--surface);border:1px solid var(--hair);border-radius:14px;padding:16px 18px;margin-bottom:18px;box-shadow:0 1px 2px rgba(21,23,28,.04)">'+
+    '<div style="display:flex;align-items:center;gap:10px;background:var(--paper);border:1px solid var(--hair);border-radius:10px;padding:11px 14px">'+
+    '<span style="color:var(--ink-faint);display:flex;flex:none">'+ic('search',18)+'</span>'+
+    '<input id="home-search" value="'+esc(HQ)+'" placeholder="Search weeks, topics, or concepts..." aria-label="Search weeks" autocomplete="off" style="flex:1;border:none;background:none;outline:none;font-size:1rem;color:var(--ink);min-width:0">'+
+    (HQ?'<button data-action="home-clear" aria-label="Clear search" style="background:none;border:none;color:var(--ink-faint);display:flex;padding:2px">'+ic('x',16)+'</button>':'')+
+    '</div>'+
+    '<div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:14px;padding-top:14px;border-top:1px solid var(--raised)">'+
+    '<span id="home-resultlabel" style="font-size:.8125rem;color:var(--ink-soft)">'+resultLabel()+'</span>'+
+    '<div style="margin-left:auto;display:flex;gap:4px;background:var(--raised);border-radius:9px;padding:4px" role="group" aria-label="Layout">'+chips+'</div>'+
+    '</div></section>';
   var foot='<div class="card"><div class="eyebrow">A companion to Blackboard</div><p style="margin:0">This site holds the learning materials and private study tools. Official records, submission, and class discussion live in Blackboard. Nothing here is assessed or tracked.</p></div>';
-  return hero+'<h2 style="margin:0 0 14px">The 14 weeks</h2>'+bands+foot;
+  return hero+bar+'<div id="home-results">'+homeList()+'</div>'+foot;
+}
+function resultLabel(){ var n=filteredWeeks().length, total=(D.weeks||[]).length; return HQ.trim()?(n+' of '+total+' weeks'):('All '+total+' weeks'); }
+function filteredWeeks(){
+  var q=HQ.trim().toLowerCase();
+  return (D.weeks||[]).filter(function(w){
+    if(!q) return true;
+    var hay=(w.title+' '+(w.concept||'')+' '+(w.concepts||[]).map(function(c){return c.term+' '+(c.paras||[]).join(' ');}).join(' ')+' week '+w.number).toLowerCase();
+    return hay.indexOf(q)>=0;
+  });
+}
+function weekCard(w){
+  var p=phaseOf(w.phaseId);
+  return '<a href="#/week/'+w.number+'" style="text-decoration:none;color:inherit;background:var(--surface);border:1px solid var(--hair);border-radius:14px;overflow:hidden;box-shadow:0 1px 2px rgba(21,23,28,.04);display:flex;flex-direction:column"><div style="height:5px;background:'+p.accent+'"></div><div style="padding:15px 16px"><div class="mono" style="font-size:.6875rem;color:var(--ink-faint);letter-spacing:.04em">WEEK '+pad(w.number)+'</div><div style="font-weight:600;font-size:1rem;line-height:1.3;margin:5px 0 4px;color:var(--ink)">'+esc(w.title||'')+'</div><div style="font-size:.8125rem;color:var(--ink-soft);line-height:1.45">'+esc(w.concept||'')+'</div></div></a>';
+}
+function weekRow(w){
+  var p=phaseOf(w.phaseId);
+  return '<a href="#/week/'+w.number+'" style="display:flex;align-items:center;gap:14px;padding:13px 18px;border-bottom:1px solid var(--raised);text-decoration:none;color:inherit"><span class="mono" style="font-size:.74rem;color:'+p.accent+';flex:none;width:56px">WEEK '+pad(w.number)+'</span><span style="flex:1;min-width:0"><span style="font-weight:600;color:var(--ink)">'+esc(w.title||'')+'</span><span style="display:block;font-size:.82rem;color:var(--ink-soft);overflow:hidden;text-overflow:ellipsis;white-space:nowrap">'+esc(w.concept||'')+'</span></span><span style="color:var(--ink-faint);flex:none">&rarr;</span></a>';
+}
+function homeList(){
+  var weeks=filteredWeeks();
+  if(!weeks.length) return '<div style="text-align:center;padding:54px 20px;color:var(--ink-soft)"><div style="font-size:1.05rem;font-weight:600;color:var(--ink);margin-bottom:6px">No weeks match that.</div><p style="margin:0">Try a broader word.</p></div>';
+  if(HL==='index') return '<div style="background:var(--surface);border:1px solid var(--hair);border-radius:14px;overflow:hidden;box-shadow:0 1px 2px rgba(21,23,28,.04)">'+weeks.map(weekRow).join('')+'</div>';
+  if(HL==='tiles') return '<div class="wkgrid">'+weeks.map(weekCard).join('')+'</div>';
+  return (D.phases||[]).map(function(p){
+    var pw=(p.weeks||[]).map(function(n){return week(n);}).filter(Boolean).filter(function(w){return weeks.indexOf(w)>=0;});
+    if(!pw.length) return '';
+    return '<section style="margin-bottom:22px"><div style="display:flex;align-items:baseline;gap:10px;margin-bottom:12px"><span style="display:inline-flex;align-items:center;height:24px;padding:0 10px;border-radius:8px;background:'+p.fill+';color:'+p.accent+';font-family:var(--mono);font-size:.75rem;font-weight:600">'+esc(p.name)+'</span><span class="muted" style="font-size:.8125rem">Weeks '+p.weeks[0]+' to '+p.weeks[p.weeks.length-1]+'</span><div style="flex:1;height:1px;background:var(--raised)"></div></div><div class="wkgrid">'+pw.map(weekCard).join('')+'</div></section>';
+  }).join('');
 }
 
 /* ---------- week page ---------- */
@@ -311,6 +352,8 @@ document.addEventListener('click',function(e){
   else if(a==='cmp-clear'){ CMP=[]; SHOWSYN=false; saveCmp(); render(); }
   else if(a==='cmp-synth'){ SHOWSYN=true; render(); }
   else if(a==='cmp-hide'){ SHOWSYN=false; render(); }
+  else if(a==='home-layout'){ HL=t.getAttribute('data-layout'); MAIN.innerHTML=home(); }
+  else if(a==='home-clear'){ HQ=''; MAIN.innerHTML=home(); var hs=document.getElementById('home-search'); if(hs) hs.focus(); }
 });
 document.addEventListener('keydown',function(e){
   var f=e.target.closest&&e.target.closest('[data-action=flip]');
@@ -320,6 +363,7 @@ document.addEventListener('keydown',function(e){
 });
 document.addEventListener('input',function(e){
   if(e.target.id==='gsearch'){ document.getElementById('gsearchout').innerHTML=glossarySearch(e.target.value); }
+  else if(e.target.id==='home-search'){ HQ=e.target.value; var hr=document.getElementById('home-results'); if(hr) hr.innerHTML=homeList(); var rl=document.getElementById('home-resultlabel'); if(rl) rl.textContent=resultLabel(); }
 });
 document.addEventListener('change',function(e){
   if(e.target.id==='gweek'){ location.hash='#/glossary?week='+e.target.value; }
