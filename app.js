@@ -19,7 +19,7 @@ var CSS = [
 ".toolcard{display:block;text-decoration:none;color:inherit;border:1px solid var(--hair);border-radius:14px;padding:18px;background:var(--surface);transition:transform .15s,border-color .15s}",
 ".toolcard:hover{transform:translateY(-2px);border-color:#cfc9bb}",
 ".toolcard .ic{width:42px;height:42px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;margin-bottom:10px}",
-".wkgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}",
+".wkgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}",
 ".wktile{display:flex;flex-direction:column;gap:6px;text-decoration:none;color:#1A1A1A;border:1px solid var(--hair);border-radius:12px;padding:14px;min-height:104px;transition:transform .15s}",
 ".wktile:hover{transform:translateY(-2px)}",
 ".wktile .wn{font-family:var(--mono);font-size:.74rem;font-weight:600}",
@@ -102,21 +102,35 @@ function modalKey(e){
 }
 function closeModal(){ OVERLAY.innerHTML=''; document.removeEventListener('keydown',modalKey); if(lastFocus&&lastFocus.focus) lastFocus.focus(); }
 
+/* ---------- icons (SOC122 family set) ---------- */
+var ICON={
+  grid:['M4 4h7v7H4z','M13 4h7v7h-7z','M4 13h7v7H4z','M13 13h7v7h-7z'],
+  book:['M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15.5H6.5A2.5 2.5 0 0 0 4 21z','M4 18.5A2.5 2.5 0 0 1 6.5 16H20'],
+  clipboard:['M9 4.5h6v3H9z','M9 6H6v15h12V6h-3'],
+  columns:['M4 4h7v16H4z','M13 4h7v16h-7z'],
+  map:['M9 4L3 6v14l6-2 6 2 6-2V4l-6 2-6-2z','M9 4v14','M15 6v14']
+};
+function ic(name,size,w){ var p=ICON[name]||ICON.grid,s=size||20,out='<svg width="'+s+'" height="'+s+'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="'+(w||1.8)+'" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'; for(var i=0;i<p.length;i++) out+='<path d="'+p[i]+'"></path>'; return out+'</svg>'; }
+
 /* ---------- navigation ---------- */
 var ROUTES=[
-  {sec:'Course'},
-  {id:'home',label:'Home',hash:'#/home'},
-  {sec:'Learning tools'},
-  {id:'glossary',label:'Glossary and Thinkers',hash:'#/glossary'},
-  {id:'cartography',label:'Living Cartography',hash:'#/cartography'},
-  {id:'cards',label:'Self-check cards',hash:'#/cards'},
-  {id:'compare',label:'Compare ideas',hash:'#/compare'}
+  {id:'home',label:'Home',hash:'#/home',icon:'grid'},
+  {id:'glossary',label:'Glossary & Thinkers',hash:'#/glossary',icon:'book'},
+  {id:'cards',label:'Self-check',hash:'#/cards',icon:'clipboard'},
+  {id:'compare',label:'Compare ideas',hash:'#/compare',icon:'columns'},
+  {id:'cartography',label:'Living Cartography',hash:'#/cartography',icon:'map'}
 ];
 function renderNav(active){
-  NAV.innerHTML=ROUTES.map(function(r){
-    if(r.sec) return '<div class="navsec">'+esc(r.sec)+'</div>';
-    return '<a href="'+r.hash+'"'+(r.id===active?' aria-current="page"':'')+'>'+esc(r.label)+'</a>';
+  var nav=ROUTES.map(function(r){
+    var on=r.id===active;
+    return '<a href="'+r.hash+'" aria-current="'+(on?'page':'false')+'" style="display:flex;align-items:center;gap:11px;border-radius:10px;padding:10px 12px;font-size:.9375rem;font-weight:'+(on?'600':'500')+';background:'+(on?'#EEF1F5':'transparent')+';color:'+(on?'#15171C':'#474C57')+';text-decoration:none;margin-bottom:2px"><span style="display:flex;align-items:center;justify-content:center;width:22px;height:22px;flex:none;color:'+(on?'var(--red)':'#8a909c')+'">'+ic(r.icon,19)+'</span><span style="flex:1">'+esc(r.label)+'</span></a>';
   }).join('');
+  var weeks='<div style="margin-top:14px;padding-top:14px;border-top:1px solid var(--hair)"><div class="mono" style="font-size:.6875rem;letter-spacing:.04em;color:#8a909c;padding:0 12px 8px">WEEKS</div>'+
+    (D.weeks||[]).map(function(w){ var p=phaseOf(w.phaseId);
+      return '<a href="#/week/'+w.number+'" style="display:flex;align-items:center;gap:9px;border-radius:9px;padding:7px 12px;font-size:.8125rem;font-weight:500;color:#474C57;text-decoration:none"><span class="mono" style="font-size:.6875rem;color:'+p.accent+';flex:none;width:18px">'+pad(w.number)+'</span><span style="flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">'+esc(w.title||'')+'</span></a>';
+    }).join('')+'</div>';
+  var foot='<div style="margin-top:14px;padding:13px 12px;border-radius:12px;background:var(--raised)"><div class="mono" style="font-size:.75rem;color:#474C57;margin-bottom:4px">'+esc((D.course||{}).code||'BFS218')+'</div><div style="font-size:.8125rem;color:#15171C;line-height:1.45">A companion to Blackboard, week by week.</div></div>';
+  NAV.innerHTML=nav+weeks+foot;
 }
 
 /* ---------- media embeds ---------- */
@@ -162,21 +176,22 @@ function stepSlide(wrap,dir){
 /* ---------- home ---------- */
 function home(){
   var c=D.course||{},inst=D.instructor||{};
-  var toolMeta={glossary:['#5B7A8C','Glossary and Thinkers','Every concept and the people behind it, week by week','#/glossary','A'],
-    cartography:['#7C6A93','Living Cartography','Map techno-racism in your own digital life','#/cartography','M'],
-    cards:['#6E8B6A','Self-check cards','Practice recalling the ideas in your own words','#/cards','R'],
-    compare:['#3A6EA5','Compare ideas','Hold two or three concepts side by side and see how they connect','#/compare','C']};
-  var hero='<section id="hero">'+contourSVG()+
-    '<div style="position:relative"><div class="htag">'+esc(c.code)+' &middot; '+esc(c.institution||'Seneca Polytechnic')+' &middot; '+esc(c.mode||'Online reference')+'</div>'+
-    '<h1>'+esc(c.title||'')+'</h1><p class="hsub">'+esc(c.subtitle||'')+'. Read, watch, and work through the course materials, with tools that help the ideas take hold.</p>'+
-    '<div class="hactions"><a class="btn btn-primary" href="#/week/1">Start with Week 1</a><a class="btn" href="#/glossary">Explore the tools</a></div></div></section>';
-  var tools='<h2>Learning tools</h2><div class="toolgrid">'+Object.keys(toolMeta).map(function(k){var t=toolMeta[k];return '<a class="toolcard" href="'+t[3]+'"><div class="ic" style="background:'+t[0]+'22;color:'+t[0]+'">'+t[4]+'</div><b>'+esc(t[1])+'</b><p style="margin:.3em 0 0;color:#4A4A4A;font-size:.92rem">'+esc(t[2])+'</p></a>';}).join('')+'</div>';
+  var conceptCount=0; (D.weeks||[]).forEach(function(w){ conceptCount+=(w.concepts||[]).length; });
+  var stats=[['Weeks',(D.weeks||[]).length],['Key ideas',conceptCount],['Tools',ROUTES.length-1]];
+  var hero='<section style="background:#1B2A4A;border-radius:16px;padding:28px 30px;color:#fff;margin-bottom:22px;position:relative;overflow:hidden">'+contourSVG()+
+    '<div style="position:relative;display:flex;align-items:flex-start;gap:24px;flex-wrap:wrap;justify-content:space-between">'+
+    '<div style="flex:1;min-width:280px"><div class="mono" style="font-size:.75rem;letter-spacing:.06em;color:var(--amber);margin-bottom:10px">'+esc(c.code||'BFS218')+' &middot; '+esc(c.institution||'Seneca Polytechnic')+'</div>'+
+    '<h1 style="font-size:2.05rem;line-height:1.14;font-weight:600;margin:0 0 10px;color:#fff">'+esc(c.title||'')+'</h1>'+
+    '<p style="font-size:1rem;line-height:1.6;color:rgba(255,255,255,.8);margin:0;max-width:60ch">'+esc(c.subtitle||'')+'. Read, watch, and work through the course week by week, with tools that help the ideas take hold.</p>'+
+    '<div style="margin-top:18px;display:flex;gap:10px;flex-wrap:wrap"><a href="#/week/1" style="background:var(--red);color:#fff;text-decoration:none;border-radius:999px;padding:11px 20px;font-weight:600;font-size:.95rem">Start with Week 1</a><a href="#/glossary" style="background:rgba(255,255,255,.12);color:#fff;text-decoration:none;border-radius:999px;padding:11px 20px;font-weight:600;font-size:.95rem">Explore the tools</a></div></div>'+
+    '<div style="display:flex;gap:10px;flex:none">'+stats.map(function(st){return '<div style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:12px;padding:12px 16px;text-align:center;min-width:78px"><div class="mono" style="font-size:1.7rem;font-weight:600;line-height:1">'+st[1]+'</div><div style="font-size:.6875rem;text-transform:uppercase;letter-spacing:.06em;color:rgba(255,255,255,.6);margin-top:5px">'+st[0]+'</div></div>';}).join('')+'</div>'+
+    '</div></section>';
   var bands=(D.phases||[]).map(function(p){
-    var tiles=(p.weeks||[]).map(function(n){var wk=week(n);if(!wk)return '';return '<a class="wktile" href="#/week/'+n+'" style="background:'+p.fill+'"><span class="wn" style="color:'+p.accent+'">WEEK '+pad(n)+'</span><b>'+esc(wk.title||'')+'</b><span class="muted" style="font-size:.8rem">'+esc(wk.concept||'')+'</span></a>';}).join('');
-    return '<h3 style="margin:18px 0 8px;color:'+p.accent+'">'+esc(p.name)+' <span class="muted" style="font-weight:400">Weeks '+p.weeks[0]+' to '+p.weeks[p.weeks.length-1]+'</span></h3><div class="wkgrid">'+tiles+'</div>';
+    var cards=(p.weeks||[]).map(function(n){var wk=week(n);if(!wk)return '';return '<a href="#/week/'+n+'" style="text-decoration:none;color:inherit;background:var(--surface);border:1px solid var(--hair);border-radius:14px;overflow:hidden;box-shadow:0 1px 2px rgba(21,23,28,.04);display:flex;flex-direction:column"><div style="height:5px;background:'+p.accent+'"></div><div style="padding:15px 16px"><div class="mono" style="font-size:.6875rem;color:var(--ink-faint);letter-spacing:.04em">WEEK '+pad(n)+'</div><div style="font-weight:600;font-size:1rem;line-height:1.3;margin:5px 0 4px;color:var(--ink)">'+esc(wk.title||'')+'</div><div style="font-size:.8125rem;color:var(--ink-soft);line-height:1.45">'+esc(wk.concept||'')+'</div></div></a>';}).join('');
+    return '<section style="margin-bottom:22px"><div style="display:flex;align-items:baseline;gap:10px;margin-bottom:12px"><span style="display:inline-flex;align-items:center;height:24px;padding:0 10px;border-radius:8px;background:'+p.fill+';color:'+p.accent+';font-family:var(--mono);font-size:.75rem;font-weight:600">'+esc(p.name)+'</span><span class="muted" style="font-size:.8125rem">Weeks '+p.weeks[0]+' to '+p.weeks[p.weeks.length-1]+'</span><div style="flex:1;height:1px;background:var(--raised)"></div></div><div class="wkgrid">'+cards+'</div></section>';
   }).join('');
-  var foot='<div class="card" style="margin-top:24px"><div class="eyebrow">A companion to Blackboard</div><p style="margin:0">This site holds the learning materials and private tools. Official course records, submissions, and class discussion live in Blackboard. Nothing here is assessed or tracked.</p></div>';
-  return hero+tools+'<h2 style="margin-top:26px">The 14 weeks</h2>'+bands+foot;
+  var foot='<div class="card"><div class="eyebrow">A companion to Blackboard</div><p style="margin:0">This site holds the learning materials and private study tools. Official records, submission, and class discussion live in Blackboard. Nothing here is assessed or tracked.</p></div>';
+  return hero+'<h2 style="margin:0 0 14px">The 14 weeks</h2>'+bands+foot;
 }
 
 /* ---------- week page ---------- */
