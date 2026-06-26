@@ -1,29 +1,29 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 500" font-family="'IBM Plex Sans', 'Segoe UI', system-ui, sans-serif">
-  <rect width="680" height="500" fill="#ffffff"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 440" font-family="'IBM Plex Sans', 'Segoe UI', system-ui, sans-serif">
+  <rect width="680" height="440" fill="#ffffff"/>
   <text x="40" y="46" font-size="26" font-weight="700" fill="#15171C">The harm only appears at the intersection</text>
   <text x="40" y="74" font-size="16" fill="#666">The same system, tested three ways</text>
 
   <!-- Row 1: by gender -->
-  <rect x="40" y="110" width="600" height="76" rx="10" fill="#f5f7f9" stroke="#e3e7ec" stroke-width="1.5"/>
-  <text x="64" y="145" font-size="18" fill="#15171C">Accuracy tested by gender</text>
-  <text x="64" y="170" font-size="14" fill="#666">men and women, overall</text>
-  <rect x="470" y="128" width="150" height="40" rx="20" fill="#eaf6ec" stroke="#1a7f37" stroke-width="1.5"/>
-  <text x="545" y="154" text-anchor="middle" font-size="16" font-weight="700" fill="#1a7f37">Looks fair</text>
+  <rect x="40" y="96" width="600" height="70" rx="10" fill="#f5f7f9" stroke="#e3e7ec" stroke-width="1.5"/>
+  <text x="64" y="128" font-size="18" fill="#15171C">Accuracy tested by gender</text>
+  <text x="64" y="151" font-size="14" fill="#666">men and women, overall</text>
+  <rect x="470" y="112" width="150" height="38" rx="19" fill="#eaf6ec" stroke="#1a7f37" stroke-width="1.5"/>
+  <text x="545" y="137" text-anchor="middle" font-size="16" font-weight="700" fill="#1a7f37">Looks fair</text>
 
   <!-- Row 2: by race -->
-  <rect x="40" y="206" width="600" height="76" rx="10" fill="#f5f7f9" stroke="#e3e7ec" stroke-width="1.5"/>
-  <text x="64" y="241" font-size="18" fill="#15171C">Accuracy tested by race</text>
-  <text x="64" y="266" font-size="14" fill="#666">lighter and darker skin, overall</text>
-  <rect x="470" y="224" width="150" height="40" rx="20" fill="#eaf6ec" stroke="#1a7f37" stroke-width="1.5"/>
-  <text x="545" y="250" text-anchor="middle" font-size="16" font-weight="700" fill="#1a7f37">Looks fair</text>
+  <rect x="40" y="186" width="600" height="70" rx="10" fill="#f5f7f9" stroke="#e3e7ec" stroke-width="1.5"/>
+  <text x="64" y="218" font-size="18" fill="#15171C">Accuracy tested by race</text>
+  <text x="64" y="241" font-size="14" fill="#666">lighter and darker skin, overall</text>
+  <rect x="470" y="202" width="150" height="38" rx="19" fill="#eaf6ec" stroke="#1a7f37" stroke-width="1.5"/>
+  <text x="545" y="227" text-anchor="middle" font-size="16" font-weight="700" fill="#1a7f37">Looks fair</text>
 
   <!-- Row 3: the intersection -->
-  <rect x="40" y="302" width="600" height="76" rx="10" fill="#fdeceb" stroke="#DA291C" stroke-width="2"/>
-  <text x="64" y="337" font-size="18" font-weight="700" fill="#15171C">Black women: race and gender together</text>
-  <text x="64" y="362" font-size="14" fill="#666">the intersection no single axis shows</text>
-  <rect x="470" y="320" width="150" height="40" rx="20" fill="#DA291C"/>
-  <text x="545" y="346" text-anchor="middle" font-size="16" font-weight="700" fill="#ffffff">34.7% error</text>
+  <rect x="40" y="276" width="600" height="70" rx="10" fill="#fdeceb" stroke="#DA291C" stroke-width="2"/>
+  <text x="64" y="308" font-size="18" font-weight="700" fill="#15171C">Black women: race and gender together</text>
+  <text x="64" y="331" font-size="14" fill="#666">the intersection no single axis shows</text>
+  <rect x="470" y="292" width="150" height="38" rx="19" fill="#DA291C"/>
+  <text x="545" y="317" text-anchor="middle" font-size="16" font-weight="700" fill="#ffffff">34.7% error</text>
 
-  <text x="40" y="430" font-size="15" fill="#474C57">A system can pass on each axis alone and still fail where they meet.</text>
-  <text x="40" y="470" font-size="13" fill="#666">Crenshaw (1991); Buolamwini and Gebru (2018).</text>
+  <text x="40" y="390" font-size="15" fill="#474C57">A system can pass on each axis alone and still fail where they meet.</text>
+  <text x="40" y="425" font-size="13" fill="#666">Crenshaw (1991); Buolamwini and Gebru (2018).</text>
 </svg>
