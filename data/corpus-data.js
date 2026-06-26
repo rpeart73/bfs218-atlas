@@ -242,7 +242,7 @@ window.BFS218 = {
   },
   {
    "id": "opc2021",
-   "assigned": "Assigned by section each week (see the weekly schedule)",
+   "assigned": "Findings summary",
    "eye": "western",
    "type": "Report",
    "access": "open",
@@ -270,6 +270,7 @@ window.BFS218 = {
   },
   {
    "id": "singh2021",
+   "assigned": "executive summary",
    "eye": "western",
    "type": "Article",
    "access": "open",
