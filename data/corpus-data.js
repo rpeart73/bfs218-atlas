@@ -127,7 +127,7 @@ window.BFS218 = {
  "records": [
   {
    "id": "benjamin2019",
-   "assigned": "Read by chapter each week (see the weekly schedule)",
+   "assigned": "Assigned by section each week (see the weekly schedule)",
    "video": { "yt": "JahO1-saibU", "title": "Ruha Benjamin on \"The New Jim Code? Race, Carceral Technoscience, and Liberatory Imagination\"", "channel": "Othering & Belonging Institute", "scholar": "Ruha Benjamin" },
    "eye": "western",
    "type": "Book",
@@ -160,6 +160,7 @@ window.BFS218 = {
   },
   {
    "id": "crenshaw1991",
+   "assigned": "Assigned by section each week (see the weekly schedule)",
    "video": { "yt": "akOe5-UsQ2o", "title": "The urgency of intersectionality | Kimberle Crenshaw | TED", "channel": "TED", "scholar": "Kimberle Crenshaw" },
    "eye": "western",
    "type": "Article",
@@ -187,7 +188,7 @@ window.BFS218 = {
   },
   {
    "id": "noble2018",
-   "assigned": "Introduction, pp. 1 to 14",
+   "assigned": "Assigned by section each week (see the weekly schedule)",
    "video": { "yt": "murg3Roch64", "title": "HTNM Lecture: Safiya Umoja Noble's \"Algorithms of Oppression: How Search Engines Reinforce Racism\"", "channel": "Berkeley Center for New Media", "scholar": "Safiya Umoja Noble" },
    "eye": "western",
    "type": "Chapter",
@@ -241,6 +242,7 @@ window.BFS218 = {
   },
   {
    "id": "opc2021",
+   "assigned": "Assigned by section each week (see the weekly schedule)",
    "eye": "western",
    "type": "Report",
    "access": "open",
@@ -293,6 +295,7 @@ window.BFS218 = {
   },
   {
    "id": "robertson2020",
+   "assigned": "Executive Summary and Part I",
    "video": { "yt": "Dh7TKrVvnvM", "title": "To Surveil and Predict: A Human Rights Analysis of Algorithmic Policing in Canada", "channel": "Centre for Ethics", "scholar": "Kate Robertson and Cynthia Khoo (Citizen Lab)" },
    "eye": "western",
    "type": "Report",
@@ -401,7 +404,7 @@ window.BFS218 = {
   },
   {
    "id": "king2003",
-   "assigned": "Chapter 1",
+   "assigned": "The Truth About Stories, Chapter 1",
    "eye": "indigenous",
    "type": "Book",
    "access": "open",
@@ -455,6 +458,7 @@ window.BFS218 = {
   },
   {
    "id": "bird2023",
+   "assigned": "results and discussion excerpt",
    "eye": "western",
    "type": "Report",
    "access": "open",
@@ -507,7 +511,7 @@ window.BFS218 = {
   },
   {
    "id": "costanza2020",
-   "assigned": "Introduction, pp. 1 to 30",
+   "assigned": "Design Justice, Introduction (pp.1-30)",
    "video": { "yt": "SuVBJbyKrI4", "title": "Sasha Costanza-Chock - Community-Led Practices to Build the Worlds We Need | The Conference 2023", "channel": "The Conference / Media Evolution", "scholar": "Sasha Costanza-Chock" },
    "eye": "western",
    "type": "Book",
