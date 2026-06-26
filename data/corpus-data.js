@@ -151,7 +151,9 @@ window.BFS218 = {
     "buolamwini2018",
     "tanksley2023",
     "costanza2020"
-   ]
+   ],
+   "url": "https://www.ruhabenjamin.com/race-after-technology",
+   "fulltext": false
   },
   {
    "id": "crenshaw1991",
@@ -176,7 +178,8 @@ window.BFS218 = {
    "related": [
     "benjamin2019",
     "buolamwini2018"
-   ]
+   ],
+   "fulltext": true
   },
   {
    "id": "noble2018",
@@ -199,7 +202,9 @@ window.BFS218 = {
    "related": [
     "benjamin2019",
     "devlin2023"
-   ]
+   ],
+   "url": "https://nyupress.org/9781479837243/algorithms-of-oppression/",
+   "fulltext": false
   },
   {
    "id": "buolamwini2018",
@@ -224,7 +229,8 @@ window.BFS218 = {
    "related": [
     "benjamin2019",
     "crenshaw1991"
-   ]
+   ],
+   "fulltext": true
   },
   {
    "id": "opc2021",
@@ -245,12 +251,13 @@ window.BFS218 = {
    "week": 6,
    "abstract": "This special report to Parliament sets out the Privacy Commissioner's investigation into the RCMP's use of Clearview AI facial recognition, which the office found violated federal privacy law, alongside draft joint guidance for law enforcement agencies considering facial recognition. It is a concrete Canadian case in which a surveillance tool was named unlawful after it had already been deployed. The report anchors the Canadian week as one of two domestic examples of the New Jim Code meeting Canadian law.",
    "coreIdea": "Canada's privacy regulator found the RCMP's use of Clearview AI facial recognition unlawful, a domestic limit placed on a surveillance tool after the fact.",
-   "url": "https://publications.gc.ca/collections/collection_2021/cpvp-opc/IP54-110-2021-eng.pdf",
+   "url": "https://www.priv.gc.ca/en/opc-actions-and-decisions/ar_index/202021/sr_rcmp/",
    "related": [
     "robertson2020",
     "singh2021",
     "molnar2023"
-   ]
+   ],
+   "fulltext": true
   },
   {
    "id": "singh2021",
@@ -274,7 +281,8 @@ window.BFS218 = {
    "related": [
     "robertson2020",
     "opc2021"
-   ]
+   ],
+   "fulltext": true
   },
   {
    "id": "robertson2020",
@@ -295,18 +303,19 @@ window.BFS218 = {
    "week": 6,
    "abstract": "Produced by the University of Toronto's International Human Rights Program and the Citizen Lab, this report gives a human-rights analysis of algorithmic policing in Canada, documenting predictive policing, facial recognition, and algorithmic social-media surveillance. It argues that these tools carry serious risks to Charter rights, including privacy and equality, and that their burden falls disproportionately on racialized and marginalized communities. It is a leading Canadian source on how policing technologies were adopted ahead of clear legal limits.",
    "coreIdea": "Algorithmic policing has spread across Canada ahead of clear rules, threatening Charter rights and weighing hardest on racialized communities.",
-   "url": "https://citizenlab.ca/2020/09/to-surveil-and-predict-a-human-rights-analysis-of-algorithmic-policing-in-canada/",
+   "url": "https://citizenlab.ca/wp-content/uploads/2020/09/To-Surveil-and-Predict.pdf",
    "related": [
     "molnar2023",
     "singh2021",
     "opc2021"
-   ]
+   ],
+   "fulltext": true
   },
   {
    "id": "molnar2023",
    "eye": "western",
    "type": "Article",
-   "access": "open",
+   "access": "library",
    "title": "Digital Border Technologies, Techno-Racism and Logics of Exclusion",
    "authors": "Petra Molnar",
    "year": 2023,
@@ -325,7 +334,9 @@ window.BFS218 = {
    "related": [
     "robertson2020",
     "opc2021"
-   ]
+   ],
+   "url": "https://onlinelibrary.wiley.com/doi/10.1111/imig.13187",
+   "fulltext": false
   },
   {
    "id": "mohamed2020",
@@ -351,7 +362,8 @@ window.BFS218 = {
    "related": [
     "king2003",
     "smillie2005"
-   ]
+   ],
+   "fulltext": true
   },
   {
    "id": "smillie2005",
@@ -374,7 +386,8 @@ window.BFS218 = {
    "related": [
     "mohamed2020",
     "king2003"
-   ]
+   ],
+   "fulltext": true
   },
   {
    "id": "king2003",
@@ -397,7 +410,9 @@ window.BFS218 = {
    "related": [
     "smillie2005",
     "mohamed2020"
-   ]
+   ],
+   "url": "https://www.cbc.ca/radio/ideas/the-2003-cbc-massey-lectures-the-truth-about-stories-a-native-narrative-1.2946870",
+   "fulltext": true
   },
   {
    "id": "devlin2023",
@@ -423,7 +438,8 @@ window.BFS218 = {
    "related": [
     "noble2018",
     "bird2023"
-   ]
+   ],
+   "fulltext": true
   },
   {
    "id": "bird2023",
@@ -443,11 +459,12 @@ window.BFS218 = {
    "week": 10,
    "abstract": "Bird, Castleman, and Song investigate predictive analytics used in higher education to flag community college students as likely to succeed or struggle. They show that if such a model were used to target extra support to at-risk students, algorithmic bias would lead to fewer Black students receiving those resources, and that the size of the bias shifts depending on how at-risk is defined. The study makes concrete how a model meant to help can quietly reinforce racial inequity in who gets flagged and supported.",
    "coreIdea": "Predictive models built to help students can reinforce racial inequity, steering support away from the Black students who most need it.",
-   "url": "https://edworkingpapers.com/ai23-717",
+   "url": "https://edworkingpapers.com/sites/default/files/ai23-717.pdf",
    "related": [
     "devlin2023",
     "noble2018"
-   ]
+   ],
+   "fulltext": true
   },
   {
    "id": "tanksley2023",
@@ -468,11 +485,12 @@ window.BFS218 = {
    "abstract": "Tiera Tanksley sets out an abolitionist, critical race pedagogy for computer science that centres the voices, experiences, and technological innovations of Black youth, treating them as creators of technology rather than only its subjects. The work models the difference between a reform, which eases the worst edges of a biased field, and a real repair, which changes who holds authority in building and teaching technology. It grounds the resistance week's argument that responding to techno-racism is constructive, not only critical.",
    "coreIdea": "An abolitionist pedagogy centres Black youth as makers of technology, changing who holds power rather than patching a biased field.",
    "doi": "10.26716/jcsi.2023.12.27.49",
-   "url": "https://digitalcommons.chapman.edu/cgi/viewcontent.cgi?article=1020&context=jcsi",
+   "url": "https://digitalcommons.chapman.edu/jcsi/vol6/iss1/9/",
    "related": [
     "costanza2020",
     "benjamin2019"
-   ]
+   ],
+   "fulltext": true
   },
   {
    "id": "costanza2020",
@@ -492,11 +510,12 @@ window.BFS218 = {
    "week": 11,
    "abstract": "Sasha Costanza-Chock draws together the Design Justice Network principles into a framework that rethinks design to centre the people normally marginalized by it. Its commitments include centring the voices of those directly impacted, prioritizing impact over the designer's intentions, and treating community-led practice as the way to build technology. The course reads the Introduction and the Network Principles for a concrete model of what an alternative to the New Jim Code looks like, and returns to it in the closing cartography weeks.",
    "coreIdea": "Design justice centres the people most affected and judges a design by its impact, not by its makers' good intentions.",
-   "url": "https://direct.mit.edu/books/oa-monograph/4605/Design-JusticeCommunity-Led-Practices-to-Build-the",
+   "url": "https://archive.org/details/mit_press_book_9780262356862",
    "related": [
     "tanksley2023",
     "benjamin2019"
-   ]
+   ],
+   "fulltext": true
   },
   {
    "id": "attard2023",
@@ -520,7 +539,8 @@ window.BFS218 = {
    "related": [
     "benjamin2019",
     "costanza2020"
-   ]
+   ],
+   "fulltext": true
   }
  ],
  "glossary": [
