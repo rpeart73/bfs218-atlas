@@ -234,6 +234,7 @@ window.BFS218 = {
    "abstract": "Joy Buolamwini and Timnit Gebru built a facial-analysis benchmark balanced by gender and skin type and tested three commercial gender-classification systems against it. They found that darker-skinned women were the most misclassified group, with error rates up to 34.7 percent, while the maximum error for lighter-skinned men was 0.8 percent. The study is a clear, measured example of how an intersectional gap, hidden by any single-axis test, gets built into a shipped product, and it grounds Benjamin's idea of the coded gaze.",
    "coreIdea": "Commercial facial-analysis systems failed darker-skinned women far more often than lighter-skinned men, an intersectional gap built into the product.",
    "url": "https://proceedings.mlr.press/v81/buolamwini18a/buolamwini18a.pdf",
+   "sourceUrl": "https://proceedings.mlr.press/v81/buolamwini18a.html",
    "related": [
     "benjamin2019",
     "crenshaw1991"
@@ -504,6 +505,7 @@ window.BFS218 = {
    "coreIdea": "An abolitionist pedagogy centres Black youth as makers of technology, changing who holds power rather than patching a biased field.",
    "doi": "10.26716/jcsi.2023.12.27.49",
    "url": "https://digitalcommons.chapman.edu/jcsi/vol6/iss1/9/",
+   "pdfUrl": "https://digitalcommons.chapman.edu/cgi/viewcontent.cgi?article=1020&context=jcsi",
    "related": [
     "costanza2020",
     "benjamin2019"
@@ -531,6 +533,7 @@ window.BFS218 = {
    "abstract": "Sasha Costanza-Chock draws together the Design Justice Network principles into a framework that rethinks design to centre the people normally marginalized by it. Its commitments include centring the voices of those directly impacted, prioritizing impact over the designer's intentions, and treating community-led practice as the way to build technology. The course reads the Introduction and the Network Principles for a concrete model of what an alternative to the New Jim Code looks like, and returns to it in the closing cartography weeks.",
    "coreIdea": "Design justice centres the people most affected and judges a design by its impact, not by its makers' good intentions.",
    "url": "https://archive.org/details/mit_press_book_9780262356862",
+   "pdfUrl": "https://archive.org/download/mit_press_book_9780262356862/mit_press_book_9780262356862.pdf",
    "related": [
     "tanksley2023",
     "benjamin2019"
