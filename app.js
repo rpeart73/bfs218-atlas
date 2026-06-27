@@ -13,13 +13,15 @@
 
   var SKEY = 'bfs218corpus.v2';
   function load() { try { var o = JSON.parse(localStorage.getItem(SKEY) || '{}'); return o && typeof o === 'object' ? o : {}; } catch (e) { return {}; } }
-  function persist() { try { localStorage.setItem(SKEY, JSON.stringify({ saved: state.saved, layout: state.layout, introOpen: state.introOpen, cmpNotes: state.cmpNotes, rcNotes: state.rcNotes, journeyWeek: state.journeyWeek })); } catch (e) {} }
+  function persist() { try { localStorage.setItem(SKEY, JSON.stringify({ saved: state.saved, layout: state.layout, introOpen: state.introOpen, cmpNotes: state.cmpNotes, rcNotes: state.rcNotes, journeyWeek: state.journeyWeek, wkCheck: state.wkCheck, wkReflect: state.wkReflect })); } catch (e) {} }
   var saved0 = load();
 
   var state = {
     screen: 'journey',
     journeyWeek: saved0.journeyWeek || null,
     stationWeek: null,
+    wkCheck: (saved0.wkCheck && typeof saved0.wkCheck === 'object') ? saved0.wkCheck : {},
+    wkReflect: (saved0.wkReflect && typeof saved0.wkReflect === 'object') ? saved0.wkReflect : {},
     layout: saved0.layout || 'byweek',
     search: '',
     activeTypes: [],
@@ -1062,7 +1064,85 @@
     }).join('');
     return '<div style="margin-top:8px"><div class="mono" style="font-size:.6875rem;letter-spacing:.05em;color:var(--ink-faint);margin:0 0 12px">NOW DO SOMETHING WITH IT</div><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px">' + th + '</div></div>';
   }
+  var WEEKPAGE = {
+    BFS218: {
+      5: {
+        time: 'About 90 minutes (read 40, watch 20, do 25, reflect 5)',
+        deck: 'BFS218_Week05',
+        overview: 'This week is about who gets seen by technology, and who does not, and why that is not an accident. Some people are watched, scanned, and tracked far more than others. Some are barely recognized at all. Both can do harm, and for racialized communities the two often happen at the same time. You will learn to name this pattern, look at hard evidence for it in real facial-recognition systems, and find an example of it in your own life.',
+        purpose: 'Coded exposure is the third part of Ruha Benjamin\'s idea of the New Jim Code: being visible to technology is handed out unevenly, on purpose, in the way systems are designed. The point of this week is to help you spot that unevenness and say plainly what harm it causes. It builds on intersectionality from Week 2 and sets up the work on accountability later in the course.',
+        outcomes: ['Explain coded exposure: the uneven, designed way technology makes some people very visible and others invisible.', 'Explain why being over-watched and being unrecognized can both be harmful, and can happen to the same people at once.', 'Describe the coded gaze and point to the Gender Shades study as evidence for it.', 'Find a real example of coded exposure and add it to your Living Cartography.'],
+        guiding: ['What are the different meanings of the word "exposure," and how does Benjamin use them all at once?', 'Is being visible a trap? When does being seen by a system protect you, and when does it put you at risk?', 'Where have you seen the coded gaze: a camera or app that reads some people well and others badly?', 'Who does a system you use make very visible, and who does it make invisible?'],
+        checks: ['Facial-recognition systems are about equally accurate for everyone.', 'Being unseen by a system can be just as harmful as being watched.', 'The bias in these systems comes mainly from a few prejudiced programmers.', 'You could find an example of coded exposure in your own daily life.', 'If a system is very accurate overall, it is safe to use.'],
+        concepts: [
+          { h: 'Visibility is handed out by design', body: 'Technology does not see everyone equally, and that gap is built in, not an accident. Some groups are made highly visible to cameras and systems, while others are barely registered at all. Think of an automatic faucet that turns on for some hands but not others, or a camera that locks onto some faces and slides past the rest: the unevenness is a design choice, even when no single person chose it on purpose.', cite: 'Benjamin, 2019' },
+          { h: 'Being seen can hurt, and so can being unseen', body: 'Being watched, scanned, and tracked is a harm. But not being recognized, by a system that cannot read your face or will not serve you, is also a harm. For racialized people these are not opposites you choose between; both can land at once, over-surveilled by police cameras yet missed by the systems meant to help.', cite: 'Benjamin, 2019' },
+          { h: 'The coded gaze: whose face a system is built to see', body: 'This is Joy Buolamwini\'s name for the way a system is designed and tested around some faces and not others. The 2018 Gender Shades study measured it: facial-analysis tools were nearly perfect on lighter-skinned men but failed darker-skinned women far more often. The bias does not come from one cruel programmer, it comes from whose faces filled the data and the tests.', cite: 'Buolamwini & Gebru, 2018' },
+          { h: 'Accurate is not the same as safe', body: 'Even a system that recognizes you correctly can still put you in danger by watching and exposing you. A face scanner that works perfectly at a protest or a border does not protect the people it identifies, it exposes them. So the real question is not only how often a system is wrong, but who it gets used against.', cite: 'Benjamin, 2019' }
+        ],
+        terms: [
+          { term: 'Coded exposure', def: 'the uneven, designed way technology makes some people highly visible and others invisible.', cite: 'Benjamin, 2019' },
+          { term: 'The coded gaze', def: 'whose face a system is built to recognize; the bias baked into who it sees well and who it does not.', cite: 'Buolamwini & Gebru, 2018' },
+          { term: 'Intersectionality', def: 'the idea that race and gender (and other parts of who we are) overlap, so a harm aimed at darker-skinned women can be missed if you look at race alone or gender alone.', cite: 'Crenshaw, 1991' },
+          { term: 'The New Jim Code', def: 'Benjamin\'s name for new technologies that carry old racism forward while looking neutral or even fair.', cite: 'Benjamin, 2019' }
+        ],
+        readings: [
+          { apa: 'Benjamin, R. (2019). <em>Race after technology: Abolitionist tools for the New Jim Code</em>. Polity Press.', scope: 'Read: the chapter on coded exposure (pages assigned on Blackboard)', id: 'benjamin2019' },
+          { apa: 'Buolamwini, J., &amp; Gebru, T. (2018). Gender shades: Intersectional accuracy disparities in commercial gender classification. <em>Proceedings of Machine Learning Research, 81</em>, 77-91.', scope: 'Open access', id: 'buolamwini2018' }
+        ],
+        activity: { screen: 'sandbox', title: 'Audit the Coded Gaze', what: 'You step into the role of a bias auditor and run a real benchmark, the same test Buolamwini and Gebru used, on three commercial facial-analysis systems (IBM, Microsoft, and Face++).', why: 'so you find the bias yourself instead of being told about it. You will see how it hides behind a high overall accuracy score, and how it shows up in every system, not just one bad product.' },
+        youcan: ['Explain coded exposure in your own words', 'Say why being over-watched and being unrecognized can both be harms', 'Describe the coded gaze and point to the Gender Shades evidence'],
+        reflectPrompt: 'In a sentence or two: where in your own life is being visible handed out by design, and who decides?'
+      }
+    }
+  };
+  function weekData(w) { var c = (D.course && D.course.code) || ''; return (WEEKPAGE[c] && WEEKPAGE[c][w]) || null; }
+  function wkOptBtns(key) {
+    var sel = state.wkCheck[key], opts = ['Agree', 'Not sure', 'Disagree'];
+    return opts.map(function (o, i) { var on = sel === i; return '<button onclick="SOC.wkCheck(\'' + key + '\',' + i + ')" aria-pressed="' + on + '" class="wk-opt' + (on ? ' on' : '') + '">' + o + '</button>'; }).join('');
+  }
+  function wkOpts(key) { return '<div class="wk-opts" id="opts-' + key + '">' + wkOptBtns(key) + '</div>'; }
+  function wkChecks(w, phase, d) {
+    return d.checks.map(function (q, i) { return '<div class="wk-q">' + (i + 1) + '. ' + esc(q) + wkOpts(phase + '|' + w + '|' + i) + '</div>'; }).join('');
+  }
+  function weekPage(w, d) {
+    var ws = journeyWeeks(), idx = ws.indexOf(w), prev = idx > 0 ? ws[idx - 1] : null, next = idx < ws.length - 1 ? ws[idx + 1] : null;
+    var sec = function (id, title, inner) { return '<section id="wk-' + id + '" class="node"><h2 class="wk-sec">' + esc(title) + '</h2>' + inner + '</section>'; };
+    var hero = '<section id="wk-ov" class="node jhero jfade" style="margin:0 0 16px"><div style="position:relative">'
+      + '<div class="mono" style="font-size:.7rem;letter-spacing:.08em;color:var(--red);font-weight:700;margin-bottom:8px">WEEK ' + w + '</div>'
+      + '<h1 style="font-size:2rem;line-height:1.12;font-weight:700;margin:0 0 12px;color:var(--ink)">' + esc(weekTitle(w)) + '</h1>'
+      + '<p style="font-size:1.04rem;line-height:1.6;color:var(--ink);margin:0 0 4px;max-width:64ch">' + esc(d.overview) + '</p>'
+      + '<div style="font-size:1.08rem;font-weight:600;color:var(--ink);border-left:3px solid var(--red);padding-left:14px;margin:16px 0">' + esc(journeyQ(w)) + '</div>'
+      + '<div style="font-family:var(--mono);font-size:.74rem;color:var(--ink-faint)">' + ic('clock', 13) + ' ' + esc(d.time) + '</div>'
+      + '</div></section>';
+    var pre = sec('pre', 'Before you begin', '<p class="wk-hint">A quick gut-check. There is no grade and no wrong answer, it just captures what you already think. You will see the same questions again at the end, so you can watch your thinking change.</p>' + wkChecks(w, 'pre', d));
+    var purpose = '<section id="wk-learn" class="node"><h2 class="wk-sec">Purpose</h2><p style="margin:0">' + esc(d.purpose) + '</p></section>';
+    var outcomes = sec('out', 'Learning outcomes', '<p style="margin:0 0 8px;font-size:.9rem">By the end of this week, you will be able to:</p>' + d.outcomes.map(function (o) { return '<div class="wk-oc"><span class="b"></span>' + esc(o) + '</div>'; }).join(''));
+    var guiding = sec('gq', 'Guiding questions', '<p style="margin:0 0 8px;font-size:.9rem">Hold these in mind as you work:</p>' + d.guiding.map(function (q) { return '<div class="wk-gq"><span class="q">+</span>' + esc(q) + '</div>'; }).join(''));
+    var concepts = sec('con', 'Key concepts', d.concepts.map(function (c) { return '<div class="wk-concept"><h3>' + esc(c.h) + '</h3><p>' + esc(c.body) + ' <span class="wk-cite">(' + esc(c.cite) + ')</span></p></div>'; }).join(''));
+    var terms = sec('term', 'Key terms', d.terms.map(function (t) { return '<div class="wk-term"><b>' + esc(t.term) + '</b>: ' + esc(t.def) + ' <span class="wk-cite">(' + esc(t.cite) + ')</span></div>'; }).join(''));
+    var readings = sec('read', 'Readings', d.readings.map(function (r) { return '<div class="wk-read"><div class="ref">' + r.apa + '</div><button onclick="SOC.read(\'' + r.id + '\')" class="wk-scope">' + esc(r.scope) + ' &#8599;</button></div>'; }).join(''));
+    var watch = '<section id="wk-watch" class="node"><h2 class="wk-sec">Walkthrough</h2><p style="margin:0 0 12px;font-size:.92rem">Watch this week\'s narrated walkthrough.</p><div class="wk-deck"><iframe src="./walkthroughs/' + d.deck + '/index.html" title="Week ' + w + ' walkthrough" loading="lazy" allowfullscreen></iframe></div><a href="./walkthroughs/' + d.deck + '/index.html" target="_blank" rel="noopener" class="wk-fs">Open the walkthrough fullscreen &#8599;</a></section>';
+    var act = '<section id="wk-do" class="node interactive"><h2 class="wk-sec">The activity: ' + esc(d.activity.title) + '</h2><div class="wk-whatwhy"><b>What this is:</b> ' + esc(d.activity.what) + '<br><br><b>Why you are doing it:</b> ' + esc(d.activity.why) + '</div><button onclick="SOC.go(\'' + d.activity.screen + '\')" class="wk-cta">Start the activity ' + ic('chevron', 17, 2.4) + '</button><p style="margin:10px 0 0;font-size:.74rem;color:var(--ink-faint)">Every activity works the same way: predict, then do it, then see the result, then name it with the reading.</p></section>';
+    var reflect = '<section id="wk-reflect" class="node"><h2 class="wk-sec">Reflection</h2>'
+      + '<div class="wk-ocheck"><div class="mono" style="font-size:.78rem;font-weight:700;color:var(--ink-faint);margin-bottom:7px">YOU CAN NOW</div>' + d.youcan.map(function (y) { return '<div class="wk-row"><span class="t">' + ic('check', 14, 2.6) + '</span>' + esc(y) + '</div>'; }).join('') + '</div>'
+      + '<h3 style="margin:16px 0 4px">Now, what do you think?</h3><p class="wk-hint" style="margin-bottom:8px">The same questions from the start. Did your answers move?</p>' + wkChecks(w, 'post', d)
+      + '<h3 style="margin:16px 0 4px">Your reflection</h3><p style="margin:0 0 8px;font-size:.95rem">' + esc(d.reflectPrompt) + '</p>'
+      + '<textarea oninput="SOC.wkReflect(' + w + ',this.value)" class="wk-ta" placeholder="Your reflection...">' + esc(state.wkReflect[w] || '') + '</textarea>'
+      + '<div class="wk-savebox"><h3>Save your work for this week</h3><p style="margin:0 0 4px;font-size:.9rem">This makes one Word file (.docx) on Seneca letterhead, your record of the week and what you hand in on Blackboard. It contains:</p><ul><li>your before-and-after answers to the five check questions</li><li>your audit: which systems you tested and what you found</li><li>your answer to the reflection question</li></ul><button onclick="SOC.saveWeek(' + w + ')" class="wk-save">Save my work for this week (.docx)</button></div>'
+      + '</section>';
+    var navRow = '<div style="display:flex;gap:12px;margin-top:18px;flex-wrap:wrap">'
+      + (prev != null ? '<button onclick="SOC.station(' + prev + ')" style="flex:1;min-width:180px;text-align:left;border:1px solid var(--border);background:#fff;border-radius:12px;padding:13px 16px;cursor:pointer"><div class="mono" style="font-size:.66rem;color:var(--ink-faint)">&larr; PREVIOUS</div><div style="font-size:.92rem;font-weight:700;color:var(--ink);margin-top:2px">Week ' + prev + ': ' + esc(weekTitle(prev)) + '</div></button>' : '')
+      + (next != null ? '<button onclick="SOC.station(' + next + ')" style="flex:1;min-width:180px;text-align:right;border:1px solid var(--border);background:#fff;border-radius:12px;padding:13px 16px;cursor:pointer"><div class="mono" style="font-size:.66rem;color:var(--red)">NEXT &rarr;</div><div style="font-size:.92rem;font-weight:700;color:var(--ink);margin-top:2px">Week ' + next + ': ' + esc(weekTitle(next)) + '</div></button>' : '')
+      + '</div>';
+    var rail = '<aside class="wk-rail"><div class="wk-railbox"><div class="wk-railh">IN THIS WEEK</div>'
+      + [['ov', 'Overview'], ['pre', 'Before you begin'], ['learn', 'Purpose &amp; outcomes'], ['read', 'Readings'], ['watch', 'Walkthrough'], ['do', 'The activity'], ['reflect', 'Reflection &amp; save']].map(function (it) { return '<a href="#wk-' + it[0] + '"><span class="s"></span>' + it[1] + '</a>'; }).join('')
+      + '<div class="wk-railt">' + ic('clock', 12) + ' ' + esc(d.time.split('(')[0].trim()) + '</div></div></aside>';
+    return '<div class="rise wk-grid"><main>' + hero + pre + purpose + outcomes + guiding + concepts + terms + readings + watch + act + reflect + navRow + '</main>' + rail + '</div>';
+  }
   function weekStation(w) {
+    var d = weekData(w);
+    if (d) return weekPage(w, d);
     var ws = journeyWeeks(), idx = ws.indexOf(w), recs = recordsForWeek(w);
     if (idx < 0 || !recs.length) return '<div style="padding:40px 0;color:var(--ink-dim);font-size:1rem">This week has no readings posted yet. <button onclick="SOC.go(\'journey\')" style="background:none;border:none;color:var(--red);font-weight:600;cursor:pointer">Back to your journey</button></div>';
     var hero = '<section class="jfade jhero" style="margin-bottom:22px;padding:30px 32px 28px">' + heroArt()
@@ -1170,6 +1250,22 @@
     rcPick: function (id) { state.rcReading = id; state.lens = 'thematic'; persist(); render(); topScroll(); },
     rcClear: function () { state.rcReading = null; render(); topScroll(); },
     rcNote: function (k, v) { state.rcNotes[k] = v; persist(); },
+    wkCheck: function (k, o) { state.wkCheck[k] = o; persist(); var el = document.getElementById('opts-' + k); if (el) el.innerHTML = wkOptBtns(k); },
+    wkReflect: function (w, v) { state.wkReflect[w] = v; persist(); },
+    saveWeek: function (w) {
+      var d = weekData(w); if (!d) { flash('Open a week first.'); return; }
+      var opt = function (k) { var s = state.wkCheck[k]; return s == null ? '(not answered)' : ['Agree', 'Not sure', 'Disagree'][s]; };
+      var checkLines = d.checks.map(function (q, i) { return (i + 1) + '. ' + q + '\n   Before: ' + opt('pre|' + w + '|' + i) + '   After: ' + opt('post|' + w + '|' + i); }).join('\n');
+      var audited = Object.keys(state.auditedSystems || {});
+      var auditText = audited.length ? ('You audited ' + audited.length + ' of 3 systems. Every system you tested failed darker-skinned women the most (up to 34.7 percent), against near-zero error for lighter-skinned men. The disparity was hidden by overall accuracy and only an intersectional cut revealed it.') : '(activity not run yet)';
+      var sections = [
+        { h: 'Week ' + w + ': ' + weekTitle(w), t: d.purpose },
+        { h: 'Before and after, your check answers', t: checkLines },
+        { h: 'The activity: ' + d.activity.title, t: auditText },
+        { h: 'Your reflection', t: (state.wkReflect[w] || '').trim() || '(not written yet)' }
+      ];
+      senecaDoc('BFS218', weekTitle(w) + ' (Week ' + w + ')', ['BFS218 Racism and the Digital Age', 'Your week record'], sections, 'BFS218_Week' + w + '_my_work');
+    },
     rcReveal: function (k) { var m = document.getElementById('soc-main'); var top = m ? m.scrollTop : 0; state.revealed[k] = !state.revealed[k]; render(); var m2 = document.getElementById('soc-main'); if (m2) m2.scrollTop = top; },
     mcPick: function (k, i) { var m = document.getElementById('soc-main'); var top = m ? m.scrollTop : 0; state.mcSel[k] = i; render(); var m2 = document.getElementById('soc-main'); if (m2) m2.scrollTop = top; },
     mcReset: function (id) { var m = document.getElementById('soc-main'); var top = m ? m.scrollTop : 0; var keep = {}; Object.keys(state.mcSel).forEach(function (k) { if (k.indexOf(id + '|mc|') !== 0) keep[k] = state.mcSel[k]; }); state.mcSel = keep; render(); var m2 = document.getElementById('soc-main'); if (m2) m2.scrollTop = top; },
