@@ -1,0 +1,143 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+:root{--red:#DA291C;--ink:#15171C;--dim:#474C57;--faint:#6B7280;--border:#DEE3EA;--page:#F7F8FA;--soft:#EEF1F5;--green:#1f7a4d;--navy:#1B2A4A;--sans:'Segoe UI',system-ui,Arial,sans-serif;--mono:ui-monospace,Consolas,monospace}
+*{box-sizing:border-box}body{margin:0;font-family:var(--sans);background:var(--page);color:var(--ink);-webkit-font-smoothing:antialiased}
+.mono{font-family:var(--mono)}
+header{position:sticky;top:0;height:60px;background:#fff;border-bottom:2px solid var(--red);display:flex;align-items:center;padding:0 24px;gap:12px}
+.logo{font-weight:800;color:var(--red);font-size:1.1rem;letter-spacing:-.02em}.logo span{color:#000;font-weight:400;font-size:.7rem;display:block;margin-top:-3px;letter-spacing:.05em}
+.crumb{font-size:.9rem;font-weight:600;color:var(--ink)}
+.chip{margin-left:auto;font-family:var(--mono);font-size:.72rem;font-weight:600;color:var(--red);background:#F6E3E1;padding:5px 10px;border-radius:6px}
+.wrap{max-width:1120px;margin:0 auto;padding:26px 26px 80px;display:grid;grid-template-columns:1fr 240px;gap:30px;align-items:start}
+.back{display:inline-flex;align-items:center;gap:6px;background:#fff;border:1px solid var(--border);border-radius:8px;padding:7px 13px;font-size:.82rem;font-weight:600;color:var(--ink);margin-bottom:16px}
+.node{background:#fff;border:1px solid var(--border);border-radius:14px;padding:20px 22px;margin:0 0 16px;box-shadow:0 1px 2px rgba(21,23,28,.04)}
+.kick{font-family:var(--mono);font-size:.66rem;letter-spacing:.07em;color:var(--red);font-weight:700;margin-bottom:8px}
+.kickg{color:var(--faint)}
+h1{font-size:2rem;line-height:1.1;margin:0 0 10px;font-weight:700;letter-spacing:-.01em}
+h2{font-size:1.18rem;margin:0 0 10px;font-weight:700}
+h3{font-size:1rem;margin:0 0 3px;font-weight:700}
+p{line-height:1.6;color:var(--dim);margin:0 0 8px}
+.hero{background:linear-gradient(180deg,#fff,#fff);border-top:4px solid var(--red)}
+.dq{font-size:1.08rem;font-weight:600;color:var(--ink);border-left:3px solid var(--red);padding-left:14px;margin:14px 0}
+.arc{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.arc span{font-size:.74rem;font-weight:600;color:var(--dim);background:var(--soft);border-radius:999px;padding:6px 12px}
+.time{font-family:var(--mono);font-size:.74rem;color:var(--faint);margin-top:10px}
+.oc{display:flex;gap:10px;align-items:flex-start;margin:8px 0;font-size:.95rem;color:var(--ink);line-height:1.5}
+.oc .b{flex:none;width:20px;height:20px;border-radius:6px;border:2px solid var(--border);margin-top:1px}
+.gq{display:flex;gap:9px;align-items:flex-start;margin:7px 0;font-size:.92rem;color:var(--dim);line-height:1.5}.gq .q{color:var(--red);font-weight:800}
+.concept{border-left:3px solid var(--navy);padding:4px 0 4px 13px;margin:11px 0}
+.terms{display:flex;gap:8px;flex-wrap:wrap}.terms span{font-size:.8rem;font-weight:600;color:var(--navy);background:#E6EAF1;border-radius:999px;padding:6px 12px}
+.read{display:flex;gap:13px;align-items:flex-start;border:1px solid var(--border);border-radius:11px;padding:13px 15px;margin:9px 0}
+.read .ic{flex:none;width:38px;height:38px;border-radius:9px;background:#F6E3E1;color:var(--red);display:flex;align-items:center;justify-content:center;font-weight:800}
+.read .rd{font-size:.74rem;color:var(--dim);background:var(--soft);border-radius:6px;padding:2px 8px;display:inline-block;margin-top:5px}
+.deck{position:relative;aspect-ratio:16/9;background:linear-gradient(135deg,#16213B,#1B2A4A);border-radius:12px;display:flex;align-items:center;justify-content:center;flex-direction:column;color:#fff;cursor:pointer}
+.deck .play{width:62px;height:62px;border-radius:50%;background:var(--red);display:flex;align-items:center;justify-content:center;font-size:1.6rem;margin-bottom:12px}
+.deck small{color:rgba(255,255,255,.7);font-family:var(--mono);font-size:.72rem;letter-spacing:.05em;margin-top:6px}
+.interactive{border-top:4px solid var(--red)}
+.audit-preview{display:flex;gap:14px;flex-wrap:wrap;margin:14px 0}
+.col{flex:1;min-width:90px;text-align:center}.col .lab{font-size:.62rem;font-weight:700;color:var(--ink);margin-bottom:6px}
+.dots{display:grid;grid-template-columns:repeat(5,1fr);gap:4px}.dot{width:11px;height:11px;border-radius:50%;background:#CBD2DB;margin:0 auto}.dot.f{background:var(--red)}
+.cta{display:inline-flex;align-items:center;gap:8px;background:var(--red);color:#fff;border:none;border-radius:10px;padding:11px 20px;font-size:.92rem;font-weight:700;margin-top:6px}
+.ocheck{background:var(--soft);border-radius:11px;padding:13px 15px;margin:12px 0}
+.ocheck .row{display:flex;gap:9px;align-items:center;font-size:.88rem;color:var(--ink);margin:5px 0}.ocheck .row .t{color:var(--green);font-weight:800}
+.savebar{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:14px;padding-top:14px;border-top:1px solid var(--soft)}
+.save{background:var(--red);color:#fff;border:none;border-radius:10px;padding:11px 20px;font-size:.9rem;font-weight:700}
+.prevnext{display:flex;gap:12px;margin-top:18px}.prevnext a{flex:1;border:1px solid var(--border);background:#fff;border-radius:12px;padding:13px 16px;text-decoration:none;color:var(--ink)}
+.prevnext .l{font-family:var(--mono);font-size:.66rem;color:var(--faint)}.prevnext .n{font-size:.92rem;font-weight:700;margin-top:2px}
+.rail{position:sticky;top:78px;background:#fff;border:1px solid var(--border);border-radius:14px;padding:16px 16px;font-size:.85rem}
+.rail .h{font-family:var(--mono);font-size:.64rem;letter-spacing:.07em;color:var(--faint);font-weight:700;margin-bottom:12px}
+.prog{height:6px;background:var(--soft);border-radius:999px;overflow:hidden;margin-bottom:14px}.prog .b{height:100%;width:45%;background:var(--green);border-radius:999px}
+.rail a{display:flex;gap:9px;align-items:center;text-decoration:none;color:var(--dim);padding:6px 0;font-weight:600;font-size:.84rem}
+.rail a .s{flex:none;width:16px;height:16px;border-radius:50%;border:2px solid var(--border)}
+.rail a.done .s{background:var(--green);border-color:var(--green)}.rail a.done{color:var(--ink)}
+.rail a.cur{color:var(--red)}.rail a.cur .s{border-color:var(--red)}
+.tnote{font-size:.72rem;color:var(--faint);margin-top:12px;padding-top:12px;border-top:1px solid var(--soft)}
+.mockbadge{position:fixed;right:12px;bottom:12px;background:#15171C;color:#fff;font-size:.7rem;font-family:var(--mono);padding:6px 11px;border-radius:7px;opacity:.85}
+</style></head><body>
+<header><div class="logo">Seneca<span>POLYTECHNIC</span></div><div class="crumb">BFS218 &nbsp;·&nbsp; Coded Exposure</div><div class="chip">FALL 2026</div></header>
+<div class="wrap">
+<main>
+<a class="back">&#8592; Back to your journey</a>
+
+<div class="node hero">
+  <div class="kick">WEEK 05 OVERVIEW</div>
+  <h1>Coded Exposure</h1>
+  <p style="font-size:1.02rem;max-width:62ch">How visibility itself is engineered unevenly across race, and what it costs to be over-seen or unseen.</p>
+  <div class="dq">What happens when a system is built to see some faces better than others?</div>
+  <div class="arc"><span>1. Read</span><span>2. Watch the walkthrough</span><span>3. Run the audit</span><span>4. Reflect</span></div>
+  <div class="time">&#9201; About 90 minutes &nbsp;·&nbsp; read 40 / watch 20 / do 25 / reflect 5</div>
+</div>
+
+<div class="node"><div class="kick">PURPOSE</div><p style="margin:0">Coded exposure is Benjamin's third dimension of the New Jim Code: visibility is distributed by design. This week you learn to see that distribution and name its harm, building on the intersectionality you met in Week 2 and setting up the accountability work ahead.</p></div>
+
+<div class="node"><div class="kick">LEARNING OUTCOMES</div><p style="margin:0 0 6px;font-size:.86rem">By the end of this week, you will be able to:</p>
+  <div class="oc"><span class="b"></span>Define coded exposure as the uneven, designed distribution of visibility across race.</div>
+  <div class="oc"><span class="b"></span>Explain the double bind of being over-exposed and under-recognized at the same time.</div>
+  <div class="oc"><span class="b"></span>Describe the coded gaze and cite the Gender Shades evidence for it.</div>
+  <div class="oc"><span class="b"></span>Identify a real example of coded exposure and add it to your Living Cartography.</div>
+</div>
+
+<div class="node"><div class="kick kickg">GUIDING QUESTIONS</div><p style="margin:0 0 8px;font-size:.86rem">Hold these while you work:</p>
+  <div class="gq"><span class="q">+</span>What are the different meanings of exposure, and how does Benjamin use them at once?</div>
+  <div class="gq"><span class="q">+</span>Is visibility a trap? When is being seen a protection, and when a risk?</div>
+  <div class="gq"><span class="q">+</span>Where have you seen the coded gaze, a system that reads some people well and others badly?</div>
+  <div class="gq"><span class="q">+</span>Who is made hyper-visible by a system you use, and who is made invisible by it?</div>
+</div>
+
+<div class="node"><div class="kick kickg">KEY CONCEPTS</div>
+  <div class="concept"><h3>Coded exposure distributes visibility by design</h3><p style="margin:0;font-size:.88rem">Some people are made hyper-visible to systems while others are made invisible.</p></div>
+  <div class="concept"><h3>Visibility cuts both ways</h3><p style="margin:0;font-size:.88rem">Being watched is a harm; not being recognized is also a harm. For racialized communities both happen at once.</p></div>
+  <div class="concept"><h3>The coded gaze decides whose face counts</h3><p style="margin:0;font-size:.88rem">Buolamwini's term for whose face a system is built to see.</p></div>
+  <div class="concept"><h3>Accuracy is not the same as safety</h3><p style="margin:0;font-size:.88rem">A system that sees you well can still put you at risk by watching and exposing you.</p></div>
+</div>
+
+<div class="node"><div class="kick kickg">KEY TERMS</div><div class="terms"><span>Coded exposure</span><span>The coded gaze</span><span>Intersectionality</span><span>Surveillance</span><span>The New Jim Code</span></div></div>
+
+<div class="node"><div class="kick">READINGS</div>
+  <div class="read"><div class="ic">B</div><div><h3>Race After Technology: Coded Exposure</h3><p style="margin:2px 0 0;font-size:.83rem">Ruha Benjamin</p><span class="rd">Read: Ch. on coded exposure, pp. assigned</span></div></div>
+  <div class="read"><div class="ic">G</div><div><h3>Gender Shades: Intersectional Accuracy Disparities</h3><p style="margin:2px 0 0;font-size:.83rem">Joy Buolamwini and Timnit Gebru (2018)</p><span class="rd">Open access &#8599;</span></div></div>
+</div>
+
+<div class="node"><div class="kick">&#9654; WALKTHROUGH</div><p style="margin:0 0 12px;font-size:.86rem">Watch this week's narrated walkthrough, embedded right here.</p>
+  <div class="deck"><div class="play">&#9654;</div><div style="font-weight:700">Week 05: Coded Exposure</div><small>WEEKLY WALKTHROUGH &nbsp;·&nbsp; FULLSCREEN AVAILABLE</small></div>
+</div>
+
+<div class="node interactive"><div class="kick">&#9733; THE INTERACTIVE</div><h2>Audit the Coded Gaze</h2>
+  <p style="margin:0 0 4px;font-size:.9rem">Run a real benchmark on three commercial systems and find the bias their makers missed.</p>
+  <div class="audit-preview">
+    <div class="col"><div class="lab">Lighter men</div><div class="dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div></div>
+    <div class="col"><div class="lab">Lighter women</div><div class="dots"><span class="dot f"></span><span class="dot f"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div></div>
+    <div class="col"><div class="lab">Darker men</div><div class="dots"><span class="dot f"></span><span class="dot f"></span><span class="dot f"></span><span class="dot"></span><span class="dot"></span></div></div>
+    <div class="col"><div class="lab">Darker women</div><div class="dots"><span class="dot f"></span><span class="dot f"></span><span class="dot f"></span><span class="dot f"></span><span class="dot f"></span></div></div>
+  </div>
+  <button class="cta">Run the audit &#8594;</button>
+  <p style="margin:10px 0 0;font-size:.72rem;color:var(--faint)">predict &#8594; do &#8594; reveal &#8594; name it with the reading</p>
+</div>
+
+<div class="node"><div class="kick kickg">REFLECTION</div>
+  <div class="ocheck"><div style="font-size:.78rem;font-weight:700;color:var(--faint);margin-bottom:7px" class="mono">YOU CAN NOW</div>
+    <div class="row"><span class="t">&#10003;</span>Define coded exposure</div>
+    <div class="row"><span class="t">&#10003;</span>Explain the double bind of visibility</div>
+    <div class="row"><span class="t">&#10003;</span>Describe the coded gaze and cite Gender Shades</div>
+  </div>
+  <p style="margin:0;font-size:.9rem">In one or two sentences: where in your own life is visibility distributed by design, and who decides?</p>
+  <textarea style="width:100%;min-height:70px;margin-top:8px;border:1px solid var(--border);border-radius:8px;padding:9px 11px;font:inherit;font-size:.9rem" placeholder="Your reflection..."></textarea>
+  <div class="savebar"><button class="save">Save my work for this week (.docx)</button><span style="font-size:.78rem;color:var(--faint)">bundles your audit + this reflection into one file</span></div>
+</div>
+
+<div class="prevnext"><a><div class="l">&#8592; PREVIOUS</div><div class="n">Week 04: Algorithms in Canada</div></a><a style="text-align:right"><div class="l">NEXT &#8594;</div><div class="n">Week 06: Algorithms in Canada</div></a></div>
+</main>
+
+<aside><div class="rail">
+  <div class="h">IN THIS WEEK</div>
+  <div class="prog"><div class="b"></div></div>
+  <a class="done"><span class="s"></span>Overview</a>
+  <a class="done"><span class="s"></span>Purpose &amp; outcomes</a>
+  <a class="done"><span class="s"></span>Readings</a>
+  <a class="cur"><span class="s"></span>Walkthrough</a>
+  <a><span class="s"></span>The interactive</a>
+  <a><span class="s"></span>Reflection</a>
+  <div class="tnote">&#9201; ~90 min &nbsp;·&nbsp; 3 of 6 done</div>
+</div></aside>
+</div>
+<div class="mockbadge">MOCKUP &#183; not the live build</div>
+</body></html>
