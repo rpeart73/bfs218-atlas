@@ -866,25 +866,33 @@
   var GS = {
     perGroup: 25,
     groups: [
-      { id: 'lm', label: 'Lighter-skinned men', short: 'Lighter men', skin: 'lighter', gender: 'men', rate: 0.8 },
-      { id: 'lw', label: 'Lighter-skinned women', short: 'Lighter women', skin: 'lighter', gender: 'women', rate: 7.1 },
-      { id: 'dm', label: 'Darker-skinned men', short: 'Darker men', skin: 'darker', gender: 'men', rate: 12.0 },
-      { id: 'dw', label: 'Darker-skinned women', short: 'Darker women', skin: 'darker', gender: 'women', rate: 34.7 }
+      { id: 'lm', label: 'Lighter-skinned men', short: 'Lighter men', skin: 'lighter', gender: 'men' },
+      { id: 'lw', label: 'Lighter-skinned women', short: 'Lighter women', skin: 'lighter', gender: 'women' },
+      { id: 'dm', label: 'Darker-skinned men', short: 'Darker men', skin: 'darker', gender: 'men' },
+      { id: 'dw', label: 'Darker-skinned women', short: 'Darker women', skin: 'darker', gender: 'women' }
+    ],
+    systems: [
+      { id: 'ibm', name: 'IBM', rate: { lm: 0.3, lw: 7.1, dm: 12.0, dw: 34.7 } },
+      { id: 'microsoft', name: 'Microsoft', rate: { lm: 0.0, lw: 1.7, dm: 6.0, dw: 20.8 } },
+      { id: 'faceplus', name: 'Face++', rate: { lm: 0.8, lw: 6.0, dm: 0.7, dw: 34.5 } }
     ]
   };
-  function gsFails(g) { return Math.round(g.rate / 100 * GS.perGroup); }
-  function gsAvg(fn) { var a = GS.groups.filter(fn), s = 0; a.forEach(function (g) { s += g.rate; }); return Math.round(s / a.length * 10) / 10; }
+  function auditSys() { return GS.systems[state.auditSystem || 0]; }
+  function rateOf(g) { return auditSys().rate[g.id]; }
+  function gsFails(g) { return Math.round(rateOf(g) / 100 * GS.perGroup); }
+  function gsAvg(fn) { var a = GS.groups.filter(fn), s = 0; a.forEach(function (g) { s += rateOf(g); }); return Math.round(s / a.length * 10) / 10; }
   function auditSliceData(slice) {
     if (slice === 'overall') return [['All faces, one number', gsAvg(function () { return true; }), '#15171C']];
     if (slice === 'gender') return [['Men', gsAvg(function (g) { return g.gender === 'men'; }), '#3a47a8'], ['Women', gsAvg(function (g) { return g.gender === 'women'; }), '#3a47a8']];
     if (slice === 'skin') return [['Lighter-skinned', gsAvg(function (g) { return g.skin === 'lighter'; }), '#B7791F'], ['Darker-skinned', gsAvg(function (g) { return g.skin === 'darker'; }), '#B7791F']];
-    return GS.groups.map(function (g) { return [g.label, g.rate, g.id === 'dw' ? '#DA291C' : '#15171C']; });
+    return GS.groups.map(function (g) { return [g.label, rateOf(g), g.id === 'dw' ? '#DA291C' : '#15171C']; });
   }
   function auditInsight(slice) {
-    if (slice === 'overall') return 'One number: about ' + Math.round(100 - gsAvg(function () { return true; })) + ' percent accurate overall. A marketing slide would stop here. Would you ship it?';
-    if (slice === 'gender') return 'Split by gender, a gap opens: the system fails women more than men. Averaging still keeps it looking manageable.';
-    if (slice === 'skin') return 'Split by skin type, a wider gap: it fails darker-skinned faces more. But each single axis on its own still understates the harm.';
-    return 'Now gender and skin type together. Darker-skinned women fail 34.7 percent of the time against 0.8 percent for lighter-skinned men, far worse than either single axis predicted. A single-axis test would have passed this system. That is intersectionality (Crenshaw) and the coded gaze (Buolamwini).';
+    var sys = auditSys();
+    if (slice === 'overall') return 'One number for ' + sys.name + ': about ' + Math.round(100 - gsAvg(function () { return true; })) + ' percent accurate overall. A marketing slide would stop here. Would you ship it?';
+    if (slice === 'gender') return 'Split by gender, a gap opens: ' + sys.name + ' fails women more than men. Averaging still keeps it looking manageable.';
+    if (slice === 'skin') return 'Split by skin type, a wider gap: ' + sys.name + ' fails darker-skinned faces more. Each single axis on its own still understates the harm.';
+    return sys.name + ': darker-skinned women fail ' + sys.rate.dw.toFixed(1) + ' percent of the time, against ' + sys.rate.lm.toFixed(1) + ' percent for lighter-skinned men. A single-axis test would have passed it. That is intersectionality (Crenshaw) and the coded gaze (Buolamwini).';
   }
   function auditBars(slice) {
     var data = auditSliceData(slice);
@@ -910,18 +918,21 @@
     }).join('') + '</div>';
   }
   function auditFallbackTable() {
-    var rows = GS.groups.map(function (g) { return '<tr><td style="padding:6px 8px;border-top:1px solid #EEF1F5">' + esc(g.label) + '</td><td style="text-align:right;padding:6px 8px;border-top:1px solid #EEF1F5">' + g.rate.toFixed(1) + '%</td><td style="text-align:right;padding:6px 8px;border-top:1px solid #EEF1F5">' + gsFails(g) + ' of ' + GS.perGroup + '</td></tr>'; }).join('');
-    return '<table style="width:100%;border-collapse:collapse;margin-top:16px;font-size:.8125rem"><caption class="mono" style="text-align:left;font-size:.6875rem;letter-spacing:.05em;color:#8a909c;margin-bottom:6px">PUBLISHED RESULTS (DATA TABLE)</caption><thead><tr><th scope="col" style="text-align:left;padding:6px 8px;border-bottom:1px solid #DEE3EA">Group</th><th scope="col" style="text-align:right;padding:6px 8px;border-bottom:1px solid #DEE3EA">Error rate</th><th scope="col" style="text-align:right;padding:6px 8px;border-bottom:1px solid #DEE3EA">Faces failed of 25</th></tr></thead><tbody>' + rows + '</tbody></table><p style="font-size:.72rem;line-height:1.5;color:#8a909c;margin:8px 0 0;max-width:76ch">Group error rates from Buolamwini and Gebru, Gender Shades (2018). Darker-skinned women (34.7%) and lighter-skinned men (0.8%) are the published headline figures; lighter-skinned women and darker-skinned men are the published per-system intersectional results. Gender, skin-type, and overall figures are averages across the balanced benchmark.</p>';
+    var sys = auditSys();
+    var rows = GS.groups.map(function (g) { return '<tr><td style="padding:6px 8px;border-top:1px solid #EEF1F5">' + esc(g.label) + '</td><td style="text-align:right;padding:6px 8px;border-top:1px solid #EEF1F5">' + rateOf(g).toFixed(1) + '%</td><td style="text-align:right;padding:6px 8px;border-top:1px solid #EEF1F5">' + gsFails(g) + ' of ' + GS.perGroup + '</td></tr>'; }).join('');
+    return '<table style="width:100%;border-collapse:collapse;margin-top:16px;font-size:.8125rem"><caption class="mono" style="text-align:left;font-size:.6875rem;letter-spacing:.05em;color:#8a909c;margin-bottom:6px">' + esc(sys.name) + ' RESULTS (DATA TABLE)</caption><thead><tr><th scope="col" style="text-align:left;padding:6px 8px;border-bottom:1px solid #DEE3EA">Group</th><th scope="col" style="text-align:right;padding:6px 8px;border-bottom:1px solid #DEE3EA">Error rate</th><th scope="col" style="text-align:right;padding:6px 8px;border-bottom:1px solid #DEE3EA">Faces failed of 25</th></tr></thead><tbody>' + rows + '</tbody></table><p style="font-size:.72rem;line-height:1.5;color:#8a909c;margin:8px 0 0">Per-system intersectional error rates from Buolamwini and Gebru, Gender Shades (2018), the three commercial systems they audited (IBM, Microsoft, Face++). Gender, skin-type, and overall figures are averages across the balanced benchmark of 25 faces per group.</p>';
   }
   function sandboxScreen() {
-    var run = !!state.auditRun, slice = state.auditSlice || 'overall';
+    var run = !!state.auditRun, slice = state.auditSlice || 'overall', sys = auditSys();
+    var auditedCount = Object.keys(state.auditedSystems || {}).length;
     var openBtn = '<button onclick="SOC.read(\'buolamwini2018\')" style="margin-top:2px;background:none;border:none;color:#1552D8;font-size:.8125rem;font-weight:600;padding:0;cursor:pointer">Open Gender Shades (Buolamwini and Gebru, 2018) &#8599;</button>';
-    var predict = '<div style="background:#F7F8FA;border:1px solid #DEE3EA;border-radius:12px;padding:14px 16px;margin:16px 0 0"><div class="mono" style="font-size:.6875rem;letter-spacing:.05em;color:#8a909c;margin-bottom:6px">PREDICT FIRST</div><p style="font-size:.9rem;line-height:1.55;color:#15171C;margin:0">You are about to audit a facial-analysis system against a benchmark balanced by gender and skin type. Before you run it: which group do you expect it to fail the most, and why?</p></div>';
-    var method = '<p style="font-size:.78rem;line-height:1.5;color:#6b7280;margin:14px 0 0;max-width:76ch">This re-enacts Buolamwini and Gebru\'s published audit. The system, the balanced benchmark, and the results are theirs; you are walking through what they found, not running a live classifier. Each marker is one benchmark face the system was tested on; red means the system got it wrong. The markers are neutral and do not depict anyone.</p>';
-    var grid = '<div style="background:#fff;border:1px solid #DEE3EA;border-radius:12px;padding:16px 18px;margin:14px 0 0"><div class="mono" style="font-size:.6875rem;letter-spacing:.05em;color:#8a909c;margin-bottom:12px">THE BALANCED BENCHMARK &middot; 25 FACES PER GROUP</div><div id="bfs-grid">' + auditGrid(run) + '</div></div>';
-    var runBtn = '<div style="margin:14px 0 0">' + (run
-      ? '<button onclick="SOC.runAudit()" style="background:#fff;border:1px solid #DEE3EA;color:#15171C;border-radius:9px;padding:8px 14px;font-size:.8125rem;font-weight:600;cursor:pointer">Run again</button>'
-      : '<button onclick="SOC.runAudit()" style="background:var(--red);border:none;color:#fff;border-radius:10px;padding:11px 20px;font-size:.95rem;font-weight:600;cursor:pointer">Run the audit on the system</button>') + '</div>';
+    var predict = '<div style="background:#F7F8FA;border:1px solid #DEE3EA;border-radius:12px;padding:14px 16px;margin:16px 0 0"><div class="mono" style="font-size:.6875rem;letter-spacing:.05em;color:#8a909c;margin-bottom:6px">PREDICT FIRST</div><p style="font-size:.9rem;line-height:1.55;color:#15171C;margin:0">You are about to audit three real facial-analysis systems against a benchmark balanced by gender and skin type. Before you run it: which group do you expect them to fail the most, and why?</p></div>';
+    var method = '<p style="font-size:.78rem;line-height:1.5;color:#6b7280;margin:14px 0 0">This re-enacts Buolamwini and Gebru\'s published audit of three commercial systems (IBM, Microsoft, and Face++). The systems, the balanced benchmark, and the results are theirs; you are walking through what they found, not running a live classifier. Each marker is one benchmark face the system was tested on; red means the system got it wrong. The markers are neutral and do not depict anyone.</p>';
+    var grid = '<div style="background:#fff;border:1px solid #DEE3EA;border-radius:12px;padding:16px 18px;margin:14px 0 0"><div class="mono" style="font-size:.6875rem;letter-spacing:.05em;color:#8a909c;margin-bottom:12px">THE BALANCED BENCHMARK &middot; 25 FACES PER GROUP' + (run ? ' &middot; AUDITING ' + esc(sys.name.toUpperCase()) : '') + '</div><div id="bfs-grid">' + auditGrid(run) + '</div></div>';
+    var runBtn = '<div style="margin:14px 0 0;display:flex;gap:12px;flex-wrap:wrap;align-items:center">' + (run
+      ? '<button onclick="SOC.nextSystem()" style="background:var(--red);border:none;color:#fff;border-radius:10px;padding:10px 18px;font-size:.9rem;font-weight:600;cursor:pointer">Audit the next system &#8594;</button><span style="font-size:.8125rem;color:#6b7280">' + auditedCount + ' of 3 systems audited</span>'
+      : '<button onclick="SOC.runAudit()" style="background:var(--red);border:none;color:#fff;border-radius:10px;padding:11px 20px;font-size:.95rem;font-weight:600;cursor:pointer">Run the audit on the first system</button>') + '</div>';
+    var summary = run ? '<div style="background:' + (auditedCount >= 3 ? '#15171C' : '#F7F8FA') + ';color:' + (auditedCount >= 3 ? '#fff' : '#15171C') + ';border:1px solid ' + (auditedCount >= 3 ? '#15171C' : '#DEE3EA') + ';border-radius:12px;padding:14px 16px;margin:14px 0 0;font-size:.875rem;line-height:1.55">' + (auditedCount >= 3 ? 'You audited all three: IBM, Microsoft, and Face++. Every one failed darker-skinned women the most. The coded gaze is an industry pattern, not one bad product.' : esc(sys.name) + ' failed darker-skinned women the most. Audit the next system and watch whether the pattern repeats. (' + auditedCount + ' of 3 audited.)') + '</div>' : '';
     var results = run
       ? '<div style="background:#fff;border:1px solid #DEE3EA;border-top:4px solid #DA291C;border-radius:12px;padding:16px 18px;margin:14px 0 0"><div class="mono" style="font-size:.6875rem;letter-spacing:.05em;color:#8a909c;margin-bottom:10px">NOW, HOW DO YOU REPORT IT?</div>' + auditSliceBtns(slice) + '<div id="bfs-bars">' + auditBars(slice) + '</div><p id="bfs-insight" style="font-size:.875rem;line-height:1.55;color:#474C57;margin:14px 0 0">' + esc(auditInsight(slice)) + '</p></div>'
       : '<p style="font-size:.85rem;color:#6b7280;margin:14px 0 0">Run the audit, then slice the results to see what a single number hides.</p>';
@@ -937,7 +948,7 @@
       + '<div class="mono" style="font-size:.6875rem;letter-spacing:.06em;color:var(--red);font-weight:600;margin-bottom:6px">BIAS AUDIT</div>'
       + '<h1 style="font-size:1.75rem;font-weight:600;margin:0 0 8px">Audit the coded gaze</h1>'
       + '<p style="font-size:.9375rem;line-height:1.55;color:#474C57;margin:0 0 4px;max-width:78ch">You are the auditor. Run a balanced benchmark on a facial-analysis system, then find the bias its makers missed, the way Buolamwini and Gebru did.</p>'
-      + openBtn + predict + method + grid + runBtn + results + auditFallbackTable() + check + chain + save
+      + openBtn + predict + method + grid + runBtn + summary + results + auditFallbackTable() + check + chain + save
       + '</section>';
   }
   function cardsScreen() {
@@ -1221,15 +1232,16 @@
       if (sel !== undefined && sel !== null) sections.push({ h: 'Quick check', t: 'Q: ' + checkQ + '\nYour answer was ' + (sel === 0 ? 'the grounded one. Correct.' : 'not the grounded one. Look again at what the reading actually claims.') });
       senecaDoc(cc || 'Course', 'Self-Check Studio', sub, sections, (cc || 'Course') + '_self_check_studio');
     },
-    runAudit: function () { var m = document.getElementById('soc-main'), top = m ? m.scrollTop : 0; state.auditRun = true; if (!state.auditSlice) state.auditSlice = 'overall'; render(); var m2 = document.getElementById('soc-main'); if (m2) m2.scrollTop = top; },
+    runAudit: function () { var m = document.getElementById('soc-main'), top = m ? m.scrollTop : 0; state.auditRun = true; state.auditSystem = 0; state.auditedSystems = state.auditedSystems || {}; state.auditedSystems[GS.systems[0].id] = true; if (!state.auditSlice) state.auditSlice = 'overall'; render(); var m2 = document.getElementById('soc-main'); if (m2) m2.scrollTop = top; },
+    nextSystem: function () { var m = document.getElementById('soc-main'), top = m ? m.scrollTop : 0; state.auditSystem = ((state.auditSystem || 0) + 1) % GS.systems.length; state.auditedSystems = state.auditedSystems || {}; state.auditedSystems[auditSys().id] = true; render(); var m2 = document.getElementById('soc-main'); if (m2) m2.scrollTop = top; },
     auditSlice: function (s) { state.auditSlice = s; var b = document.getElementById('bfs-bars'); if (b) b.innerHTML = auditBars(s); var i = document.getElementById('bfs-insight'); if (i) i.textContent = auditInsight(s); var sb = document.getElementById('bfs-slicebtns'); if (sb) sb.outerHTML = auditSliceBtns(s); },
     saveSandbox: function () {
       var gs = rec('buolamwini2018'), sel = state.mcSel['BFS218|sandbox'];
       var sections = [
-        { h: 'System', t: 'A commercial facial-analysis system, audited against a benchmark balanced by gender and skin type (Buolamwini and Gebru, Gender Shades, 2018).' },
-        { h: 'What the audit found', t: 'Darker-skinned women misclassified up to 34.7 percent of the time; lighter-skinned men 0.8 percent; lighter-skinned women about 7 percent; darker-skinned men about 12 percent.' },
+        { h: 'Systems audited', t: 'Three commercial facial-analysis systems, audited against a benchmark balanced by gender and skin type (Buolamwini and Gebru, Gender Shades, 2018): IBM, Microsoft, and Face++.' },
+        { h: 'What the audit found', t: 'Every system failed darker-skinned women the most: 34.7 percent (IBM), 34.5 percent (Face++), and 20.8 percent (Microsoft), against near-zero error for lighter-skinned men. Not one bad product, an industry pattern.' },
         { h: 'Why the bias was hidden', t: 'Overall accuracy and single-axis tests (gender alone, or skin type alone) averaged the harm away. Only looking at gender and skin type together revealed it. That is intersectionality (Crenshaw) and the coded gaze (Buolamwini).' },
-        { h: 'Harm and accountability', t: 'The system is sold as neutral, and it lands hardest where these tools are deployed, in policing and at borders (the OPC and Robertson readings). Accountability sits with the institutions that build, buy, and deploy them, not one programmer. This is the New Jim Code (Benjamin); a response can be grounded in the resistance and design-justice readings (Tanksley, Costanza-Chock).' }
+        { h: 'Harm and accountability', t: 'These systems are sold as neutral, and they land hardest where they are deployed, in policing and at borders (the OPC and Robertson readings). Accountability sits with the institutions that build, buy, and deploy them, not one programmer. This is the New Jim Code (Benjamin); a response can be grounded in the resistance and design-justice readings (Tanksley, Costanza-Chock).' }
       ];
       if (sel !== undefined && sel !== null) sections.push({ h: 'Quick check', t: 'You named the harm as ' + (sel === 0 ? 'the New Jim Code, built into design and data. Correct.' : 'intent or a one-off bug. Look again: the failure came from how the system was built and tested, not from intent or chance.') });
       senecaDoc('BFS218', 'Bias Audit', ['Audit the coded gaze', (gs ? gs.title : 'Gender Shades') + ' (Buolamwini and Gebru, 2018)'], sections, 'BFS218_bias_audit');
