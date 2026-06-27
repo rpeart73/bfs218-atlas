@@ -13,11 +13,13 @@
 
   var SKEY = 'bfs218corpus.v2';
   function load() { try { var o = JSON.parse(localStorage.getItem(SKEY) || '{}'); return o && typeof o === 'object' ? o : {}; } catch (e) { return {}; } }
-  function persist() { try { localStorage.setItem(SKEY, JSON.stringify({ saved: state.saved, layout: state.layout, introOpen: state.introOpen, cmpNotes: state.cmpNotes, rcNotes: state.rcNotes })); } catch (e) {} }
+  function persist() { try { localStorage.setItem(SKEY, JSON.stringify({ saved: state.saved, layout: state.layout, introOpen: state.introOpen, cmpNotes: state.cmpNotes, rcNotes: state.rcNotes, journeyWeek: state.journeyWeek })); } catch (e) {} }
   var saved0 = load();
 
   var state = {
-    screen: 'library',
+    screen: 'journey',
+    journeyWeek: saved0.journeyWeek || null,
+    stationWeek: null,
     layout: saved0.layout || 'byweek',
     search: '',
     activeTypes: [],
@@ -222,9 +224,10 @@
   }
   function sidebar() {
     var s = state;
-    var navDefs = [['library', 'Home', 'grid'], ['readings', 'Library of Readings', 'gallery'], ['compare', 'Compare Reading Concepts', 'columns'], ['reading', 'Build Your Reading Comprehension', 'book'], ['glossary', 'Glossary & Thinkers', 'book'], ['cards', 'Self-check', 'clipboard']];
+    var navDefs = [['journey', 'Home', 'gauge'], ['readings', 'Library of Readings', 'gallery'], ['compare', 'Compare Reading Concepts', 'columns'], ['reading', 'Build Your Reading Comprehension', 'book'], ['glossary', 'Glossary & Thinkers', 'book'], ['cards', 'Self-check', 'clipboard']];
+    if (D.course && D.course.code === 'BFS218') navDefs.push(['sandbox', 'Audit the Coded Gaze', 'search']);
     var btns = navDefs.map(function (d) {
-      var key = d[0], active = (key === 'library' && (s.screen === 'library' || s.screen === 'detail')) || s.screen === key;
+      var key = d[0], active = (key === 'journey' && (s.screen === 'journey' || s.screen === 'library' || s.screen === 'station' || s.screen === 'detail')) || s.screen === key;
       var badge = '';
       if (key === 'compare' && s.compareIds.length) badge = '<span class="mono" style="font-size:.6875rem;font-weight:600;color:#1552D8;background:#E7EEFB;padding:1px 7px;border-radius:999px">' + s.compareIds.length + '</span>';
       var click = "SOC.go('" + key + "')";
@@ -856,6 +859,57 @@
     if (code === 'BFS218') return bfsStudio(sel);
     return '';
   }
+  /* ---------- BFS218 bias-audit sandbox (gated to BFS218) ---------- */
+  var GS_MAX_DW = 34.7; /* published: darker-skinned women misclassified up to 34.7% (Buolamwini and Gebru 2018; in BFS218 corpus) */
+  var GS_MIN_LM = 0.8;  /* published: maximum error for lighter-skinned men 0.8% */
+  function bfsRep() { return state.sandboxRep == null ? 0 : state.sandboxRep; }
+  function bfsErrDW(rep) { return Math.round((GS_MIN_LM + (GS_MAX_DW - GS_MIN_LM) * (1 - rep / 100)) * 10) / 10; }
+  function sbBar(label, val, color) {
+    var w = Math.max(2, Math.round(val / 40 * 100));
+    return '<div style="margin:0 0 11px">'
+      + '<div style="display:flex;justify-content:space-between;font-size:.8125rem;font-weight:600;color:#15171C;margin-bottom:4px"><span>' + esc(label) + '</span><span class="mono">' + val.toFixed(1) + '%</span></div>'
+      + '<div style="height:18px;background:#EEF1F5;border-radius:6px;overflow:hidden"><div style="height:100%;width:' + w + '%;background:' + color + ';border-radius:6px"></div></div>'
+      + '</div>';
+  }
+  function sandboxOut(rep) {
+    var dw = bfsErrDW(rep), lm = GS_MIN_LM, gap = Math.round((dw - lm) * 10) / 10;
+    var bars = '<div role="img" aria-label="Error rates by group. Darker-skinned women ' + dw.toFixed(1) + ' percent. Lighter-skinned men ' + lm.toFixed(1) + ' percent. Gap ' + gap.toFixed(1) + ' points.">'
+      + sbBar('Darker-skinned women', dw, '#DA291C')
+      + sbBar('Lighter-skinned men', lm, '#15171C')
+      + '</div>';
+    var table = '<table style="width:100%;border-collapse:collapse;margin-top:6px;font-size:.8125rem"><caption class="mono" style="text-align:left;font-size:.6875rem;letter-spacing:.05em;color:#8a909c;margin-bottom:6px">ERROR RATE BY GROUP (DATA TABLE)</caption>'
+      + '<thead><tr><th scope="col" style="text-align:left;padding:5px 8px;border-bottom:1px solid #DEE3EA">Group</th><th scope="col" style="text-align:right;padding:5px 8px;border-bottom:1px solid #DEE3EA">Misclassification rate</th></tr></thead>'
+      + '<tbody><tr><td style="padding:5px 8px;border-bottom:1px solid #EEF1F5">Darker-skinned women</td><td style="text-align:right;padding:5px 8px;border-bottom:1px solid #EEF1F5">' + dw.toFixed(1) + '%</td></tr>'
+      + '<tr><td style="padding:5px 8px">Lighter-skinned men</td><td style="text-align:right;padding:5px 8px">' + lm.toFixed(1) + '%</td></tr></tbody></table>';
+    var note = (rep < 10) ? 'This end shows the disparity Buolamwini and Gebru measured.' : ((rep > 85) ? 'With balanced representation the gap nearly closes in this model.' : 'As the data grows more representative in this model, the gap shrinks.');
+    var line = '<p style="font-size:.875rem;line-height:1.55;color:#474C57;margin:12px 0 0">At this representation level the model shows darker-skinned women misclassified <strong>' + dw.toFixed(1) + ' percent</strong> of the time and lighter-skinned men <strong>' + lm.toFixed(1) + ' percent</strong>, a gap of <strong>' + gap.toFixed(1) + ' points</strong>. ' + note + '</p>';
+    return bars + table + line;
+  }
+  function sandboxScreen() {
+    var gs = rec('buolamwini2018'), rep = bfsRep();
+    var openBtn = gs ? '<button onclick="SOC.read(\'buolamwini2018\')" style="margin-top:2px;background:none;border:none;color:#1552D8;font-size:.8125rem;font-weight:600;padding:0;cursor:pointer">Open Gender Shades (Buolamwini and Gebru, 2018) &#8599;</button>' : '';
+    var predict = '<div style="background:#F7F8FA;border:1px solid #DEE3EA;border-radius:12px;padding:14px 16px;margin:16px 0 0"><div class="mono" style="font-size:.6875rem;letter-spacing:.05em;color:#8a909c;margin-bottom:6px">PREDICT FIRST</div><p style="font-size:.9rem;line-height:1.55;color:#15171C;margin:0">Before you move anything: if a face dataset is built mostly from lighter-skinned faces, what do you expect happens to the error rate for darker-skinned women? Hold that prediction, then test it.</p></div>';
+    var slider = '<label for="bfs-rep" style="display:block;font-size:.8125rem;font-weight:600;color:#474C57;margin-bottom:7px">Representation of darker-skinned faces in the training data</label>'
+      + '<input id="bfs-rep" type="range" min="0" max="100" step="5" value="' + rep + '" oninput="SOC.sandboxRep(this.value)" aria-describedby="bfs-rep-cap" style="width:100%;max-width:520px;accent-color:#DA291C">'
+      + '<div style="display:flex;justify-content:space-between;max-width:520px;font-size:.6875rem;color:#8a909c;margin-top:2px"><span>Underrepresented</span><span>Balanced</span></div>';
+    var caption = '<p id="bfs-rep-cap" style="font-size:.78rem;line-height:1.5;color:#6b7280;margin:10px 0 0;max-width:70ch">This is a teaching illustration. Buolamwini and Gebru audited commercial systems with a benchmark balanced by gender and skin type, and found darker-skinned women misclassified up to ' + GS_MAX_DW + ' percent while lighter-skinned men stayed at ' + GS_MIN_LM + ' percent. Here you vary how well darker-skinned faces are represented in the data, to see how design, data, and evaluation choices can produce a gap like that. It is not a live classifier and not a re-run of their study.</p>';
+    var live = '<div style="background:#fff;border:1px solid #DEE3EA;border-top:4px solid #DA291C;border-radius:12px;padding:16px 18px;margin:16px 0 0">' + slider + caption + '<div id="bfs-sbout" style="margin-top:16px">' + sandboxOut(rep) + '</div></div>';
+    var inter = '<div style="background:#15171C;color:#fff;border-radius:12px;padding:15px 17px;margin:16px 0 0"><div class="mono" style="font-size:.62rem;letter-spacing:.05em;color:#9aa3b2;margin-bottom:6px">WHY THIS GROUP</div><p style="font-size:.875rem;line-height:1.55;color:rgba(255,255,255,.92);margin:0">The group hit hardest sits at an intersection: darker-skinned and women. A test that checked only gender accuracy, or only skin-type accuracy, would have averaged this away. That is intersectionality (Crenshaw) made measurable, what Buolamwini calls the coded gaze.</p></div>';
+    var check = studioCheck('BFS218|sandbox', {
+      q: 'In this illustration, the gap widens as darker-skinned faces become less represented in the data, with no racist rule written anywhere. Which concept names a harm built into a system through its design and data rather than through intent?',
+      options: ['The New Jim Code (Benjamin): discrimination built into systems that are sold as neutral, through their design and data', 'A prejudiced programmer who coded the bias on purpose', 'A random one-off software bug that can be patched and then forgotten'],
+      answer: 0,
+      why: 'This is the New Jim Code: the gap is produced by whose faces filled the training data and how the system was built, not by anyone writing a racist rule or by chance. Buolamwini and Gebru measured it, darker-skinned women misclassified far more often, while the product still shipped as neutral.'
+    });
+    var chain = '<div style="background:#F7F8FA;border:1px solid #DEE3EA;border-radius:12px;padding:15px 17px;margin:16px 0 0"><div class="mono" style="font-size:.6875rem;letter-spacing:.05em;color:#8a909c;margin-bottom:7px">CARRY THIS INTO YOUR ACCOUNTABILITY CHAIN</div><p style="font-size:.875rem;line-height:1.55;color:#15171C;margin:0">System (facial analysis) &#8594; data choice (underrepresentation in the data) &#8594; mechanism (error climbs for the underrepresented group) &#8594; harm (intersectional, and shipped as neutral) &#8594; accountability (the institutions that build, buy, and deploy it, not one programmer) &#8594; response (grounded in the readings).</p></div>';
+    var save = '<div style="margin-top:16px"><button onclick="SOC.saveSandbox()" style="background:var(--red);border:none;color:#fff;border-radius:9px;padding:10px 18px;font-size:.875rem;font-weight:600;cursor:pointer">Save my work to the Personal Cartography (.docx)</button></div>';
+    return '<section style="background:#fff;border:1px solid #DEE3EA;border-radius:14px;padding:18px 18px 22px;margin:0 0 22px;box-shadow:0 1px 2px rgba(21,23,28,.04)">'
+      + '<div class="mono" style="font-size:.6875rem;letter-spacing:.06em;color:var(--red);font-weight:600;margin-bottom:6px">BIAS AUDIT SANDBOX</div>'
+      + '<h1 style="font-size:1.75rem;font-weight:600;margin:0 0 8px">Audit the coded gaze</h1>'
+      + '<p style="font-size:.9375rem;line-height:1.55;color:#474C57;margin:0 0 4px;max-width:78ch">Change one thing in this model, how well darker-skinned faces are represented in the data, and watch a racialized gap appear with no racist rule anywhere. Then name what you are seeing with the reading.</p>'
+      + openBtn + predict + live + inter + check + chain + save
+      + '</section>';
+  }
   function cardsScreen() {
     var weeks = weeksWithReadings();
     var sel = state.cardWeek;
@@ -871,18 +925,138 @@
       + '<div class="soc-cardgrid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px">' + list.map(card).join('') + '</div></div>';
   }
 
+  /* ---------- immersive journey shell (cascaded, course-aware) ---------- */
+  var JOURNEY_Q = {
+    BFS218: {
+      1: 'Can a technology sold as neutral still carry old racism forward?',
+      2: 'Why does harm show up most clearly at the intersection of systems?',
+      5: 'What happens when a system is built to see some faces better than others?',
+      6: 'When policing and borders run on algorithms, who is watched, and who gets to decide?',
+      8: 'Who owns the data, and who controls the story it tells?',
+      10: 'When an algorithm decides who gets help, who gets left behind?',
+      11: 'If the tools carry the harm, who gets to redesign them?',
+      12: 'Who is accountable when the system causes harm, and does the law keep up?'
+    },
+    PSY355: {
+      1: 'What actually makes someone resilient: their grit, or the resources around them?',
+      3: 'Does believing you can grow change your results, and when does it not?',
+      4: 'Where does the confidence to keep going actually come from?',
+      5: 'Is a hard stretch a verdict on who you are, or a stage you move through?',
+      6: 'Why does the same support help one person and not another?',
+      7: 'Can adversity itself become a source of growth, and how?',
+      8: 'Is being hard on yourself what keeps you going, or what wears you down?',
+      9: 'What lets you keep going without breaking, persistence or flexibility?',
+      10: 'Can writing about your own experience actually build resilience?',
+      11: 'What makes asking for help actually work?'
+    }
+  };
+  function journeyQ(w) { var c = (D.course && D.course.code) || ''; return (JOURNEY_Q[c] && JOURNEY_Q[c][w]) || 'What is this week asking you to see?'; }
+  function journeyWeeks() { return weeksWithReadings(); }
+  function currentJourneyWeek() { var ws = journeyWeeks(); if (!ws.length) return null; if (state.journeyWeek && ws.indexOf(state.journeyWeek) >= 0) return state.journeyWeek; return ws[0]; }
+  function heroArt() {
+    return '<svg class="jhero-art" viewBox="0 0 800 320" preserveAspectRatio="xMidYMid slice" aria-hidden="true">'
+      + '<path d="M0,250 C160,210 300,300 460,250 C620,200 720,260 800,230 L800,320 L0,320 Z" fill="#DA291C" fill-opacity=".05"/>'
+      + '<path d="M0,285 C180,250 320,320 500,280 C660,245 740,295 800,275 L800,320 L0,320 Z" fill="#1B2A4A" fill-opacity=".04"/>'
+      + '<g stroke="#DA291C" stroke-opacity=".10" fill="none" stroke-width="1.4"><path d="M360,150 C480,110 600,180 760,130 C800,116 810,120 830,112"/><path d="M360,185 C480,150 600,215 760,165 C800,150 810,156 830,148"/></g>'
+      + '<g fill="#DA291C" fill-opacity=".16"><circle cx="690" cy="70" r="2.6"/><circle cx="742" cy="118" r="1.8"/><circle cx="636" cy="52" r="1.6"/></g>'
+      + '</svg>';
+  }
+  function journeyIntro() { return 'Follow one question through the whole course, week by week. Each week sets up what to read, why it matters, and one thing to do with it. Start at the top, or pick up where you left off.'; }
+  function journeyHome() {
+    var ws = journeyWeeks(), cur = currentJourneyWeek(), started = !!state.journeyWeek;
+    var title = (D.course && (D.course.name || D.course.code)) || 'Your course';
+    var ctaLabel = started ? ('Resume Week ' + cur) : ('Start Week ' + (ws[0] || 1));
+    var hero = '<section class="jhero jfade" style="margin-bottom:26px">' + heroArt()
+      + '<div style="position:relative;max-width:64ch">'
+      + '<div class="mono" style="font-size:.75rem;letter-spacing:.08em;color:var(--red);font-weight:600;margin-bottom:12px">SENECA POLYTECHNIC &middot; FALL 2026</div>'
+      + '<h1 style="font-size:2.5rem;line-height:1.1;font-weight:600;margin:0 0 14px;letter-spacing:-.01em">' + esc(title) + '</h1>'
+      + '<p style="font-size:1.0625rem;line-height:1.6;color:var(--ink-dim);margin:0 0 24px;max-width:54ch">' + esc(journeyIntro()) + '</p>'
+      + '<button class="jhero-cta" onclick="SOC.station(' + (cur || (ws[0] || 1)) + ')">' + ctaLabel + ic('chevron', 18, 2.4) + '</button>'
+      + (started ? '' : '<div style="margin-top:14px;font-size:.8125rem;color:var(--ink-faint)">' + ws.length + ' weeks in this course</div>')
+      + '</div></section>';
+    var spineHead = '<div style="display:flex;align-items:baseline;gap:12px;margin:0 0 16px;flex-wrap:wrap"><h2 style="font-size:1.375rem;font-weight:600;margin:0;color:var(--ink)">Your journey</h2><span style="font-size:.875rem;color:var(--ink-faint)">' + ws.length + ' weeks, in course order</span></div>';
+    return '<div class="rise">' + hero + spineHead + journeyStations(cur) + '</div>';
+  }
+  function journeyStations(cur) {
+    var ws = journeyWeeks();
+    return '<div style="display:flex;flex-direction:column;gap:12px">' + ws.map(function (w) {
+      var recs = recordsForWeek(w), n = recs.length, isCur = (w === cur), note = n + (n === 1 ? ' reading' : ' readings');
+      return '<button class="jstation' + (isCur ? ' cur' : '') + '" onclick="SOC.station(' + w + ')">'
+        + '<div style="display:flex;align-items:flex-start;gap:16px">'
+        + '<span class="jdot" style="display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;flex:none;border-radius:12px;background:' + (isCur ? 'var(--red)' : '#1B2A4A') + ';color:#fff;font-family:var(--mono);font-size:1.0625rem;font-weight:600">' + w + '</span>'
+        + '<div style="flex:1;min-width:0">'
+        + '<div style="display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin-bottom:3px">' + (isCur ? '<span class="mono" style="font-size:.625rem;font-weight:700;letter-spacing:.06em;color:var(--red);background:#F6E3E1;padding:2px 8px;border-radius:999px">YOU ARE HERE</span>' : '') + '<h3 style="font-size:1.0625rem;font-weight:600;margin:0;color:var(--ink)">' + esc(weekTitle(w)) + '</h3></div>'
+        + '<p style="font-size:.9375rem;line-height:1.5;color:var(--ink-dim);margin:0 0 8px">' + esc(journeyQ(w)) + '</p>'
+        + '<div style="display:flex;align-items:center;gap:7px;font-size:.75rem;color:var(--ink-faint)"><span style="display:inline-flex;color:#8a909c">' + ic('book', 13) + '</span>' + esc(note) + '<span style="margin:0 4px">&middot;</span><span style="color:var(--red);font-weight:600">Open &rarr;</span></div>'
+        + '</div></div></button>';
+    }).join('') + '</div>';
+  }
+  function stationFraming(w, recs) {
+    if (recs.length > 1) return 'This week brings ' + recs.length + ' readings together. Read them as parts of one argument, not as separate facts.';
+    if (recs.length === 1) return 'This week turns on one reading. Read it closely, then do something with it.';
+    return '';
+  }
+  function stationReading(r, kicker) {
+    var u = readUrl(r), accent = '#3a47a8';
+    var look = r.assigned ? ('<div style="margin-top:10px;background:#F7F8FA;border-left:3px solid ' + accent + ';padding:8px 12px;border-radius:0 8px 8px 0;font-size:.8125rem;line-height:1.5;color:var(--ink-dim)"><span style="font-weight:600;color:var(--ink)">Read:</span> ' + esc(r.assigned) + '</div>') : '';
+    return '<div style="border:1px solid var(--border);border-top:4px solid ' + accent + ';background:#fff;border-radius:13px;padding:17px 19px">'
+      + '<div style="display:flex;align-items:center;gap:9px;margin-bottom:7px"><span class="mono" style="font-size:.625rem;font-weight:700;letter-spacing:.04em;color:' + accent + '">' + esc(kicker) + '</span></div>'
+      + '<h3 style="font-size:1.1875rem;line-height:1.3;font-weight:600;margin:0 0 3px;color:var(--ink)">' + esc(r.title) + '</h3>'
+      + '<div style="font-size:.8125rem;color:var(--ink-dim);margin-bottom:9px">' + esc(r.authors) + ' &middot; ' + esc(String(r.year)) + '</div>'
+      + '<p style="font-size:.9375rem;line-height:1.55;color:var(--ink-dim);margin:0">' + esc(r.coreIdea) + '</p>'
+      + look
+      + '<div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap">'
+      + (u ? '<button onclick="SOC.read(\'' + r.id + '\')" style="display:inline-flex;align-items:center;gap:7px;background:var(--red);border:none;color:#fff;border-radius:9px;padding:9px 16px;font-size:.875rem;font-weight:600;cursor:pointer">Open the reading' + ic('external', 14, 2.2) + '</button>' : '')
+      + '<button onclick="SOC.open(\'' + r.id + '\')" style="background:#fff;border:1px solid var(--border);color:var(--ink);border-radius:9px;padding:9px 16px;font-size:.875rem;font-weight:600;cursor:pointer">Details</button>'
+      + '</div></div>';
+  }
+  function stationDo(w) {
+    var tiles = [['See it for yourself', 'Work this week\'s readings in the Self-Check Studio.', 'clipboard', 'SOC.goWeek(\'cards\',' + w + ')']];
+    if (D.course && D.course.frame) tiles.push(['Locate it on your map', 'Add this week to your Personal Cartography.', 'globe', 'SOC.go(\'map\')']);
+    if (D.course && D.course.code === 'BFS218') tiles.push(['Audit a system', 'Watch a racialized harm appear in the sandbox, then name it.', 'search', 'SOC.go(\'sandbox\')']);
+    if (D.course && D.course.code === 'PSY355') tiles.push(['Build your resilience', 'Bring this week into your Resilience Ecology.', 'layers', 'SOC.go(\'ecology\')']);
+    tiles.push(['Hold two readings together', 'Compare any two readings, side by side.', 'columns', 'SOC.go(\'compare\')']);
+    var th = tiles.map(function (t) {
+      return '<button class="jtile" onclick="' + t[3] + '"><span style="display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:11px;background:#F6E3E1;color:var(--red)">' + ic(t[2], 19) + '</span><h4 style="font-size:1rem;font-weight:600;margin:4px 0 0;color:var(--ink)">' + t[0] + '</h4><p style="font-size:.84rem;line-height:1.5;color:var(--ink-dim);margin:0">' + t[1] + '</p></button>';
+    }).join('');
+    return '<div style="margin-top:8px"><div class="mono" style="font-size:.6875rem;letter-spacing:.05em;color:var(--ink-faint);margin:0 0 12px">NOW DO SOMETHING WITH IT</div><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px">' + th + '</div></div>';
+  }
+  function weekStation(w) {
+    var ws = journeyWeeks(), idx = ws.indexOf(w), recs = recordsForWeek(w);
+    if (idx < 0 || !recs.length) return '<div style="padding:40px 0;color:var(--ink-dim);font-size:1rem">This week has no readings posted yet. <button onclick="SOC.go(\'journey\')" style="background:none;border:none;color:var(--red);font-weight:600;cursor:pointer">Back to your journey</button></div>';
+    var hero = '<section class="jfade jhero" style="margin-bottom:22px;padding:30px 32px 28px">' + heroArt()
+      + '<div style="position:relative">'
+      + '<div class="mono" style="font-size:.6875rem;letter-spacing:.06em;color:var(--red);font-weight:600;margin-bottom:9px">WEEK ' + w + ' OF YOUR JOURNEY</div>'
+      + '<h1 style="font-size:1.875rem;line-height:1.16;font-weight:600;margin:0 0 12px">' + esc(weekTitle(w)) + '</h1>'
+      + '<p style="font-size:1.0625rem;line-height:1.5;color:var(--ink);font-weight:500;margin:0;max-width:60ch">' + esc(journeyQ(w)) + '</p>'
+      + '</div></section>';
+    var framing = '<p style="font-size:1rem;line-height:1.65;color:var(--ink-dim);margin:0 0 22px;max-width:72ch">' + esc(stationFraming(w, recs)) + '</p>';
+    var readBlocks = '<div style="display:flex;flex-direction:column;gap:14px;margin-bottom:24px">';
+    recs.forEach(function (r, i) { readBlocks += stationReading(r, i === 0 ? 'This week\'s reading' : 'Also this week'); });
+    readBlocks += '</div>';
+    var prev = idx > 0 ? ws[idx - 1] : null, next = idx < ws.length - 1 ? ws[idx + 1] : null;
+    var navRow = '<div style="display:flex;gap:12px;margin-top:26px;flex-wrap:wrap">'
+      + (prev != null ? '<button onclick="SOC.station(' + prev + ')" style="flex:1;min-width:190px;text-align:left;border:1px solid var(--border);background:#fff;border-radius:12px;padding:13px 16px;cursor:pointer"><div class="mono" style="font-size:.6875rem;color:var(--ink-faint)">&larr; PREVIOUS</div><div style="font-size:.9375rem;font-weight:600;color:var(--ink);margin-top:2px">Week ' + prev + ': ' + esc(weekTitle(prev)) + '</div></button>' : '')
+      + (next != null ? '<button onclick="SOC.station(' + next + ')" style="flex:1;min-width:190px;text-align:right;border:1px solid var(--border);background:#fff;border-radius:12px;padding:13px 16px;cursor:pointer"><div class="mono" style="font-size:.6875rem;color:var(--red)">NEXT &rarr;</div><div style="font-size:.9375rem;font-weight:600;color:var(--ink);margin-top:2px">Week ' + next + ': ' + esc(weekTitle(next)) + '</div></button>' : '')
+      + '</div>';
+    return '<div class="rise">' + hero + framing + '<div class="mono" style="font-size:.6875rem;letter-spacing:.05em;color:var(--ink-faint);margin:0 0 12px">WHAT YOU ARE READING</div>' + readBlocks + stationDo(w) + navRow + '</div>';
+  }
+
   /* ---------- render ---------- */
   function homeBar() {
-    return '<button onclick="SOC.go(\'library\')" style="display:inline-flex;align-items:center;gap:7px;background:#fff;border:1px solid #DEE3EA;border-radius:8px;padding:8px 14px;font-size:.875rem;font-weight:600;color:#15171C;margin-bottom:18px;cursor:pointer">&#8592; Return to Home</button>';
+    return '<button onclick="SOC.go(\'journey\')" style="display:inline-flex;align-items:center;gap:7px;background:#fff;border:1px solid #DEE3EA;border-radius:8px;padding:8px 14px;font-size:.875rem;font-weight:600;color:#15171C;margin-bottom:18px;cursor:pointer">&#8592; Back to your journey</button>';
   }
   function body() {
+    if (state.screen === 'journey' || state.screen === 'library') return journeyHome();
+    if (state.screen === 'station') return homeBar() + weekStation(state.stationWeek || currentJourneyWeek());
     if (state.screen === 'detail') return homeBar() + detail();
     if (state.screen === 'readings') return homeBar() + readingsGallery();
     if (state.screen === 'compare') return homeBar() + compare();
     if (state.screen === 'reading') return homeBar() + readingComp();
     if (state.screen === 'glossary') return homeBar() + glossaryScreen();
     if (state.screen === 'cards') return homeBar() + cardsScreen();
-    return library();
+    if (state.screen === 'sandbox' && D.course && D.course.code === 'BFS218') return homeBar() + sandboxScreen();
+    return journeyHome();
   }
   function render() {
     if (state.screen !== 'compare' && render._prev !== undefined && render._prev !== state.screen && (state.compareIds.length || state.showSynthesis)) { state.compareIds = []; state.showSynthesis = false; }
@@ -930,6 +1104,8 @@
   }
   window.SOC = {
     go: function (s) { if (s === 'library') { state.savedView = false; } if (s === 'reading') { state.rcReading = null; state.lens = 'thematic'; } if (s === 'readings') { state.galWeek = null; state.galTopic = null; } state.screen = s; focusTarget = 'soc-main'; render(); topScroll(); },
+    station: function (w) { state.stationWeek = w; state.journeyWeek = w; state.screen = 'station'; persist(); focusTarget = 'soc-main'; render(); topScroll(); },
+    goWeek: function (s, w) { state.cardWeek = w; state.screen = s; focusTarget = 'soc-main'; render(); topScroll(); },
     galWeek: function (w) { var m = document.getElementById('soc-main'); var y = m ? m.scrollTop : 0; state.galWeek = (state.galWeek === w) ? null : w; render(); var m2 = document.getElementById('soc-main'); if (m2) m2.scrollTop = y; },
     galTopic: function (t) { var m = document.getElementById('soc-main'); var y = m ? m.scrollTop : 0; state.galTopic = (state.galTopic === t) ? null : t; render(); var m2 = document.getElementById('soc-main'); if (m2) m2.scrollTop = y; },
     galClear: function () { state.galWeek = null; state.galTopic = null; render(); },
@@ -1014,6 +1190,19 @@
       } else { flash('Self-Check Studio save is for the course sites.'); return; }
       if (sel !== undefined && sel !== null) sections.push({ h: 'Quick check', t: 'Q: ' + checkQ + '\nYour answer was ' + (sel === 0 ? 'the grounded one. Correct.' : 'not the grounded one. Look again at what the reading actually claims.') });
       senecaDoc(cc || 'Course', 'Self-Check Studio', sub, sections, (cc || 'Course') + '_self_check_studio');
+    },
+    sandboxRep: function (v) { state.sandboxRep = parseInt(v, 10); var o = document.getElementById('bfs-sbout'); if (o) o.innerHTML = sandboxOut(state.sandboxRep); },
+    saveSandbox: function () {
+      var gs = rec('buolamwini2018'), rep = bfsRep(), dw = bfsErrDW(rep), lm = GS_MIN_LM, gap = Math.round((dw - lm) * 10) / 10, sel = state.mcSel['BFS218|sandbox'];
+      var sections = [
+        { h: 'System', t: 'Commercial facial-analysis and gender-classification systems, audited by Buolamwini and Gebru (Gender Shades, 2018).' },
+        { h: 'Design or data choice', t: 'Gender Shades used a benchmark balanced by gender and skin type to reveal that commercial systems performed unevenly. This sandbox models how design, data, and evaluation choices can produce that kind of disparity.' },
+        { h: 'Racialized mechanism', t: 'As the underrepresented group thins out in the data, the error rate for that group climbs. In the published audit, darker-skinned women were misclassified up to ' + GS_MAX_DW + ' percent of the time; lighter-skinned men, ' + GS_MIN_LM + ' percent.' },
+        { h: 'What the sandbox showed', t: 'At the representation level you set, darker-skinned women ' + dw.toFixed(1) + ' percent, lighter-skinned men ' + lm.toFixed(1) + ' percent, a gap of ' + gap.toFixed(1) + ' points. (An illustration of the relationship, not a live classifier.)' },
+        { h: 'Harm and accountability', t: 'The harm is intersectional (darker-skinned women) and is built into a product sold as neutral. Accountability sits with the institutions that build, buy, and deploy these systems, not one programmer. This is the New Jim Code (Benjamin) and the coded gaze (Buolamwini).' }
+      ];
+      if (sel !== undefined && sel !== null) sections.push({ h: 'Quick check', t: 'You named the harm as ' + (sel === 0 ? 'the New Jim Code, built into design and data. Correct.' : 'intent or a one-off bug. Look again: the gap came from the data and the design, not from intent or chance.') });
+      senecaDoc('BFS218', 'Bias Audit Sandbox', ['Audit the coded gaze', (gs ? gs.title : 'Gender Shades') + ' (Buolamwini and Gebru, 2018)'], sections, 'BFS218_bias_audit_sandbox');
     },
     read: function (id) { var r = rec(id); var u = r && readUrl(r); if (u) { window.open(u, '_blank', 'noopener'); } else { state.screen = 'detail'; state.detailId = id; focusTarget = 'soc-main'; render(); topScroll(); } },
     openSaved: function () { state.screen = 'library'; state.activeTypes = []; state.activeWeek = null; state.search = ''; state.savedView = state.saved.length > 0; flash(state.saved.length ? 'Your saved shelf.' : 'Nothing saved yet. Tap the bookmark on any reading.'); topScroll(); },
