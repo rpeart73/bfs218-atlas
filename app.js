@@ -227,7 +227,6 @@
   function sidebar() {
     var s = state;
     var navDefs = [['journey', 'Home', 'gauge'], ['readings', 'Library of Readings', 'gallery'], ['compare', 'Compare Reading Concepts', 'columns'], ['reading', 'Build Your Reading Comprehension', 'book'], ['glossary', 'Glossary & Thinkers', 'book'], ['cards', 'Self-check', 'clipboard']];
-    if (D.course && D.course.code === 'BFS218') navDefs.push(['sandbox', 'Audit the Coded Gaze', 'search']);
     var btns = navDefs.map(function (d) {
       var key = d[0], active = (key === 'journey' && (s.screen === 'journey' || s.screen === 'library' || s.screen === 'station' || s.screen === 'detail')) || s.screen === key;
       var badge = '';
