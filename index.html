@@ -65,6 +65,9 @@
   @keyframes heroFloat{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
   .jfade{animation:heroFloat .5s cubic-bezier(.2,.7,.2,1) both}
   @media (max-width:760px){ .jhero{padding:34px 22px 30px} }
+  .bfs-face{width:14px;height:14px;border-radius:50%;background:#CBD2DB;display:inline-block}
+  .bfs-face.fail{background:#DA291C;animation:bfsFail .45s ease both}
+  @keyframes bfsFail{from{transform:scale(.3);opacity:.25}to{transform:scale(1);opacity:1}}
   @media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
   @media (max-width:760px){
     .soc-sidebar{display:none!important}
@@ -84,6 +87,6 @@
 <div id="soc-live" role="status" aria-live="polite" class="skip"></div>
 <script src="./data/corpus-data.js?v=26"></script>
 <script src="./data/bfs218-mc.js?v=22"></script>
-<script src="./app.js?v=37"></script>
+<script src="./app.js?v=38"></script>
 </body>
 </html>
